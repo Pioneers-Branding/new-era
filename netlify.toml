@@ -1,0 +1,28 @@
+# Netlify configuration
+# ---------------------------------------------------------------------------
+# The site source lives in LP/. build.php renders index.php to static HTML in
+# LP/dist/ and copies assets/ alongside it. `publish` is resolved relative to
+# `base`, so "dist" means "LP/dist".
+#
+# Netlify's build image ships PHP, but the exact version varies by image. If
+# the build fails with "php: command not found", either pin an image that has
+# it or build locally (`php build.php`) and deploy LP/dist/ directly.
+
+[build]
+  base    = "LP"
+  command = "php build.php"
+  publish = "dist"
+
+# Long-lived caching for fingerprint-free static assets. Safe here because the
+# photo filenames encode their dimensions and change when the image changes.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options        = "SAMEORIGIN"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
