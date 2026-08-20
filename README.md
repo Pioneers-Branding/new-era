@@ -19,6 +19,38 @@ LP/
 netlify.toml         build config (base = LP, publish = dist)
 ```
 
+## Brand colours
+
+Sampled from `LP/assets/logo/new-era-logo.webp`. These three are the logo
+itself — everything else on the site is derived from them.
+
+| Role         | Hex       | Where it appears in the logo                    |
+| ------------ | --------- | ----------------------------------------------- |
+| Ocean blue   | `#0F639B` | "Anew" wordmark, "TMS & Psychiatry" tagline, the blue rays of the burst |
+| Orange       | `#E8922F` | "Era" wordmark, the orange rays of the burst     |
+| Leaf green   | `#86BE52` | the green rays of the burst                      |
+
+Supporting tints and shades used across the site:
+
+| Role                | Hex       | Use                                    |
+| ------------------- | --------- | -------------------------------------- |
+| Navy (deep)         | `#0F2440` | headings, footer, dark sections        |
+| Navy (darkest)      | `#0A1A30` | hero overlay, deepest backgrounds      |
+| Navy (mid)          | `#1B3A63` | secondary dark surfaces                |
+| Blue (action)       | `#1D4ED8` | primary buttons, links                 |
+| Blue (hover)        | `#2563EB` | button hover                           |
+| Blue (light)        | `#BFD5FE` | badges, outlines on dark               |
+| Blue (tint)         | `#EFF5FF` | section backgrounds                    |
+| Cyan accent         | `#0EA5E9` | gradients, small accents               |
+| Body text           | `#475569` | paragraph copy                         |
+| Muted text          | `#8494AB` | captions, footnotes                    |
+| Border              | `#E2E8F0` | card and divider borders               |
+| Off-white           | `#F4F6F9` | alternating section background         |
+
+Note: the landing page currently runs blue-only — the logo's orange and green
+are not used anywhere on it. Decide deliberately whether the homepage picks
+them up as accents or keeps the same blue-only system.
+
 ## Local development
 
 ```bash

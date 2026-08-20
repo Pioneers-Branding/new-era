@@ -27,7 +27,7 @@ $IMG = [
     'window'  => '1776886099265-6366478b341b', // waiting area
     'light'   => '1779281887548-f676406dea2f', // clinic interior
     'people'  => '1653512488909-e204afcc8495', // patient, smiling
-    'ketamine'=> '1581056571876-61dfa4b0fbed', // infusion / treatment suite
+    'ketamine'=> '1763310225009-50214e3c99d9', // IV infusion line, clinical setting
 ];
 $TEAM_IMG = ['1562337404-3044c84ac061','1507003211169-0a1dd7228f2d','1526080652727-5b77f74eacd2','1522529599102-193c0d76b5b6'];
 
@@ -97,16 +97,18 @@ $mechanism = [
     ['03','Mood circuitry re-engages','Areas that slowed under depression become active again, rebalancing the circuits underlying mood, concentration, energy and sleep.','M12 3a9 9 0 109 9M12 3v9l6.4 3.2'],
 ];
 
-/* [title, description, bullets, image src, object-fit] */
+/* [title, description, bullets, image src, object-fit, object-position (optional)]
+   The cards crop to a wide 56-unit band, so portraits whose subject sits high in
+   the frame need 'object-top' or the head is cut off. */
 $services = [
     ['TMS Therapy','FDA-cleared magnetic stimulation targeting the brain\'s mood center. Non-invasive, drug-free and covered by most insurance plans.',['Magstim Horizon® with StimGuide PRO','Standard and Theta Burst protocols','Covered by most major plans'],
      $DEVICE_IMG, 'contain'],
     ['Medication Management','Board-certified psychiatrists and psychiatric nurse practitioners managing your diagnosis, prescribing and ongoing adjustment over time.',['Comprehensive psychiatric evaluation','Ongoing review and adjustment','Same-week availability'],
-     img($IMG['med'], 900, 560), 'cover'],
+     img($IMG['med'], 900, 560), 'cover', 'object-top'],
     ['Ketamine Therapy','Rapid-acting treatment for treatment-resistant depression, administered and monitored in a clinical setting.',['Esketamine (SPRAVATO®)','Clinically supervised administration','For treatment-resistant depression'],
      img($IMG['ketamine'], 900, 560), 'cover'],
     ['Psychotherapy','Licensed therapists providing in-person and online sessions, coordinated with your medical care under one roof.',['In-person or virtual sessions','Licensed clinicians','Integrated with your treatment plan'],
-     $LOCATION_IMG, 'cover'],
+     $LOCATION_IMG, 'cover', 'object-center'],
 ];
 
 $stats = [
@@ -792,7 +794,7 @@ tailwind.config = {
       <article class="reveal group flex flex-col overflow-hidden rounded-lg border border-steel-200 bg-white hover:shadow-pop transition-shadow">
         <div class="relative h-56 overflow-hidden <?= $sv[4] === 'contain' ? 'bg-white border-b border-steel-200 p-5' : 'bg-steel-100' ?>">
           <img src="<?= $sv[3] ?>" alt="<?= htmlspecialchars($sv[0]) ?>" loading="lazy"
-               class="h-full w-full <?= $sv[4] === 'contain' ? 'object-contain' : 'object-cover group-hover:scale-[1.03]' ?> transition-transform duration-500">
+               class="h-full w-full <?= $sv[4] === 'contain' ? 'object-contain' : 'object-cover group-hover:scale-[1.03]' ?> <?= $sv[5] ?? 'object-center' ?> transition-transform duration-500">
           <span class="absolute top-4 left-4 rounded bg-navy/90 px-2.5 py-1 text-[12px] font-semibold text-white tracking-wide">0<?= $i+1 ?></span>
         </div>
         <div class="flex flex-col flex-1 p-7">
