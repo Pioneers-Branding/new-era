@@ -219,6 +219,35 @@ tailwind.config = {
   details[open] .chev{ transform:rotate(180deg); }
   ::selection{ background:#AFD5E9; color:#0F2440; }
   .no-bar::-webkit-scrollbar{ display:none; }
+
+  /* ── Mobile card sliders ───────────────────────────────────────────────
+     Below md the card grids scroll horizontally with snap points instead of
+     stacking, so the phone page does not run to a dozen screens. At md and
+     up the original grid takes over untouched. The class is doubled to
+     out-specify the Tailwind display/gap utilities on the same element,
+     which the Play CDN injects after this stylesheet. */
+  @media (max-width: 767.98px){
+    .cards-slider.cards-slider{
+      display:flex;
+      gap:1rem;
+      overflow-x:auto;
+      overscroll-behavior-x:contain;
+      scroll-snap-type:x mandatory;
+      scroll-padding-inline:1.5rem;
+      /* full-bleed track, first card still aligned to the page gutter */
+      margin-inline:-1.5rem;
+      padding-inline:1.5rem;
+      padding-bottom:.5rem;
+      scrollbar-width:none;
+    }
+    .cards-slider.cards-slider::-webkit-scrollbar{ display:none; }
+    /* 84% leaves the next card peeking, which is the swipe affordance */
+    .cards-slider.cards-slider > *{
+      scroll-snap-align:start;
+      flex:0 0 84%;
+      max-width:84%;
+    }
+  }
   .rule{ border-top:3px solid #E8922F; width:44px; }
 
   /* ── Header: transparent over the hero → white once scrolled ───────────── */
@@ -660,7 +689,7 @@ tailwind.config = {
       </p>
     </div>
 
-    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="cards-slider mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <?php foreach ($conditions as $c): ?>
       <article class="reveal group flex flex-col overflow-hidden rounded-lg border border-steel-200 bg-white hover:shadow-pop transition-shadow">
         <div class="relative overflow-hidden bg-steel-100">
@@ -796,7 +825,7 @@ tailwind.config = {
       </p>
     </div>
 
-    <div class="mt-12 grid md:grid-cols-2 gap-6">
+    <div class="cards-slider mt-12 grid md:grid-cols-2 gap-6">
       <?php foreach ($services as $i => $sv): ?>
       <article class="reveal group flex flex-col overflow-hidden rounded-lg border border-steel-200 bg-white hover:shadow-pop transition-shadow">
         <div class="relative h-64 lg:h-72 overflow-hidden <?= $sv[4] === 'contain' ? 'bg-white border-b border-steel-200 p-5' : 'bg-steel-100' ?>">
@@ -875,7 +904,7 @@ tailwind.config = {
     </figure>
 
     <!-- review grid -->
-    <div class="mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="cards-slider mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
       <?php foreach ($reviews as $r): ?>
       <?php
         $parts = preg_split('/\s+/', $r[0]);
