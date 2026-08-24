@@ -29,7 +29,6 @@ $IMG = [
     'people'  => '1653512488909-e204afcc8495', // patient, smiling
     'ketamine'=> '1763310225009-50214e3c99d9', // IV infusion line, clinical setting
 ];
-$TEAM_IMG = ['1562337404-3044c84ac061','1507003211169-0a1dd7228f2d','1526080652727-5b77f74eacd2','1522529599102-193c0d76b5b6'];
 
 /* ---------- Hero background ----------------------------------------------
  * Use a wide, landscape shot (min 1920×1080). The copy sits on the left under
@@ -348,8 +347,8 @@ tailwind.config = {
 
   <img src="<?= htmlspecialchars($HERO_BG) ?>" alt=""
        class="absolute inset-0 -z-10 h-full w-full object-cover object-center">
-  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-navy-900 via-navy-900/90 to-navy-900/45"></div>
-  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-navy-900/90 via-transparent to-navy-900/70"></div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-navy-900/85 via-navy-900/65 to-navy-900/30"></div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-navy-900/75 via-transparent to-navy-900/45"></div>
 
   <div class="mx-auto max-w-[82rem] px-6 pt-[8.5rem] pb-0 lg:pt-[10rem]">
     <div class="grid lg:grid-cols-[1.02fr_.98fr] gap-10 lg:gap-14 items-start">
@@ -367,17 +366,8 @@ tailwind.config = {
 
         <p class="mt-5 text-[17px] leading-[1.7] text-steel-200 max-w-xl">
           When medication has not worked, Transcranial Magnetic Stimulation offers a different path —
-          non-invasive, drug-free, with no anesthesia and no recovery time.
+          non-invasive, drug-free, no recovery time.
         </p>
-
-        <ul class="mt-7 grid sm:grid-cols-2 gap-x-6 gap-y-3">
-          <?php foreach (['Covered by most major insurance','Appointments within 10 days','No medication, no sedation','Same-day free consultation'] as $b): ?>
-          <li class="flex items-center gap-2.5 text-[14.5px] text-steel-200">
-            <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-med-300" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-            <?= $b ?>
-          </li>
-          <?php endforeach; ?>
-        </ul>
 
         <div class="mt-8 flex flex-wrap items-center gap-3">
           <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-white/35 bg-white/5 px-6 py-3.5 text-[15px] font-semibold text-white backdrop-blur-sm hover:bg-white/15 transition">
@@ -390,76 +380,65 @@ tailwind.config = {
           </a>
         </div>
 
-        <div class="mt-8 flex items-center gap-4">
-          <div class="flex -space-x-2.5">
-            <?php foreach ($TEAM_IMG as $t): ?>
-            <img src="<?= img($t, 100, 100, 60) ?>" alt="" class="h-9 w-9 rounded-full object-cover ring-2 ring-navy">
-            <?php endforeach; ?>
-          </div>
-          <p class="text-[14px] leading-snug text-steel-200">
-            Board-certified psychiatrists &amp; licensed therapists
-            <span class="block text-[13px] text-steel-300/70">TMS, medication management, ketamine therapy and psychotherapy</span>
-          </p>
-        </div>
       </div>
 
       <!-- consultation form -->
       <div id="book" class="reveal scroll-mt-[92px]">
-        <div class="rounded-lg border border-white/15 bg-white p-6 sm:p-7 shadow-2xl shadow-navy-900/50">
+        <div class="rounded-xl border border-white/25 bg-white/10 backdrop-blur-2xl p-6 sm:p-7 shadow-2xl shadow-navy-900/60">
           <?php if ($formSent): ?>
             <div class="py-14 text-center">
-              <div class="mx-auto grid place-items-center h-14 w-14 rounded-full bg-med-50 border border-med-200 text-med-600">
+              <div class="mx-auto grid place-items-center h-14 w-14 rounded-full bg-white/15 border border-white/30 text-white">
                 <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
               </div>
-              <p class="mt-5 text-[1.4rem] font-bold tracking-tightest text-navy">Request received</p>
-              <p class="mt-3 text-[15px] leading-relaxed text-steel-600 max-w-sm mx-auto">
+              <p class="mt-5 text-[1.4rem] font-bold tracking-tightest text-white">Request received</p>
+              <p class="mt-3 text-[15px] leading-relaxed text-steel-200 max-w-sm mx-auto">
                 A care coordinator will contact you shortly. To speak with someone now, call
-                <a href="tel:<?= $PHONE_RAW ?>" class="font-semibold text-med-600 underline underline-offset-4"><?= $PHONE ?></a>.
+                <a href="tel:<?= $PHONE_RAW ?>" class="font-semibold text-white underline underline-offset-4"><?= $PHONE ?></a>.
               </p>
             </div>
           <?php else: ?>
-            <div class="flex items-start justify-between gap-4 pb-5 border-b border-steel-200">
+            <div class="flex items-start justify-between gap-4 pb-5 border-b border-white/20">
               <div>
-                <h2 class="text-[1.3rem] font-bold tracking-tightest text-navy">Request a free consultation</h2>
-                <p class="mt-1.5 text-[13.5px] text-steel-500">We verify your insurance benefits at no cost.</p>
+                <h2 class="text-[1.3rem] font-bold tracking-tightest text-white">Request a free consultation</h2>
+                <p class="mt-1.5 text-[13.5px] text-steel-200">We verify your insurance benefits at no cost.</p>
               </div>
-              <span class="shrink-0 rounded border border-med-200 bg-med-50 px-2.5 py-1 text-[11px] font-semibold text-med-700 tracking-wide">NO COST</span>
+              <span class="shrink-0 rounded border border-white/30 bg-white/15 px-2.5 py-1 text-[11px] font-semibold text-white tracking-wide">NO COST</span>
             </div>
 
             <form method="post" class="mt-5 grid gap-4">
               <input type="hidden" name="lead_form" value="1">
               <?php if ($formErr): ?>
-                <p class="rounded border border-red-200 bg-red-50 px-4 py-3 text-[13.5px] text-red-700"><?= htmlspecialchars($formErr) ?></p>
+                <p class="rounded border border-red-300/40 bg-red-500/20 px-4 py-3 text-[13.5px] text-red-100"><?= htmlspecialchars($formErr) ?></p>
               <?php endif; ?>
 
               <div class="grid sm:grid-cols-2 gap-4">
                 <label class="block">
-                  <span class="text-[12.5px] font-semibold text-navy">Full name <span class="text-red-500">*</span></span>
-                  <input name="name" required placeholder="Jane Doe" class="mt-1.5 w-full rounded-md border border-steel-300 px-3.5 py-2.5 text-[15px] placeholder-steel-300 outline-none focus:border-med-500 focus:ring-2 focus:ring-med-100 transition">
+                  <span class="text-[12.5px] font-semibold text-white">Full name <span class="text-red-300">*</span></span>
+                  <input name="name" required placeholder="Jane Doe" class="mt-1.5 w-full rounded-md border border-white/25 bg-white/10 px-3.5 py-2.5 text-[15px] text-white placeholder-white/60 outline-none focus:border-white/60 focus:bg-white/15 focus:ring-2 focus:ring-white/20 transition">
                 </label>
                 <label class="block">
-                  <span class="text-[12.5px] font-semibold text-navy">Phone <span class="text-red-500">*</span></span>
-                  <input name="phone" type="tel" required placeholder="(555) 123-4567" class="mt-1.5 w-full rounded-md border border-steel-300 px-3.5 py-2.5 text-[15px] placeholder-steel-300 outline-none focus:border-med-500 focus:ring-2 focus:ring-med-100 transition">
+                  <span class="text-[12.5px] font-semibold text-white">Phone <span class="text-red-300">*</span></span>
+                  <input name="phone" type="tel" required placeholder="(555) 123-4567" class="mt-1.5 w-full rounded-md border border-white/25 bg-white/10 px-3.5 py-2.5 text-[15px] text-white placeholder-white/60 outline-none focus:border-white/60 focus:bg-white/15 focus:ring-2 focus:ring-white/20 transition">
                 </label>
               </div>
 
               <div class="grid sm:grid-cols-[1.6fr_1fr] gap-4">
                 <label class="block">
-                  <span class="text-[12.5px] font-semibold text-navy">Email <span class="text-red-500">*</span></span>
-                  <input name="email" type="email" required placeholder="you@email.com" class="mt-1.5 w-full rounded-md border border-steel-300 px-3.5 py-2.5 text-[15px] placeholder-steel-300 outline-none focus:border-med-500 focus:ring-2 focus:ring-med-100 transition">
+                  <span class="text-[12.5px] font-semibold text-white">Email <span class="text-red-300">*</span></span>
+                  <input name="email" type="email" required placeholder="you@email.com" class="mt-1.5 w-full rounded-md border border-white/25 bg-white/10 px-3.5 py-2.5 text-[15px] text-white placeholder-white/60 outline-none focus:border-white/60 focus:bg-white/15 focus:ring-2 focus:ring-white/20 transition">
                 </label>
                 <label class="block">
-                  <span class="text-[12.5px] font-semibold text-navy">ZIP code <span class="text-red-500">*</span></span>
+                  <span class="text-[12.5px] font-semibold text-white">ZIP code <span class="text-red-300">*</span></span>
                   <input name="zip" required inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" maxlength="10" placeholder="90210"
                          title="Enter a 5-digit ZIP code"
-                         class="mt-1.5 w-full rounded-md border border-steel-300 px-3.5 py-2.5 text-[15px] placeholder-steel-300 outline-none focus:border-med-500 focus:ring-2 focus:ring-med-100 transition">
+                         class="mt-1.5 w-full rounded-md border border-white/25 bg-white/10 px-3.5 py-2.5 text-[15px] text-white placeholder-white/60 outline-none focus:border-white/60 focus:bg-white/15 focus:ring-2 focus:ring-white/20 transition">
                 </label>
               </div>
 
               <label class="block">
-                <span class="text-[12.5px] font-semibold text-navy">Service of interest</span>
-                <select name="interest" class="mt-1.5 w-full rounded-md border border-steel-300 bg-white px-3.5 py-2.5 text-[15px] outline-none focus:border-med-500 focus:ring-2 focus:ring-med-100 transition">
-                  <?php foreach (['TMS Therapy','Medication Management','Ketamine Therapy','Psychotherapy','Not sure yet'] as $i): ?><option><?= $i ?></option><?php endforeach; ?>
+                <span class="text-[12.5px] font-semibold text-white">Service of interest</span>
+                <select name="interest" style="color-scheme:dark" class="mt-1.5 w-full rounded-md border border-white/25 bg-white/10 px-3.5 py-2.5 text-[15px] text-white outline-none focus:border-white/60 focus:bg-white/15 focus:ring-2 focus:ring-white/20 transition">
+                  <?php foreach (['TMS Therapy','Medication Management','Ketamine Therapy','Psychotherapy','Not sure yet'] as $i): ?><option class="bg-navy-800 text-white"><?= $i ?></option><?php endforeach; ?>
                 </select>
               </label>
 
@@ -468,7 +447,7 @@ tailwind.config = {
                 <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </button>
 
-              <p class="text-[12px] leading-relaxed text-steel-400">
+              <p class="text-[12px] leading-relaxed text-white/65">
                 We use your ZIP code to route you to the nearest of our 15 clinics. Your information is
                 kept confidential and is never sold or shared.
               </p>
