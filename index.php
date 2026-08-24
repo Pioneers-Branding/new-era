@@ -4,8 +4,8 @@
  * Clinical / professional build. Tailwind CSS (Play CDN). Content from aneweratms.com
  */
 
-$PHONE     = '(888) 503-1549';
-$PHONE_RAW = '8885031549';
+$PHONE     = '(855) 562-0794';
+$PHONE_RAW = '8555620794';
 
 /* Photography is stored locally in assets/photos/ as "<id>-<w>x<h>.jpg".
    Nothing is fetched from a third-party CDN at render time. The $q argument is
@@ -32,11 +32,12 @@ $IMG = [
 $TEAM_IMG = ['1562337404-3044c84ac061','1507003211169-0a1dd7228f2d','1526080652727-5b77f74eacd2','1522529599102-193c0d76b5b6'];
 
 /* ---------- Hero background ----------------------------------------------
- * Drop your own image at LP/assets/hero.jpg and it is picked up automatically.
- * Use a wide, landscape shot (min 1920×1080). Keep the subject on the RIGHT
- * side of the frame — the copy sits on the left over a navy scrim.
+ * Use a wide, landscape shot (min 1920×1080). The copy sits on the left under
+ * a near-opaque navy scrim and the consultation form covers the right column
+ * on desktop, so the middle of the frame is the part that actually reads.
+ * assets/bg-image/neurons-hero.jpg is the previous abstract background.
  * ------------------------------------------------------------------------ */
-$HERO_BG = 'assets/bg-image/neurons-hero.jpg';
+$HERO_BG = 'assets/bg-image/hero-option-a-three-adults.jpg';
 
 /* Brand logo. The supplied .webp is 300×87 with an opaque white background, so a
    white-knockout PNG with a real alpha channel was generated from it for use on
@@ -47,11 +48,13 @@ $LOGO_WHITE = 'assets/logo/new-era-logo-white.png';   // white knockout — for 
 /* Real clinic interior photo */
 $LOCATION_IMG = 'assets/location/new-era-tms-location.webp';
 
-/* ---------- TMS device (Magstim Horizon + StimGuide PRO) ----------
- * Filename contains spaces, so each path segment is URL-encoded.
+/* ---------- TMS treatment photography ----------
+ * Real photographs from the clinic, on the Magstim Horizon platform. The
+ * product cutout (H3 SG PRO image website 13024.png) is still in
+ * assets/tms-device/ but is no longer rendered anywhere.
  * ------------------------------------------------------------------ */
-$DEVICE_FILE = 'assets/tms-device/H3 SG PRO image website 13024.png';
-$DEVICE_IMG  = implode('/', array_map('rawurlencode', explode('/', $DEVICE_FILE)));
+$TMS_CARD_IMG   = 'assets/tms-device/tms-newera.webp';     // clinician positioning the coil
+$TMS_DEVICE_IMG = 'assets/tms-device/tms-new-era-2.jpg';   // patient mid-treatment, coil in place
 
 /* ---------- Lead capture (stub) ---------- */
 $formSent = false; $formErr = '';
@@ -98,11 +101,11 @@ $mechanism = [
 ];
 
 /* [title, description, bullets, image src, object-fit, object-position (optional)]
-   The cards crop to a wide 56-unit band, so portraits whose subject sits high in
-   the frame need 'object-top' or the head is cut off. */
+   The cards crop the image to a wide band, so portraits whose subject sits high
+   in the frame need 'object-top' or the head is cut off. */
 $services = [
     ['TMS Therapy','FDA-cleared magnetic stimulation targeting the brain\'s mood center. Non-invasive, drug-free and covered by most insurance plans.',['Magstim Horizon® with StimGuide PRO','Standard and Theta Burst protocols','Covered by most major plans'],
-     $DEVICE_IMG, 'contain'],
+     $TMS_CARD_IMG, 'cover'],
     ['Medication Management','Board-certified psychiatrists and psychiatric nurse practitioners managing your diagnosis, prescribing and ongoing adjustment over time.',['Comprehensive psychiatric evaluation','Ongoing review and adjustment','Same-week availability'],
      img($IMG['med'], 900, 560), 'cover', 'object-top'],
     ['Ketamine Therapy','Rapid-acting treatment for treatment-resistant depression, administered and monitored in a clinical setting.',['Esketamine (SPRAVATO®)','Clinically supervised administration','For treatment-resistant depression'],
@@ -188,7 +191,11 @@ tailwind.config = {
       colors: {
         navy:  { DEFAULT:'#0F2440', 900:'#0A1A30', 800:'#132C4E', 700:'#1B3A63', 600:'#27507F' },
         steel: { 50:'#F4F6F9', 100:'#E9EDF3', 200:'#D8DFE9', 300:'#B9C4D3', 400:'#8494AB', 500:'#5B6B82', 600:'#475569' },
-        med:   { 50:'#EFF5FF', 100:'#DBE8FE', 200:'#BFD5FE', 300:'#93B6FD', 400:'#5A8BF8', 500:'#2563EB', 600:'#1D4ED8', 700:'#1A40AE' },
+        /* med-600 is the logo's ocean blue; the rest of the scale is built around it. */
+        med:   { 50:'#EFF7FB', 100:'#D7EBF5', 200:'#AFD5E9', 300:'#7BB8D6', 400:'#3F93BF', 500:'#1573A6', 600:'#0F639B', 700:'#0B4E7B' },
+        /* The logo's orange. 2.4:1 on white, so it is never used for text on a light
+           surface — only on navy, or as a non-text rule. */
+        brand: { orange:'#E8922F', green:'#86BE52' },
         sky:   { 400:'#38BDF8', 500:'#0EA5E9', 600:'#0284C7' },
       },
       fontFamily: { sans:['"IBM Plex Sans"','system-ui','sans-serif'] },
@@ -210,9 +217,9 @@ tailwind.config = {
   .reveal.in{ opacity:1; transform:none; }
   .eyebrow{ font-size:11.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; }
   details[open] .chev{ transform:rotate(180deg); }
-  ::selection{ background:#BFD5FE; color:#0F2440; }
+  ::selection{ background:#AFD5E9; color:#0F2440; }
   .no-bar::-webkit-scrollbar{ display:none; }
-  .rule{ border-top:3px solid #1D4ED8; width:44px; }
+  .rule{ border-top:3px solid #E8922F; width:44px; }
 
   /* ── Header: transparent over the hero → white once scrolled ───────────── */
   #topbar{ max-height:2.5rem; opacity:1; transition:max-height .3s ease, opacity .25s ease; overflow:hidden; }
@@ -230,8 +237,8 @@ tailwind.config = {
 
   /* White-bar state: recolour everything that was tuned for the dark bar */
   #nav.scrolled .nav-link{ color:#475569; }
-  #nav.scrolled .nav-link:hover{ color:#1D4ED8; }
-  #nav.scrolled .nav-underline{ background:#1D4ED8; }
+  #nav.scrolled .nav-link:hover{ color:#0F639B; }
+  #nav.scrolled .nav-underline{ background:#0F639B; }
   #nav.scrolled .nav-phone{ border-color:#D8DFE9; color:#0F2440; }
   #nav.scrolled .nav-phone:hover{ background:#F4F6F9; border-color:#B9C4D3; }
   #nav.scrolled .nav-burger{ border-color:#D8DFE9; color:#0F2440; }
@@ -566,10 +573,10 @@ tailwind.config = {
     <!-- technology panel -->
     <div class="reveal mt-8 grid lg:grid-cols-2 rounded-lg border border-steel-200 bg-white overflow-hidden">
 
-      <div class="relative flex items-center justify-center bg-white px-6 py-10 lg:px-10 border-b lg:border-b-0 lg:border-r border-steel-200">
-        <span class="absolute top-6 left-6 rounded bg-navy px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[.12em] text-white">Our equipment</span>
-        <img src="<?= $DEVICE_IMG ?>" alt="Magstim Horizon TMS system with StimGuide PRO neuronavigation"
-             class="w-full max-w-lg object-contain">
+      <div class="relative min-h-[340px] bg-steel-100 border-b lg:border-b-0 lg:border-r border-steel-200">
+        <span class="absolute top-6 left-6 z-10 rounded bg-navy px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[.12em] text-white">Our equipment</span>
+        <img src="<?= $TMS_DEVICE_IMG ?>" alt="Patient receiving TMS treatment, the Magstim Horizon coil positioned against the scalp"
+             class="absolute inset-0 h-full w-full object-cover">
       </div>
 
       <div class="p-8 lg:p-12">
@@ -628,7 +635,7 @@ tailwind.config = {
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8">
       <?php foreach ($stats as $i => $s): ?>
       <div class="reveal <?= $i < 3 ? 'lg:border-r border-white/20' : '' ?> lg:pr-8">
-        <p class="text-[2.8rem] font-bold leading-none tracking-tightest"><?= $s[0] ?></p>
+        <p class="text-[2.8rem] font-bold leading-none tracking-tightest text-brand-orange"><?= $s[0] ?></p>
         <p class="mt-3 text-[14px] leading-snug text-steel-300 max-w-[14rem]"><?= $s[1] ?></p>
       </div>
       <?php endforeach; ?>
@@ -792,7 +799,7 @@ tailwind.config = {
     <div class="mt-12 grid md:grid-cols-2 gap-6">
       <?php foreach ($services as $i => $sv): ?>
       <article class="reveal group flex flex-col overflow-hidden rounded-lg border border-steel-200 bg-white hover:shadow-pop transition-shadow">
-        <div class="relative h-56 overflow-hidden <?= $sv[4] === 'contain' ? 'bg-white border-b border-steel-200 p-5' : 'bg-steel-100' ?>">
+        <div class="relative h-64 lg:h-72 overflow-hidden <?= $sv[4] === 'contain' ? 'bg-white border-b border-steel-200 p-5' : 'bg-steel-100' ?>">
           <img src="<?= $sv[3] ?>" alt="<?= htmlspecialchars($sv[0]) ?>" loading="lazy"
                class="h-full w-full <?= $sv[4] === 'contain' ? 'object-contain' : 'object-cover group-hover:scale-[1.03]' ?> <?= $sv[5] ?? 'object-center' ?> transition-transform duration-500">
           <span class="absolute top-4 left-4 rounded bg-navy/90 px-2.5 py-1 text-[12px] font-semibold text-white tracking-wide">0<?= $i+1 ?></span>
@@ -1037,18 +1044,6 @@ tailwind.config = {
           psychiatric nurse practitioners and licensed therapists.
         </p>
         <a href="tel:<?= $PHONE_RAW ?>" class="mt-6 inline-block text-[1.4rem] font-bold tracking-tightest text-white hover:text-med-200 transition"><?= $PHONE ?></a>
-        <div class="mt-6 flex gap-2.5">
-          <?php foreach ([
-            ['Instagram','M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c0 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2 0-1.8-.2-2.2-.4a3.9 3.9 0 01-1.4-.9 3.9 3.9 0 01-.9-1.4c-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c0-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.4a6.4 6.4 0 100 12.8 6.4 6.4 0 000-12.8zm0 10.6a4.2 4.2 0 110-8.4 4.2 4.2 0 010 8.4zm8.1-10.8a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z'],
-            ['Facebook','M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z'],
-            ['LinkedIn','M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3 0-2.95-1.8-2.95s-2.08 1.4-2.08 2.85V21H10z'],
-            ['YouTube','M23 12s0-3.4-.4-5c-.2-.9-.9-1.6-1.8-1.8C19.2 4.8 12 4.8 12 4.8s-7.2 0-8.8.4c-.9.2-1.6.9-1.8 1.8C1 8.6 1 12 1 12s0 3.4.4 5c.2.9.9 1.6 1.8 1.8 1.6.4 8.8.4 8.8.4s7.2 0 8.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-5 .4-5zM9.8 15.3V8.7l6 3.3z'],
-          ] as $s): ?>
-          <a href="#" aria-label="<?= $s[0] ?>" class="grid place-items-center h-9 w-9 rounded border border-white/15 hover:bg-white hover:text-navy transition">
-            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="<?= $s[1] ?>"/></svg>
-          </a>
-          <?php endforeach; ?>
-        </div>
       </div>
 
       <div>

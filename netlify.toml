@@ -1,15 +1,13 @@
 # Netlify configuration
 # ---------------------------------------------------------------------------
-# The site source lives in LP/. build.php renders index.php to static HTML in
-# LP/dist/ and copies assets/ alongside it. `publish` is resolved relative to
-# `base`, so "dist" means "LP/dist".
+# The site source lives at the repository root. build.php renders index.php to
+# static HTML in dist/ and copies assets/ alongside it.
 #
 # Netlify's build image ships PHP, but the exact version varies by image. If
 # the build fails with "php: command not found", either pin an image that has
-# it or build locally (`php build.php`) and deploy LP/dist/ directly.
+# it or build locally (`php build.php`) and deploy dist/ directly.
 
 [build]
-  base    = "LP"
   command = "php build.php"
   publish = "dist"
 

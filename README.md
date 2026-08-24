@@ -6,22 +6,21 @@ template rendered to static HTML for hosting on Netlify.
 ## Layout
 
 ```
-LP/
-  index.php          the page — content arrays at the top, markup below
-  build.php          renders index.php to LP/dist/ and copies assets
-  assets/
-    photos/          photography, named <unsplash-id>-<w>x<h>.jpg
-    insurances/      carrier logos
-    logo/            brand logo + generated white-knockout variant
-    bg-image/        neurons hero background
-    tms-device/      Magstim Horizon product shot
-    location/        clinic interior photo
-netlify.toml         build config (base = LP, publish = dist)
+index.php            the landing page — content arrays at the top, markup below
+build.php            renders each page in $pages to dist/ and copies assets
+assets/
+  photos/            photography, named <unsplash-id>-<w>x<h>.jpg
+  insurances/        carrier logos
+  logo/              brand logo + generated white-knockout variant
+  bg-image/          neurons hero background
+  tms-device/        Magstim Horizon product shot
+  location/          clinic interior photo
+netlify.toml         build config (publish = dist)
 ```
 
 ## Brand colours
 
-Sampled from `LP/assets/logo/new-era-logo.webp`. These three are the logo
+Sampled from `assets/logo/new-era-logo.webp`. These three are the logo
 itself — everything else on the site is derived from them.
 
 | Role         | Hex       | Where it appears in the logo                    |
@@ -54,15 +53,13 @@ them up as accents or keeps the same blue-only system.
 ## Local development
 
 ```bash
-cd LP
 php -S localhost:8000       # then open http://localhost:8000
 ```
 
 ## Build
 
 ```bash
-cd LP
-php build.php               # writes LP/dist/
+php build.php               # writes dist/
 ```
 
 The build renders each page in `$pages`, rewrites internal `.php` links to
