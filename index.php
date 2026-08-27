@@ -400,7 +400,7 @@ tailwind.config = {
               <span class="shrink-0 rounded border border-white/30 bg-white/15 px-2.5 py-1 text-[11px] font-semibold text-white tracking-wide">NO COST</span>
             </div>
 
-            <form method="post" class="mt-5 grid gap-4">
+            <form accept-charset="UTF-8" action="https://app.formester.com/forms/uaNJQHZaD/submissions" method="POST" class="mt-5 grid gap-4">
               <input type="hidden" name="lead_form" value="1">
               <?php if ($formErr): ?>
                 <p class="rounded border border-red-300/40 bg-red-500/20 px-4 py-3 text-[13.5px] text-red-100"><?= htmlspecialchars($formErr) ?></p>
