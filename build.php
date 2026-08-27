@@ -25,9 +25,10 @@ $_SERVER['HTTPS']          = 'on';
 // Files that do not exist yet are skipped with a warning, so pages we have
 // planned can sit here until they are written.
 $pages = [
-    'index.php'   => 'index.html',
-    'privacy.php' => 'privacy.html',   // privacy policy
-    'terms.php'   => 'terms.html',     // terms of use
+    'index.php'     => 'index.html',
+    'thank-you.php' => 'thank-you.html', // form confirmation page
+    'privacy.php'   => 'privacy.html',   // privacy policy
+    'terms.php'     => 'terms.html',     // terms of use
 ];
 
 // Folders copied wholesale into dist/.
