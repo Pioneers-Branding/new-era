@@ -27,7 +27,6 @@ $IMG = [
     'window'  => '1776886099265-6366478b341b', // waiting area
     'light'   => '1779281887548-f676406dea2f', // clinic interior
     'people'  => '1653512488909-e204afcc8495', // patient, smiling
-    'ketamine'=> '1763310225009-50214e3c99d9', // IV infusion line, clinical setting
 ];
 
 /* ---------- Hero background ----------------------------------------------
@@ -107,8 +106,6 @@ $services = [
      $TMS_CARD_IMG, 'cover'],
     ['Medication Management','Board-certified psychiatrists and psychiatric nurse practitioners managing your diagnosis, prescribing and ongoing adjustment over time.',['Comprehensive psychiatric evaluation','Ongoing review and adjustment','Same-week availability'],
      img($IMG['med'], 900, 560), 'cover', 'object-top'],
-    ['Ketamine Therapy','Rapid-acting treatment for treatment-resistant depression, administered and monitored in a clinical setting.',['Esketamine (SPRAVATO®)','Clinically supervised administration','For treatment-resistant depression'],
-     img($IMG['ketamine'], 900, 560), 'cover'],
     ['Psychotherapy','Licensed therapists providing in-person and online sessions, coordinated with your medical care under one roof.',['In-person or virtual sessions','Licensed clinicians','Integrated with your treatment plan'],
      $LOCATION_IMG, 'cover', 'object-center'],
 ];
@@ -436,7 +433,7 @@ tailwind.config = {
               <label class="block">
                 <span class="text-[12.5px] font-semibold text-white">Service of interest</span>
                 <select name="interest" style="color-scheme:dark" class="mt-1.5 w-full rounded-md border border-white/25 bg-white/10 px-3.5 py-2.5 text-[15px] text-white outline-none focus:border-white/60 focus:bg-white/15 focus:ring-2 focus:ring-white/20 transition">
-                  <?php foreach (['TMS Therapy','Medication Management','Ketamine Therapy','Psychotherapy','Not sure yet'] as $i): ?><option class="bg-navy-800 text-white"><?= $i ?></option><?php endforeach; ?>
+                  <?php foreach (['TMS Therapy','Medication Management','Psychotherapy','Not sure yet'] as $i): ?><option class="bg-navy-800 text-white"><?= $i ?></option><?php endforeach; ?>
                 </select>
               </label>
 
@@ -802,7 +799,7 @@ tailwind.config = {
       </p>
     </div>
 
-    <div class="cards-slider mt-12 grid md:grid-cols-2 gap-6">
+    <div class="cards-slider mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <?php foreach ($services as $i => $sv): ?>
       <article class="reveal group flex flex-col overflow-hidden rounded-lg border border-steel-200 bg-white hover:shadow-pop transition-shadow">
         <div class="relative h-64 lg:h-72 overflow-hidden <?= $sv[4] === 'contain' ? 'bg-white border-b border-steel-200 p-5' : 'bg-steel-100' ?>">
@@ -1103,7 +1100,7 @@ function filterInsurances(state) {
       <div>
         <h4 class="text-white font-semibold text-[14px]">Treatment</h4>
         <ul class="mt-5 space-y-3 text-[14.5px]">
-          <?php foreach (['TMS Therapy','Medication Management','Ketamine Therapy','Psychotherapy'] as $l): ?>
+          <?php foreach (['TMS Therapy','Medication Management','Psychotherapy'] as $l): ?>
           <li><a href="#services" class="hover:text-white transition"><?= $l ?></a></li>
           <?php endforeach; ?>
         </ul>
