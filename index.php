@@ -4,8 +4,8 @@
  * Clinical / professional build. Tailwind CSS (Play CDN). Content from aneweratms.com
  */
 
-$PHONE     = '(855) 562-0794';
-$PHONE_RAW = '8555620794';
+$PHONE     = '(833) 221-8549';
+$PHONE_RAW = '8332218549';
 
 /* Photography is stored locally in assets/photos/ as "<id>-<w>x<h>.jpg".
    Nothing is fetched from a third-party CDN at render time. The $q argument is
@@ -122,7 +122,7 @@ $stats = [
 
 $faqs = [
     ['How quickly can I be seen?','For TMS we can often schedule a consultation the same day. A full psychiatric evaluation and the start of treatment typically occur within one to five business days.'],
-    ['Is TMS covered by insurance?','Yes. We are in-network with most major insurers, including Aetna, Anthem, Blue Cross, Blue Shield, Cigna and Evernorth, GEHA, Health Net, Humana, Medicare, MHNet Behavioral Health, Optum, Oscar Health, Scott &amp; White Health Plan (Texas only), TRICARE, TriWest and UnitedHealthcare (UHC / UBH). We do not accept Medicaid. Competitive cash-pay options are available.'],
+    ['Is TMS covered by insurance?','Yes. We accept most major commercial insurance companies as well as Tricare and Triwest. We do not accept Medicaid.<br><br><strong>California:</strong> Anthem Blue Cross, Blue Shield of California, Magellan / MHSA, Cigna, Aetna, Optum, United Healthcare, Oscar, Tricare-West, Triwest CCN, Healthnet, and MHN.<br><br><strong>Texas:</strong> Blue Cross Blue Shield of Tx (BCBS), Humana, Magellan / MHSA, Cigna, Aetna, Optum, United Healthcare, Oscar, Tricare-East, Triwest CCN, Healthnet, and MHN.<br><br>Free benefits verification and competitive cash-pay options are available.'],
     ['Does TMS hurt, and are there side effects?','TMS is non-invasive and requires no anesthesia or sedation. Most patients describe a light tapping sensation on the scalp. Because no medication enters the bloodstream, TMS avoids the systemic side effects commonly associated with antidepressants.'],
     ['How long is the full course of treatment?','Most patients complete treatment within three to six weeks, attending forty-minute sessions five times per week. Patients may drive themselves and return to work or school immediately afterward.'],
     ['What conditions do you treat?','Depression, anxiety, PTSD, OCD, postpartum depression, migraines and tinnitus, along with other conditions identified during the psychiatric evaluation.'],
@@ -130,7 +130,7 @@ $faqs = [
     ['What if I have already tried medication?','TMS is specifically indicated for patients who have not responded adequately to antidepressant medication. It targets the brain directly and represents a different mechanism of treatment.'],
 ];
 
-/* Accepted insurance. [display name, logo file in assets/insurances/ or null, note]
+/* Accepted insurance. [display name, logo file in assets/insurances/ or null, note, state (both|ca|tx)]
    Entries without artwork fall back to a text cell so the list stays complete. */
 $INS_DIR = 'assets/insurances/';
 /* Patient reviews — verbatim excerpts from Google reviews of the Austin clinic.
@@ -151,23 +151,21 @@ $reviews = [
 ];
 
 $insurers = [
-    ['Aetna',                       'aetna.webp',           ''],
-    ['Anthem',                      'anthem.webp',          ''],
-    ['Blue Cross',                   null,                  ''],
-    ['Blue Shield',                 'blue-california.webp', ''],
-    ['Cigna',                       'cigna.webp',           ''],
-    ['Evernorth',                   'evernorth-logo.png',   ''],
-    ['GEHA',                         null,                  'Government Employees Health Association'],
-    ['Health Net',                  'health-net.png',       ''],
-    ['Humana',                       null,                  ''],
-    ['Medicare',                    'medicare.webp',        ''],
-    ['MHNet Behavioral Health',     'mhn.webp',             ''],
-    ['Optum',                       'optum.webp',           ''],
-    ['Oscar Health',                 null,                  ''],
-    ['Scott &amp; White Health Plan', null,                 'Texas only'],
-    ['TRICARE',                     'tricare.webp',         ''],
-    ['TriWest',                     'triwest.png',          ''],
-    ['UnitedHealthcare',            'unitedhealthcare.png', 'UHC / UBH'],
+    ['Aetna',                               'aetna.webp',               '',           'both'],
+    ['Anthem Blue Cross',                   'anthem.webp',              'California', 'ca'],
+    ['Blue Cross Blue Shield of Tx (BCBS)', null,                      'Texas',      'tx'],
+    ['Blue Shield of California',            'blue-california.webp',     'California', 'ca'],
+    ['Cigna',                               'cigna.webp',               '',           'both'],
+    ['Healthnet',                           'health-net.png',           '',           'both'],
+    ['Humana',                               null,                      'Texas',      'tx'],
+    ['Magellan / MHSA',                     'megallan-health-logo.png', '',           'both'],
+    ['MHN',                                 'mhn.webp',                 '',           'both'],
+    ['Optum',                               'optum.webp',               '',           'both'],
+    ['Oscar',                               null,                      '',           'both'],
+    ['Tricare-West',                        'tricare.webp',             'California', 'ca'],
+    ['Tricare-East',                        'tricare.webp',             'Texas',      'tx'],
+    ['Triwest CCN',                         'triwest.png',              '',           'both'],
+    ['United Healthcare',                   'unitedhealthcare.png',     '',           'both'],
 ];
 ?>
 <!DOCTYPE html>
@@ -921,12 +919,12 @@ tailwind.config = {
           TMS is covered by most major insurance plans
         </h2>
         <p class="mt-6 text-[16.5px] leading-[1.75] text-steel-600">
-          We are in-network with the plans below, including Aetna, Anthem, Blue Cross, Blue Shield,
-          Cigna and Evernorth, Health Net, Humana, Medicare, Optum, TRICARE and UnitedHealthcare.
-          Your exact benefits are verified at no charge before treatment begins, and competitive
-          cash-pay options are available.
+          We accept most major commercial insurance companies as well as Tricare and Triwest across California and Texas.
+          Your exact benefits are verified at no charge before treatment begins, and competitive cash-pay options are available.
         </p>
-        <p class="mt-4 text-[14px] text-steel-400">Please note: Medicaid is not accepted.</p>
+        <p class="mt-4 text-[14px] font-medium text-steel-700 bg-amber-50 inline-block px-3 py-1.5 rounded-md border border-amber-200/60">
+          <strong>Note:</strong> We do not accept Medicaid.
+        </p>
       </div>
 
       <div class="lg:w-80 rounded-lg border border-steel-200 bg-steel-50 p-7">
@@ -940,28 +938,76 @@ tailwind.config = {
       </div>
     </div>
 
+    <!-- State filter tabs -->
+    <div class="reveal mt-8 flex flex-wrap items-center gap-2">
+      <span class="text-xs font-semibold uppercase tracking-wider text-steel-400 mr-2">Filter by State:</span>
+      <button type="button" onclick="filterInsurances('all')" id="ins-tab-all"
+              class="ins-tab px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-md bg-navy text-white transition-colors duration-200 shadow-sm">
+        All Accepted Plans
+      </button>
+      <button type="button" onclick="filterInsurances('ca')" id="ins-tab-ca"
+              class="ins-tab px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-md bg-steel-100 text-steel-600 hover:bg-steel-200 transition-colors duration-200">
+        California (CA)
+      </button>
+      <button type="button" onclick="filterInsurances('tx')" id="ins-tab-tx"
+              class="ins-tab px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-md bg-steel-100 text-steel-600 hover:bg-steel-200 transition-colors duration-200">
+        Texas (TX)
+      </button>
+    </div>
+
     <!-- carrier wall, full container width -->
-    <div class="reveal mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+    <div class="reveal mt-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-4" id="insurance-grid">
       <?php foreach ($insurers as $ins): ?>
-      <div class="h-[100px] rounded-lg border border-steel-200 bg-white flex flex-col items-center justify-center gap-1.5 px-4 py-3 text-center hover:border-steel-300 transition-colors">
+      <div data-state="<?= $ins[3] ?>"
+           class="ins-card h-[110px] rounded-lg border border-steel-200 bg-white flex flex-col items-center justify-center gap-1.5 px-4 py-3 text-center hover:border-steel-300 transition-all">
         <?php if ($ins[1]): ?>
           <img src="<?= $INS_DIR . $ins[1] ?>" alt="<?= strip_tags($ins[0]) ?>" loading="lazy"
                class="max-h-11 w-auto max-w-full object-contain">
         <?php else: ?>
           <span class="text-[15px] font-semibold leading-snug text-navy"><?= $ins[0] ?></span>
         <?php endif; ?>
-        <?php if ($ins[2]): ?>
-          <span class="text-[11.5px] leading-tight text-steel-400"><?= $ins[2] ?></span>
-        <?php endif; ?>
+        <div class="flex items-center gap-1.5 flex-wrap justify-center">
+          <?php if ($ins[2]): ?>
+            <span class="text-[11px] leading-tight text-steel-400"><?= $ins[2] ?></span>
+          <?php endif; ?>
+          <span class="inline-block px-1.5 py-0.5 text-[10px] font-bold rounded bg-steel-100 text-steel-600">
+            <?= $ins[3] === 'both' ? 'CA & TX' : strtoupper($ins[3]) ?>
+          </span>
+        </div>
       </div>
       <?php endforeach; ?>
     </div>
 
     <p class="reveal mt-5 text-[13px] text-steel-400">
-      Plan availability varies by clinic and state. We confirm your specific coverage before treatment begins.
+      Plan availability varies by clinic location. We confirm your specific coverage before treatment begins.
     </p>
   </div>
 </section>
+
+<script>
+function filterInsurances(state) {
+  const tabs = document.querySelectorAll('.ins-tab');
+  tabs.forEach(t => {
+    t.classList.remove('bg-navy', 'text-white', 'shadow-sm');
+    t.classList.add('bg-steel-100', 'text-steel-600');
+  });
+  const activeTab = document.getElementById('ins-tab-' + state);
+  if (activeTab) {
+    activeTab.classList.remove('bg-steel-100', 'text-steel-600');
+    activeTab.classList.add('bg-navy', 'text-white', 'shadow-sm');
+  }
+
+  const cards = document.querySelectorAll('.ins-card');
+  cards.forEach(card => {
+    const cardState = card.getAttribute('data-state');
+    if (state === 'all' || cardState === 'both' || cardState === state) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
 
 <!-- ═══ FAQ ═══ -->
 <section id="faq" class="bg-white py-14 lg:py-20 scroll-mt-[92px]">
