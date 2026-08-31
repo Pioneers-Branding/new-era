@@ -38,7 +38,7 @@ $assetDirs = ['assets'];
 
 // Single files copied into dist/ when present.
 $rootFiles = [
-    'favicon.ico', 'favicon.png', 'robots.txt', 'sitemap.xml',
+    'favicon.ico', 'favicon.png', 'apple-touch-icon.png', 'robots.txt', 'sitemap.xml',
     '_redirects', '_headers',
 ];
 

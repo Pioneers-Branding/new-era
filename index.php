@@ -15,17 +15,15 @@ function img(string $id, int $w = 900, int $h = 700, int $q = 80): string {
 }
 $IMG = [
     'hero'    => '1758691461957-474a7686e388', // physician consulting with patient
-    'hope'    => '1634498754740-b6c5df206842', // patient in profile, reflective
+    'hope'    => '1491438590914-bc09fcaaf77a', // three friends laughing, warm light
     'tms'     => '1758691461990-03b49d969495', // clinician reviewing chart with patient
     'therapy' => '1739285388427-d6f85d12a8fc', // therapy / counseling session
     'calm'    => '1638136630741-ea30b45d4516', // patient, hopeful, natural light
     'family'  => '1770775776141-6b3ac7ef9dd3', // clinic corridor
     'consult' => '1739285452629-2672b13fa42d', // clinician in conversation
     'clinic'  => '1781513144825-aa1e284c5950', // clinical treatment room
-    'quote'   => '1652226825940-46ad2a55d132', // patient portrait (testimonial)
     'med'     => '1758691461935-202e2ef6b69f', // physician at desk
     'window'  => '1776886099265-6366478b341b', // waiting area
-    'light'   => '1779281887548-f676406dea2f', // clinic interior
     'people'  => '1653512488909-e204afcc8495', // patient, smiling
 ];
 
@@ -73,12 +71,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['lead_form'])) {
 
 /* [title, description, image id] */
 $conditions = [
-    ['Depression','More than a bad or sad mood — a real disorder with physical and mental symptoms.','1486002113024-43b2ce358eb0'],
-    ['Anxiety','Intense fear and worry that becomes exhausting to live with, day after day.','1610354878912-08f1ab8ae913'],
-    ['PTSD','Trauma of many forms can lead to post-traumatic stress disorder.','1510260775793-169be61ebe50'],
+    ['Depression','More than a bad or sad mood — a real disorder with physical and mental symptoms.','1531854253260-44f0d06e3d26'],
+    ['Anxiety','Intense fear and worry that becomes exhausting to live with, day after day.','1757744705465-ea08b0ddc38a'],
+    ['PTSD','Trauma of many forms can lead to post-traumatic stress disorder.','1564564244660-5d73c057f2d2'],
     ['OCD','Obsessive-compulsive disorder built on repetitive, intrusive thoughts.','1501556466850-7c9fa1fccb4c'],
     ['Postpartum Depression','A form of depression that often affects new mothers after childbirth.','1542385151-efd9000785a0'],
-    ['Migraines','Severe headaches driven by a complex underlying neurological condition.','1507875650466-196f39058c13'],
+    ['Migraines','Severe headaches driven by a complex underlying neurological condition.','1611695434369-a8f5d76ceb7b'],
     ['Tinnitus','A chronic hearing condition producing constant buzzing or ringing.','1596088728260-08a654466a00'],
     ['Treatment-Resistant Cases','When multiple medications have failed, a different mechanism of action may be indicated.','1563213126-a4273aed2016'],
 ];
@@ -130,26 +128,37 @@ $faqs = [
 /* Accepted insurance. [display name, logo file in assets/insurances/ or null, note, state (both|ca|tx)]
    Entries without artwork fall back to a text cell so the list stays complete. */
 $INS_DIR = 'assets/insurances/';
-/* Patient reviews — verbatim excerpts from Google reviews of the Austin clinic.
-   "…" marks omitted text. [name, meta, when, excerpt] */
+/* Patient reviews — published verbatim from Google reviews of the Austin clinic,
+   newest first. Paragraph breaks are <br><br>. [name, meta, when, review] */
 $reviews = [
+    ['Shannon Collins','Local Guide · 107 reviews','3 weeks ago',
+     'I feel that I am heard and understood in my treatment. I\'ve tried a variety of medications and finally found a plan that works for me and my health. Laura Beaufford takes her time to carefully assess my case and diagnoses to create a specific treatment plan for me that is working. Finding a doctor that cares about what they are doing is important. Thankful to be treated as a person and not just another patient.'],
     ['Mark Kobdish','2 reviews','a month ago',
-     'Greg was a wonderful technician who provided the majority of my treatments. He was consistently pleasant and made sure I was comfortable, and very professional throughout.'],
-    ['Tommy Miserendino','Local Guide · 76 reviews','4 months ago',
-     'It was easy to schedule the appointments and they took my insurance… each person made sure I understood what TMS was, possible side-effects, and what to expect for treatment… No issues, straight-forward explanations about treatment, overall great experience.'],
-    ['Wendy Douglas','Local Guide · 24 reviews','4 months ago',
-     'So easy to take great care of your mental health, scheduling is totally stress free, online appts make is stress free as well… The providers take excellent care of me, I feel comfortable talking to them, Rx refills are immediate. Very happy patient here!!!'],
-    ['Madeline Rowe','Local Guide · 19 reviews','9 months ago',
-     'Laura Beaufford has been such a blessing in my mental health journey… She listens deeply, remembers details, and tailors care with genuine thoughtfulness… I always leave our sessions feeling lighter, understood, and hopeful.'],
+     'Greg was a wonderful technician who provided the majority of my treatments. He was consistently pleasant and made sure I was comfortable, and very professional throughout.<br><br>Shout out to Isabel who was in training for many of my sessions and gave me a solo treatment at the end of her orientation. She did a fantastic job and will be a great asset to the team.'],
+    ['Tommy Miserendino','Local Guide · 76 reviews','5 months ago',
+     'I came to Anew Era for TMS. It was easy to schedule the appointments and they took my insurance. I had to talk to a few people before treatment (this was explained on my initial consultation) and each person made sure I understood what TMS was, possible side-effects, and what to expect for treatment.<br><br>Scheduling the multiple visits (per the treatment) was easy and the schedule was extremely flexible.<br><br>The technician, my dude was Alex, made sure to explain everything about the visits including how the treatment would progress. He made sure each time that the machine was in place and that my experience was comfortable. If it wasn\'t in place, he would adjust until it was correct.<br><br>No issues, straight-forward explanations about treatment, overall great experience. I have done CBT, EMDR, Spravado, KAT, and prescription medicine, and TMS has had the biggest impact (EMDR works well too) on my depression.'],
+    ['Wendy Douglas','Local Guide · 24 reviews','5 months ago',
+     'So easy to take great care of your mental health, scheduling is totally stress free, online appts make is stress free as well. I thought I was going to lose my mind when my last psychiatrist dropped me because I kept missing appts. I found ANEW the next day and this was truly a blessing. The providers take excellent care of me, I feel comfortable talking to them, Rx refills are immediate. Very happy patient here!!!'],
+    ['Madeline Rowe','Local Guide · 19 reviews','10 months ago',
+     'Laura Beaufford has been such a blessing in my mental health journey. She brings an incredible balance of professionalism and heart &mdash; she truly cares. Laura\'s compassion shines through in every session, and her ability to make you feel safe and supported while also being proactive and knowledgeable is remarkable. She listens deeply, remembers details, and tailors care with genuine thoughtfulness. It\'s clear she\'s passionate about helping her patients heal and thrive. I always leave our sessions feeling lighter, understood, and hopeful. Anew Era TMS is exceptional because of clinicians like her.'],
+    ['LauraL','3 reviews','5 months ago',
+     'I have had an amazing experience during my TMS treatment. Alex and Greg have both been amazing! very professional and knowledgeable.'],
     ['Brianna Shaffer','5 reviews','a year ago',
-     'From the moment I first reached out, the team was incredibly welcoming and supportive… The progress I\'ve made is noticeable, and I genuinely feel more empowered and equipped to handle life\'s ups and downs.'],
-    ['Misha Burgardt','1 review','2 years ago',
-     'TMS has been completely life-changing in terms of my depression and anxiety. I highly recommend it to anyone who needs relief they haven\'t been able to find anywhere else.'],
+     'I\'ve had an amazing experience with Anew Era. From the moment I first reached out, the team was incredibly welcoming and supportive. My technician, Alex, has made the atmosphere very comfortable and judge free even on the days I when I look how I feel and I always come out feeling better. The progress I\'ve made is noticeable, and I genuinely feel more empowered and equipped to handle life\'s ups and downs. I appreciate their personalized approach, professional atmosphere, and commitment to helping clients thrive. Highly recommend to anyone whom have tried medications that just don\'t work and feel like there\'s no way out.'],
+    ['Matthew Gravilla','7 reviews','5 months ago',
+     'Very professional and patient forward thinking. Alex and Gregg are very professional. That is not the only quality that defines both of them. They also care about their patients. They are always accommodating to needs and are easy to talk to about what we are feeling and going through. I would only hope that more people in this industry care as much as they do. Mental health is not easy to talk about or deal with but they both go above and beyond. I am glad I chose to do TMS it has dramatically changed me for the better. I also recommend any friends of mine to go through this treatment and to do it with these two understanding and amazing techs.'],
+    ['Annabeth Parrish','10 reviews','a year ago',
+     'TMS really really helped me a lot. The kindness from Haley Anne, Elise and Alex were outstanding. They are such amazing kind women.<br><br>This therapy has really helped my depression and anxiety. I struggled for years with very low moods and anxiety. Self harm or eating disorder behaviors. I would try this therapy or that drug, but nothing worked. I was at a loss until I found a new era TMS.<br><br>I feel more free calm and peaceful the last few weeks going through daily TMS.<br><br>I\'m so so grateful I was able to find this place and get treatment. This place saved my life for sure.'],
+    ['Emma Darner','Local Guide · 14 reviews','2 years ago',
+     'I\'ve had a great experience with my TMS treatment at Anew Era. The staff is all friendly and the office is comfortable. Angel is my technician and I\'ve seen him almost every day for six weeks. He\'s easy going and kind and helps you feel at ease during treatment. I definitely recommend TMS and Anew Era to anyone struggling with depression and anxiety.'],
+    ['Gloria Lopez','2 reviews','a year ago',
+     'I have the best psychiatrist! Amanda is fantastic!! She was out on leave and I had to visit with someone else and it was not the same!! She knows my patterns even better than I do. She\'s straight forward, caring, and attentive! Love her!!!'],
 ];
 
 $insurers = [
     ['Aetna',                               'aetna.webp',               '',           'both'],
     ['Anthem Blue Cross',                   'anthem.webp',              'California', 'ca'],
+    ['Baylor Scott & White',                'baylor-scott-white.png',   'Texas',      'tx'],
     ['Blue Cross Blue Shield of Tx (BCBS)', null,                      'Texas',      'tx'],
     ['Blue Shield of California',            'blue-california.webp',     'California', 'ca'],
     ['Cigna',                               'cigna.webp',               '',           'both'],
@@ -158,7 +167,7 @@ $insurers = [
     ['Magellan / MHSA',                     'megallan-health-logo.png', '',           'both'],
     ['MHN',                                 'mhn.webp',                 '',           'both'],
     ['Optum',                               'optum.webp',               '',           'both'],
-    ['Oscar',                               null,                      '',           'both'],
+    ['Oscar',                               'oscar.png',                      '',           'both'],
     ['Tricare-West',                        'tricare.webp',             'California', 'ca'],
     ['Tricare-East',                        'tricare.webp',             'Texas',      'tx'],
     ['Triwest CCN',                         'triwest.png',              '',           'both'],
@@ -171,6 +180,8 @@ $insurers = [
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anew Era TMS &amp; Psychiatry — TMS Therapy for Depression, Anxiety &amp; PTSD</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="description" content="FDA-cleared TMS therapy, psychiatry and talk therapy for depression, anxiety, PTSD and OCD. Accepting new patients and most major insurance. Appointments within 10 days.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -213,6 +224,37 @@ tailwind.config = {
   details[open] .chev{ transform:rotate(180deg); }
   ::selection{ background:#AFD5E9; color:#0F2440; }
   .no-bar::-webkit-scrollbar{ display:none; }
+
+  /* ── Reviews carousel ──────────────────────────────────────────────────
+     Unlike the card grids this one stays a carousel at every width: one row,
+     roughly three cards visible on desktop. Reviews run from 21 to 151 words,
+     so the body is clamped and a Read more button expands it in place. */
+  .rv-track{
+    display:flex;
+    gap:1.25rem;
+    overflow-x:auto;
+    overscroll-behavior-x:contain;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:1.5rem;
+    margin-inline:-1.5rem;
+    padding-inline:1.5rem;
+    padding-bottom:.5rem;
+    scrollbar-width:none;
+  }
+  .rv-track::-webkit-scrollbar{ display:none; }
+  .rv-track > *{ scroll-snap-align:start; flex:0 0 84%; }
+  @media (min-width:640px){ .rv-track > *{ flex-basis:47%; } }
+  @media (min-width:1024px){
+    .rv-track{ margin-inline:0; padding-inline:0; scroll-padding-inline:0; }
+    .rv-track > *{ flex-basis:31.6%; }
+  }
+  .rv-text{
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:7;
+    overflow:hidden;
+  }
+  .rv-text.open{ -webkit-line-clamp:unset; overflow:visible; }
 
   /* ── Mobile card sliders ───────────────────────────────────────────────
      Below md the card grids scroll horizontally with snap points instead of
@@ -850,35 +892,26 @@ tailwind.config = {
           Reviews left by patients treated at our Austin clinic.
         </p>
       </div>
-      <a href="#book" class="shrink-0 inline-flex items-center gap-2.5 rounded-md bg-med-600 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-med-700 transition">
-        Request a free consultation
-        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
+      <div class="shrink-0 flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-2">
+          <button type="button" onclick="rvScroll(-1)" aria-label="Previous reviews"
+                  class="grid place-items-center h-11 w-11 rounded-md border border-steel-300 text-navy hover:border-med-500 hover:text-med-600 transition">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          </button>
+          <button type="button" onclick="rvScroll(1)" aria-label="More reviews"
+                  class="grid place-items-center h-11 w-11 rounded-md border border-steel-300 text-navy hover:border-med-500 hover:text-med-600 transition">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-med-600 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-med-700 transition">
+          Request a free consultation
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
     </div>
 
-    <!-- featured review -->
-    <figure class="reveal relative isolate mt-10 overflow-hidden rounded-lg bg-navy text-white">
-      <img src="<?= img($IMG['light'], 1600, 600, 72) ?>" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover opacity-[.16]">
-      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/94 to-navy/70"></div>
-      <div class="grid lg:grid-cols-[auto_1fr] gap-8 lg:gap-12 items-center p-8 sm:p-12">
-        <img src="<?= img($IMG['quote'], 460, 560) ?>" alt="" class="hidden lg:block w-[13.5rem] aspect-[5/6] object-cover rounded-lg">
-        <div>
-          <svg viewBox="0 0 24 24" class="h-8 w-8 text-white/30" fill="currentColor"><path d="M9.5 6C6.5 6 4 8.5 4 11.5S6.5 17 9.5 17c.5 0 1-.1 1.4-.2-.6 1.6-2 2.8-3.9 3.2v1c4.4-.6 8-4.3 8-9.5C15 8.5 12.5 6 9.5 6zM20.5 6C17.5 6 15 8.5 15 11.5S17.5 17 20.5 17c.2 0 .4 0 .5-.1V20c-.1.1-.2.1-.3.2v.8c1.5-.5 2.8-1.6 3.3-3z"/></svg>
-          <blockquote class="mt-5 text-[1.35rem] sm:text-[1.7rem] font-medium leading-[1.45] tracking-tightest">
-            “TMS really really helped me a lot… I feel more free calm and peaceful the last few weeks
-            going through daily TMS. I'm so so grateful I was able to find this place and get
-            treatment. <span class="text-med-200">This place saved my life for sure.</span>”
-          </blockquote>
-          <figcaption class="mt-7 pt-6 border-t border-white/15 text-[14.5px]">
-            <span class="font-semibold">Annabeth Parrish</span>
-            <span class="text-steel-300"> — 10 reviews · a year ago</span>
-          </figcaption>
-        </div>
-      </div>
-    </figure>
-
     <!-- review grid -->
-    <div class="cards-slider mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="rv-track mt-5" id="rv-track">
       <?php foreach ($reviews as $r): ?>
       <?php
         $parts = preg_split('/\s+/', $r[0]);
@@ -886,7 +919,9 @@ tailwind.config = {
       ?>
       <figure class="reveal flex flex-col rounded-lg border border-steel-200 bg-white p-6">
         <svg viewBox="0 0 24 24" class="h-6 w-6 shrink-0 text-steel-200" fill="currentColor"><path d="M9.5 6C6.5 6 4 8.5 4 11.5S6.5 17 9.5 17c.5 0 1-.1 1.4-.2-.6 1.6-2 2.8-3.9 3.2v1c4.4-.6 8-4.3 8-9.5C15 8.5 12.5 6 9.5 6zM20.5 6C17.5 6 15 8.5 15 11.5S17.5 17 20.5 17c.2 0 .4 0 .5-.1V20c-.1.1-.2.1-.3.2v.8c1.5-.5 2.8-1.6 3.3-3z"/></svg>
-        <blockquote class="mt-4 flex-1 text-[15px] leading-[1.7] text-steel-600"><?= $r[3] ?></blockquote>
+        <blockquote class="rv-text mt-4 text-[15px] leading-[1.7] text-steel-600"><?= $r[3] ?></blockquote>
+        <button type="button" class="rv-more mt-3 self-start text-[13.5px] font-semibold text-med-600 hover:text-med-700 transition">Read more</button>
+        <div class="flex-1"></div>
         <figcaption class="mt-5 pt-4 border-t border-steel-200 flex items-center gap-3">
           <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-med-50 border border-med-100 text-[12.5px] font-bold text-med-700"><?= $initials ?></span>
           <div class="min-w-0">
@@ -899,7 +934,7 @@ tailwind.config = {
     </div>
 
     <p class="reveal mt-5 text-[13px] text-steel-400">
-      Excerpts from patient reviews; “…” marks omitted text. Individual results vary.
+      Published reviews from our Austin clinic on Google. Individual results vary.
     </p>
   </div>
 </section>
@@ -1153,6 +1188,26 @@ const io = new IntersectionObserver((es) => {
   es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ── Reviews carousel ─────────────────────────────────────────────────── */
+function rvScroll(dir) {
+  const t = document.getElementById('rv-track');
+  t.scrollBy({ left: dir * t.clientWidth * 0.9, behavior: 'smooth' });
+}
+
+/* Read more only appears on reviews long enough to be clipped, so the short
+   ones do not carry a button that expands nothing. Measured after load so the
+   web font is in place. */
+window.addEventListener('load', () => {
+  document.querySelectorAll('.rv-more').forEach(btn => {
+    const text = btn.previousElementSibling;
+    if (text.scrollHeight <= text.clientHeight + 1) { btn.hidden = true; return; }
+    btn.addEventListener('click', () => {
+      const open = text.classList.toggle('open');
+      btn.textContent = open ? 'Show less' : 'Read more';
+    });
+  });
+});
 
 const burger = document.getElementById('burger');
 const mobileNav = document.getElementById('mobileNav');

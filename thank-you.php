@@ -35,6 +35,8 @@ $insurers = [
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thank You — Anew Era TMS &amp; Psychiatry</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="description" content="Thank you for requesting a consultation with Anew Era TMS & Psychiatry. We verify your insurance benefits at no cost and will contact you shortly.">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
