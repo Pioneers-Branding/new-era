@@ -34,7 +34,11 @@ $pages = [
 // Folders copied wholesale into dist/.
 // assets/ holds photos, insurance logos, the Magstim device shot, the clinic
 // photo, the neurons hero and both logo variants.
+//
+// Anything named in $skipDirs is staging material that no page references, so
+// it stays in the repo but is not published.
 $assetDirs = ['assets'];
+$skipDirs  = ['insurance-check'];
 
 // Single files copied into dist/ when present.
 $rootFiles = [
@@ -70,6 +74,9 @@ function copyDir(string $src, string $dst): int
     $count = 0;
     foreach (scandir($src) as $file) {
         if ($file === '.' || $file === '..' || $file === '.DS_Store') {
+            continue;
+        }
+        if (in_array($file, $GLOBALS['skipDirs'], true) && is_dir("$src/$file")) {
             continue;
         }
         $srcPath = "$src/$file";

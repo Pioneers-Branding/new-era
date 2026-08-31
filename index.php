@@ -14,14 +14,9 @@ function img(string $id, int $w = 900, int $h = 700, int $q = 80): string {
     return "assets/photos/{$id}-{$w}x{$h}.jpg";
 }
 $IMG = [
-    'hero'    => '1758691461957-474a7686e388', // physician consulting with patient
     'hope'    => '1491438590914-bc09fcaaf77a', // three friends laughing, warm light
-    'tms'     => '1758691461990-03b49d969495', // clinician reviewing chart with patient
-    'therapy' => '1739285388427-d6f85d12a8fc', // therapy / counseling session
     'calm'    => '1638136630741-ea30b45d4516', // patient, hopeful, natural light
-    'family'  => '1770775776141-6b3ac7ef9dd3', // clinic corridor
     'consult' => '1739285452629-2672b13fa42d', // clinician in conversation
-    'clinic'  => '1781513144825-aa1e284c5950', // clinical treatment room
     'med'     => '1758691461935-202e2ef6b69f', // physician at desk
     'window'  => '1776886099265-6366478b341b', // waiting area
     'people'  => '1653512488909-e204afcc8495', // patient, smiling
@@ -96,7 +91,8 @@ $mechanism = [
     ['03','Mood circuitry re-engages','Areas that slowed under depression become active again, rebalancing the circuits underlying mood, concentration, energy and sleep.','M12 3a9 9 0 109 9M12 3v9l6.4 3.2'],
 ];
 
-/* [title, description, bullets, image src, object-fit, object-position (optional)]
+/* [title, description, bullets, image src, object-fit, object-position (optional),
+    availability note (optional) — rendered as a pill beside the card title]
    The cards crop the image to a wide band, so portraits whose subject sits high
    in the frame need 'object-top' or the head is cut off. */
 $services = [
@@ -104,6 +100,8 @@ $services = [
      $TMS_CARD_IMG, 'cover'],
     ['Medication Management','Board-certified psychiatrists and psychiatric nurse practitioners managing your diagnosis, prescribing and ongoing adjustment over time.',['Comprehensive psychiatric evaluation','Ongoing review and adjustment','Same-week availability'],
      img($IMG['med'], 900, 560), 'cover', 'object-top'],
+    ['SPRAVATO&reg; (esketamine)','Esketamine nasal spray for treatment-resistant depression, self-administered in our clinic under the supervision of our medical team.',['Self-administered under supervision','Two hours of monitoring after each dose','For treatment-resistant depression'],
+     img('1779281887548-f676406dea2f', 900, 560), 'cover', 'object-center', 'Texas clinics only'],
     ['Psychotherapy','Licensed therapists providing in-person and online sessions, coordinated with your medical care under one roof.',['In-person or virtual sessions','Licensed clinicians','Integrated with your treatment plan'],
      $LOCATION_IMG, 'cover', 'object-center'],
 ];
@@ -475,7 +473,7 @@ tailwind.config = {
               <label class="block">
                 <span class="text-[12.5px] font-semibold text-white">Service of interest</span>
                 <select name="interest" style="color-scheme:dark" class="mt-1.5 w-full rounded-md border border-white/25 bg-white/10 px-3.5 py-2.5 text-[15px] text-white outline-none focus:border-white/60 focus:bg-white/15 focus:ring-2 focus:ring-white/20 transition">
-                  <?php foreach (['TMS Therapy','Medication Management','Psychotherapy','Not sure yet'] as $i): ?><option class="bg-navy-800 text-white"><?= $i ?></option><?php endforeach; ?>
+                  <?php foreach (['TMS Therapy','Medication Management','SPRAVATO&reg; (Texas only)','Psychotherapy','Not sure yet'] as $i): ?><option class="bg-navy-800 text-white"><?= $i ?></option><?php endforeach; ?>
                 </select>
               </label>
 
@@ -841,7 +839,7 @@ tailwind.config = {
       </p>
     </div>
 
-    <div class="cards-slider mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="cards-slider mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <?php foreach ($services as $i => $sv): ?>
       <article class="reveal group flex flex-col overflow-hidden rounded-lg border border-steel-200 bg-white hover:shadow-pop transition-shadow">
         <div class="relative h-64 lg:h-72 overflow-hidden <?= $sv[4] === 'contain' ? 'bg-white border-b border-steel-200 p-5' : 'bg-steel-100' ?>">
@@ -850,7 +848,12 @@ tailwind.config = {
           <span class="absolute top-4 left-4 rounded bg-navy/90 px-2.5 py-1 text-[12px] font-semibold text-white tracking-wide">0<?= $i+1 ?></span>
         </div>
         <div class="flex flex-col flex-1 p-7">
-          <h3 class="text-[20px] font-bold tracking-tightest text-navy"><?= $sv[0] ?></h3>
+          <div class="flex flex-wrap items-center gap-2.5">
+            <h3 class="text-[20px] font-bold tracking-tightest text-navy"><?= $sv[0] ?></h3>
+            <?php if (!empty($sv[6])): ?>
+              <span class="rounded border border-med-100 bg-med-50 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-med-700"><?= $sv[6] ?></span>
+            <?php endif; ?>
+          </div>
           <p class="mt-3 text-[15px] leading-[1.7] text-steel-600"><?= $sv[1] ?></p>
           <ul class="mt-5 pt-5 border-t border-steel-200 space-y-2.5">
             <?php foreach ($sv[2] as $li): ?>
@@ -1135,7 +1138,7 @@ function filterInsurances(state) {
       <div>
         <h4 class="text-white font-semibold text-[14px]">Treatment</h4>
         <ul class="mt-5 space-y-3 text-[14.5px]">
-          <?php foreach (['TMS Therapy','Medication Management','Psychotherapy'] as $l): ?>
+          <?php foreach (['TMS Therapy','Medication Management','SPRAVATO&reg;','Psychotherapy'] as $l): ?>
           <li><a href="#services" class="hover:text-white transition"><?= $l ?></a></li>
           <?php endforeach; ?>
         </ul>

@@ -14,3 +14,6 @@ dist/
 _*.php
 _*.html
 *.log
+
+# Staging archive of candidate carrier artwork — the folder is tracked, the zip is not
+assets/insurance-check.zip
