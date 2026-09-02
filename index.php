@@ -73,7 +73,7 @@ $conditions = [
     ['Postpartum Depression','A form of depression that often affects new mothers after childbirth.','1542385151-efd9000785a0'],
     ['Migraines','Severe headaches driven by a complex underlying neurological condition.','1611695434369-a8f5d76ceb7b'],
     ['Tinnitus','A chronic hearing condition producing constant buzzing or ringing.','1596088728260-08a654466a00'],
-    ['Treatment-Resistant Cases','When multiple medications have failed, a different mechanism of action may be indicated.','1563213126-a4273aed2016'],
+    ['Treatment Resistance','When multiple medications have failed, a different mechanism of action may be indicated.','1563213126-a4273aed2016'],
 ];
 
 /* [number, timing tag, title, body] */
@@ -81,7 +81,7 @@ $steps = [
     ['01','Same day','Free consultation','Speak with our team the day you call. We review your history, answer your questions and verify your insurance benefits at no cost.'],
     ['02','Within 1–5 days','Psychiatric evaluation','A full evaluation with a board-certified psychiatrist or psychiatric nurse practitioner establishes your diagnosis and treatment plan.'],
     ['03','First session','Brain mapping','Using StimGuide PRO neuronavigation, we locate the brain\'s mood center precisely and calibrate the magnetic pulse to your individual anatomy.'],
-    ['04','Weeks 1–6','Treatment course','Forty-minute sessions, five days per week, for three to six weeks. No anesthesia, no sedation and no recovery time between sessions.'],
+    ['04','Weeks 1–6','Treatment course','Twenty-minute sessions, five days per week, for four to six weeks. No anesthesia, no sedation and no recovery time between sessions.'],
 ];
 
 /* How TMS works — mechanism, in three stages */
@@ -117,7 +117,7 @@ $faqs = [
     ['How quickly can I be seen?','For TMS we can often schedule a consultation the same day. A full psychiatric evaluation and the start of treatment typically occur within one to five business days.'],
     ['Is TMS covered by insurance?','Yes. We accept most major commercial insurance companies as well as Tricare and Triwest. We do not accept Medicaid.<br><br><strong>California:</strong> Anthem Blue Cross, Blue Shield of California, Magellan / MHSA, Cigna, Aetna, Optum, United Healthcare, Oscar, Tricare-West, Triwest CCN, Healthnet, and MHN.<br><br><strong>Texas:</strong> Blue Cross Blue Shield of Tx (BCBS), Humana, Magellan / MHSA, Cigna, Aetna, Optum, United Healthcare, Oscar, Tricare-East, Triwest CCN, Healthnet, and MHN.<br><br>Free benefits verification and competitive cash-pay options are available.'],
     ['Does TMS hurt, and are there side effects?','TMS is non-invasive and requires no anesthesia or sedation. Most patients describe a light tapping sensation on the scalp. Because no medication enters the bloodstream, TMS avoids the systemic side effects commonly associated with antidepressants.'],
-    ['How long is the full course of treatment?','Most patients complete treatment within three to six weeks, attending forty-minute sessions five times per week. Patients may drive themselves and return to work or school immediately afterward.'],
+    ['How long is the full course of treatment?','Most patients complete treatment within four to six weeks, attending twenty-minute sessions five times per week. Patients may drive themselves and return to work or school immediately afterward.'],
     ['What conditions do you treat?','Depression, anxiety, PTSD, OCD, postpartum depression, migraines and tinnitus, along with other conditions identified during the psychiatric evaluation.'],
     ['What TMS equipment do you use?','Our clinics treat on the Magstim Horizon® TMS platform with StimGuide PRO neuronavigation. StimGuide PRO tracks the position of the treatment coil in real time against the brain map created during your session, so treatment is delivered to the same cortical target at consistent intensity throughout your course of care.'],
     ['What if I have already tried medication?','TMS is specifically indicated for patients who have not responded adequately to antidepressant medication. It targets the brain directly and represents a different mechanism of treatment.'],
@@ -396,7 +396,7 @@ tailwind.config = {
         </div>
 
         <h1 class="mt-6 text-[2.5rem] sm:text-[3.1rem] lg:text-[3.5rem] font-bold leading-[1.06] tracking-tightest text-white">
-          Clinically proven relief from depression, anxiety and PTSD.
+          A clinically proven approach to treating depression, anxiety, and PTSD.
         </h1>
 
         <p class="mt-5 text-[17px] leading-[1.7] text-steel-200 max-w-xl">
@@ -494,7 +494,7 @@ tailwind.config = {
 
     <!-- metric bar -->
     <dl class="reveal mt-12 lg:mt-14 grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/15 border-t border-x border-white/15">
-      <?php foreach ([['10 days','To first appointment'],['15','Clinics in CA & TX'],['3–6 wks','Typical course'],['Most','Insurance accepted']] as $h): ?>
+      <?php foreach ([['10 days','To first appointment'],['15','Clinics in CA & TX'],['4–6 wks','Typical course'],['Most','Insurance accepted']] as $h): ?>
       <div class="bg-navy/60 backdrop-blur-md px-5 py-4">
         <dt class="text-[20px] font-bold leading-none text-white"><?= $h[0] ?></dt>
         <dd class="mt-2 text-[12.5px] leading-snug text-steel-300"><?= $h[1] ?></dd>
@@ -648,7 +648,7 @@ tailwind.config = {
         </div>
 
         <div class="mt-8 grid grid-cols-3 gap-px bg-steel-200 border border-steel-200">
-          <?php foreach ([['40','minutes per session'],['5×','sessions per week'],['3–6','weeks of treatment']] as $m): ?>
+          <?php foreach ([['20','minutes per session'],['5×','sessions per week'],['4–6','weeks of treatment']] as $m): ?>
           <div class="bg-steel-50 px-4 py-4">
             <p class="text-[1.7rem] font-bold leading-none text-navy"><?= $m[0] ?></p>
             <p class="mt-1.5 text-[12.5px] leading-snug text-steel-500"><?= $m[1] ?></p>
@@ -749,7 +749,7 @@ tailwind.config = {
     <div class="reveal flex flex-col lg:flex-row lg:items-center justify-between gap-8">
       <div class="max-w-2xl">
         <p class="text-[1.5rem] sm:text-[1.9rem] font-bold leading-[1.25] tracking-tightest">
-          Most patients complete treatment within three to six weeks — without medication,
+          Most patients complete treatment within four to six weeks — without medication,
           anesthesia or time away from work.
         </p>
       </div>
@@ -966,8 +966,7 @@ tailwind.config = {
         <p class="eyebrow text-steel-400">Benefits verification</p>
         <p class="mt-3 text-[2.6rem] font-bold leading-none tracking-tightest text-navy">Free</p>
         <p class="mt-3 text-[14.5px] leading-relaxed text-steel-600">
-          We handle the paperwork with your insurer and confirm your exact out-of-pocket cost
-          before your first session.
+         We handle the paperwork with your insurer and provide an estimate of your expected out-of-pocket cost.
         </p>
         <a href="#book" class="mt-6 block rounded-md bg-med-600 py-3.5 text-center text-[15px] font-semibold text-white hover:bg-med-700 transition">Check my coverage</a>
       </div>
