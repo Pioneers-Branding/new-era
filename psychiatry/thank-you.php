@@ -7,7 +7,7 @@
 $PHONE     = '(936) 444-4870';
 $PHONE_RAW = '9364444870';
 
-$BASE       = '/psychiatry/';   // see index.php — absolute so the URL's trailing slash cannot matter
+$BASE       = '';   // see index.php
 $LOGO       = $BASE . 'assets/logo/new-era-logo.webp';
 $LOGO_WHITE = $BASE . 'assets/logo/new-era-logo-white.png';
 

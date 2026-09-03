@@ -158,7 +158,7 @@ foreach ($rootFiles as $file) {
 // The pages prefix their assets with $BASE (see index.php), so references come
 // out as "/psychiatry/assets/...". dist/ holds that folder's contents at its
 // own root, so the prefix is stripped before looking the file up.
-$publicBase = '/psychiatry/';
+$publicBase = '';   // pages emit relative asset paths
 $missing = [];
 foreach (glob('dist/*.html') as $page) {
     $html = file_get_contents($page);

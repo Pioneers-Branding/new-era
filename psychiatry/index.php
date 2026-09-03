@@ -15,15 +15,20 @@ $MAP_EMBED  = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3449.906163
 $MAP_LINK   = 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode('Anew Era TMS & Psychiatry - The Woodlands, ' . $ADDR);
 
 /* ---------- Asset base ----------------------------------------------------
- * Every asset path below is prefixed with this, so the page does not depend on
- * the browser resolving relative paths against the current URL. That makes the
- * images survive a URL without its trailing slash ("/psychiatry" as well as
- * "/psychiatry/"), which is where they were breaking.
+ * Empty on purpose: every asset path below stays relative to the page.
  *
- * It assumes the server's document root is the repository root. Serving this
- * folder as a site root instead means setting $BASE back to ''.
+ * This page is deployed under https://aneweratms.com/inquire/psychiatry/ and
+ * served locally from the repo root as /psychiatry/, so no single absolute
+ * prefix is correct in both places — an absolute "/psychiatry/..." 301s to the
+ * homepage in production. Relative paths work at any depth.
+ *
+ * The one thing relative paths cannot survive is a URL missing its trailing
+ * slash, which PHP's built-in server does not redirect. ../router.php restores
+ * that redirect for local development.
+ *
+ * Set this only if the page is ever served from a fixed, known prefix.
  * ------------------------------------------------------------------------ */
-$BASE = '/psychiatry/';
+$BASE = '';
 
 /* Photography is stored locally in assets/photos/ as "<id>-<w>x<h>.jpg".
    Nothing is fetched from a third-party CDN at render time. The $q argument is
