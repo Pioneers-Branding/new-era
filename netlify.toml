@@ -1,13 +1,20 @@
 # Netlify configuration
 # ---------------------------------------------------------------------------
-# The site source lives at the repository root. build.php renders index.php to
-# static HTML in dist/ and copies assets/ alongside it.
+# Each landing page is a self-contained folder: its own index.php, build.php and
+# assets/. `base` picks the one this Netlify site publishes, and `publish` is
+# resolved relative to it, so "dist" means "tms/dist".
+#
+# A second and third landing page will live in sibling folders. Netlify builds
+# one base per site, so each additional page needs either its own Netlify site
+# pointed at its folder, or a root build script that renders them all into one
+# dist/ under separate paths.
 #
 # Netlify's build image ships PHP, but the exact version varies by image. If
 # the build fails with "php: command not found", either pin an image that has
-# it or build locally (`php build.php`) and deploy dist/ directly.
+# it or build locally (`php build.php`) and deploy tms/dist/ directly.
 
 [build]
+  base    = "tms"
   command = "php build.php"
   publish = "dist"
 

@@ -4,8 +4,14 @@
  * Clinical / professional build. Tailwind CSS (Play CDN). Content from aneweratms.com
  */
 
-$PHONE     = '(833) 221-8549';
-$PHONE_RAW = '8332218549';
+$PHONE     = '(936) 444-4870';
+$PHONE_RAW = '9364444870';
+
+/* ---------- Clinic (The Woodlands, TX) ---------- */
+$ADDR_LINES = ['1733 Woodstead Ct #102', 'The Woodlands, TX 77380'];
+$ADDR       = implode(', ', $ADDR_LINES);
+$MAP_EMBED  = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3449.9061639471643!2d-95.4633427!3d30.154098700000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864737409cd2fe5d%3A0x7925b9e472b8cfcf!2sAnew%20Era%20TMS%20%26%20Psychiatry%20-%20The%20Woodlands!5e0!3m2!1sen!2sin!4v1788434231069!5m2!1sen!2sin';
+$MAP_LINK   = 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode('Anew Era TMS & Psychiatry - The Woodlands, ' . $ADDR);
 
 /* Photography is stored locally in assets/photos/ as "<id>-<w>x<h>.jpg".
    Nothing is fetched from a third-party CDN at render time. The $q argument is
@@ -126,7 +132,11 @@ $faqs = [
 /* Accepted insurance. [display name, logo file in assets/insurances/ or null, note, state (both|ca|tx)]
    Entries without artwork fall back to a text cell so the list stays complete. */
 $INS_DIR = 'assets/insurances/';
-/* Patient reviews — published verbatim from Google reviews of the Austin clinic,
+/* Carrier artwork is off for now: both the marquee and the carrier wall fall back
+   to the text cell they already had for carriers with no logo. Flip to true to
+   bring the images back — the filenames in $insurers are untouched. */
+$INS_LOGOS = false;
+/* Patient reviews — published verbatim from Google reviews of our clinics,
    newest first. Paragraph breaks are <br><br>. [name, meta, when, review] */
 $reviews = [
     ['Shannon Collins','Local Guide · 107 reviews','3 weeks ago',
@@ -512,7 +522,7 @@ tailwind.config = {
     <div class="relative flex-1 overflow-hidden no-bar" style="mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)">
       <div class="flex w-max animate-marquee items-center gap-14">
         <?php for($k=0;$k<2;$k++): foreach ($insurers as $ins): ?>
-          <?php if ($ins[1]): ?>
+          <?php if ($INS_LOGOS && $ins[1]): ?>
             <img src="<?= $INS_DIR . $ins[1] ?>" alt="<?= $k ? '' : strip_tags($ins[0]) ?>" <?= $k ? 'aria-hidden="true"' : '' ?>
                  loading="lazy" class="h-9 w-auto max-w-[132px] shrink-0 object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition duration-300">
           <?php else: ?>
@@ -892,7 +902,7 @@ tailwind.config = {
           What our patients say
         </h2>
         <p class="mt-6 text-[16.5px] leading-[1.75] text-steel-600">
-          Reviews left by patients treated at our Austin clinic.
+          Reviews left by patients treated at our clinics.
         </p>
       </div>
       <div class="shrink-0 flex items-center gap-3">
@@ -937,7 +947,7 @@ tailwind.config = {
     </div>
 
     <p class="reveal mt-5 text-[13px] text-steel-400">
-      Published reviews from our Austin clinic on Google. Individual results vary.
+      Published reviews from our clinics on Google. Individual results vary.
     </p>
   </div>
 </section>
@@ -994,7 +1004,7 @@ tailwind.config = {
       <?php foreach ($insurers as $ins): ?>
       <div data-state="<?= $ins[3] ?>"
            class="ins-card h-[110px] rounded-lg border border-steel-200 bg-white flex flex-col items-center justify-center gap-1.5 px-4 py-3 text-center hover:border-steel-300 transition-all">
-        <?php if ($ins[1]): ?>
+        <?php if ($INS_LOGOS && $ins[1]): ?>
           <img src="<?= $INS_DIR . $ins[1] ?>" alt="<?= strip_tags($ins[0]) ?>" loading="lazy"
                class="max-h-11 w-auto max-w-full object-contain">
         <?php else: ?>
@@ -1132,6 +1142,15 @@ function filterInsurances(state) {
           psychiatric nurse practitioners and licensed therapists.
         </p>
         <a href="tel:<?= $PHONE_RAW ?>" class="mt-6 inline-block text-[1.4rem] font-bold tracking-tightest text-white hover:text-med-200 transition"><?= $PHONE ?></a>
+
+        <address class="mt-5 flex items-start gap-2.5 not-italic text-[14.5px] leading-relaxed">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 mt-1 shrink-0 text-med-300" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>
+            <?php foreach ($ADDR_LINES as $line): ?><span class="block"><?= $line ?></span><?php endforeach; ?>
+            <a href="<?= htmlspecialchars($MAP_LINK) ?>" target="_blank" rel="noopener"
+               class="mt-1.5 inline-block font-semibold text-med-200 underline underline-offset-4 hover:text-white transition">Get directions</a>
+          </span>
+        </address>
       </div>
 
       <div>
@@ -1160,13 +1179,15 @@ function filterInsurances(state) {
       </div>
     </div>
 
-    <div class="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-steel-400">
+    <div class="mt-12 overflow-hidden rounded-lg border border-white/15">
+      <iframe src="<?= htmlspecialchars($MAP_EMBED) ?>"
+              title="Map to Anew Era TMS &amp; Psychiatry, <?= htmlspecialchars($ADDR) ?>"
+              class="block h-[260px] sm:h-[320px] w-full" style="border:0"
+              allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-white/10 text-[13px] text-steel-400">
       <p>&copy; 2018–<?= date('Y') ?> Anew Era TMS &amp; Psychiatry. All rights reserved.</p>
-      <div class="flex gap-6">
-        <a href="#" class="hover:text-white transition">Privacy Policy</a>
-        <a href="#" class="hover:text-white transition">Terms of Use</a>
-        <a href="#" class="hover:text-white transition">Accessibility</a>
-      </div>
     </div>
 
     <p class="mt-8 text-[11.5px] leading-relaxed text-steel-500 max-w-4xl">

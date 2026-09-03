@@ -27,8 +27,6 @@ $_SERVER['HTTPS']          = 'on';
 $pages = [
     'index.php'     => 'index.html',
     'thank-you.php' => 'thank-you.html', // form confirmation page
-    'privacy.php'   => 'privacy.html',   // privacy policy
-    'terms.php'     => 'terms.html',     // terms of use
 ];
 
 // Folders copied wholesale into dist/.

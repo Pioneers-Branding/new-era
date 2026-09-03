@@ -1,26 +1,41 @@
-# Anew Era TMS & Psychiatry — Landing Page
+# Anew Era TMS & Psychiatry — Landing Pages
 
-Conversion-focused landing page for Anew Era TMS & Psychiatry. Single PHP
-template rendered to static HTML for hosting on Netlify.
+Conversion-focused landing pages for Anew Era TMS & Psychiatry. Each one is a
+self-contained folder holding its own PHP template, build script and assets,
+rendered to static HTML for hosting on Netlify.
+
+| Folder | Page                                          |
+| ------ | --------------------------------------------- |
+| `tms/` | TMS therapy for depression, anxiety and PTSD  |
+
+Add a landing page by copying an existing folder and editing its content
+arrays. Netlify builds one `base` per site, so a new page needs either its own
+Netlify site pointed at its folder, or a root build script that renders every
+folder into a single `dist/` under separate paths.
 
 ## Layout
 
 ```
-index.php            the landing page — content arrays at the top, markup below
-build.php            renders each page in $pages to dist/ and copies assets
-assets/
-  photos/            photography, named <unsplash-id>-<w>x<h>.jpg
-  insurances/        carrier logos
-  logo/              brand logo + generated white-knockout variant
-  bg-image/          neurons hero background
-  tms-device/        Magstim Horizon product shot
-  location/          clinic interior photo
-netlify.toml         build config (publish = dist)
+tms/
+  index.php          the landing page — content arrays at the top, markup below
+  thank-you.php      post-submission page
+  build.php          renders each page in $pages to dist/ and copies assets
+  favicon.png        generated from the logo mark
+  apple-touch-icon.png
+  assets/
+    photos/          photography, named <unsplash-id>-<w>x<h>.jpg
+    insurances/      carrier logos
+    insurance-check/ staging artwork, tracked but not published
+    logo/            brand logo + generated white-knockout variant
+    bg-image/        hero background
+    tms-device/      TMS treatment photography
+    location/        clinic interior photo
+netlify.toml         build config (base = tms, publish = dist)
 ```
 
 ## Brand colours
 
-Sampled from `assets/logo/new-era-logo.webp`. These three are the logo
+Sampled from `tms/assets/logo/new-era-logo.webp`. These three are the logo
 itself — everything else on the site is derived from them.
 
 | Role         | Hex       | Where it appears in the logo                    |
@@ -53,13 +68,15 @@ them up as accents or keeps the same blue-only system.
 ## Local development
 
 ```bash
+cd tms
 php -S localhost:8000       # then open http://localhost:8000
 ```
 
 ## Build
 
 ```bash
-php build.php               # writes dist/
+cd tms
+php build.php               # writes tms/dist/
 ```
 
 The build renders each page in `$pages`, rewrites internal `.php` links to
