@@ -386,9 +386,13 @@ tailwind.config = {
 <!-- ═══ HERO (copy + consultation form) ═══ -->
 <section class="relative isolate overflow-hidden bg-navy">
 
+  <!-- The group sits centre-right in the source frame, which put both women behind
+       the consultation form. scale-x-[-1] mirrors them into the left half, and the
+       vertical object-position drops the faces clear of the headline. The photo
+       carries no text, so mirroring costs nothing. -->
   <img src="<?= htmlspecialchars($HERO_BG) ?>" alt=""
-       class="absolute inset-0 -z-10 h-full w-full object-cover object-center">
-  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-navy-900/85 via-navy-900/65 to-navy-900/30"></div>
+       class="absolute inset-0 -z-10 h-full w-full object-cover object-[68%_68%] lg:object-[50%_68%] scale-x-[-1]">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-navy-900/80 via-navy-900/52 to-navy-900/26"></div>
   <div class="absolute inset-0 -z-10 bg-gradient-to-t from-navy-900/75 via-transparent to-navy-900/45"></div>
 
   <div class="mx-auto max-w-[82rem] px-6 pt-[8.5rem] pb-0 lg:pt-[10rem]">

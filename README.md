@@ -73,9 +73,19 @@ them up as accents or keeps the same blue-only system.
 ## Local development
 
 ```bash
-cd tms
-php -S localhost:8000       # then open http://localhost:8000
+php -S localhost:8000 router.php     # from the repo root
 ```
+
+Then open `http://localhost:8000/tms/` or `http://localhost:8000/psychiatry/`.
+
+`router.php` matters. Asset paths in each page are relative, which is what lets
+the same markup work at any deploy path — the pages are published under
+`/inquire/tms/` and `/inquire/psychiatry/`. PHP's built-in server will serve
+`psychiatry/index.php` for the URL `/psychiatry` but, unlike a real server, it
+does not redirect to `/psychiatry/` first. Without that redirect the browser
+resolves every relative asset one level too high and the page renders with all
+images broken. The router restores the redirect. Start the server without it and
+the missing trailing slash will break every image on the page.
 
 ## Build
 
