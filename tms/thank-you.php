@@ -34,6 +34,28 @@ $insurers = [
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google tag (gtag.js) — Google Ads AW-18384277784 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18384277784"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18384277784');
+</script>
+
+<!-- Event snippet for Submit lead form TMS conversion page.
+     Fires on load of this page, which the lead form redirects to after a
+     successful submission. Must stay after the global tag above, which is
+     where gtag() is defined. -->
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18384277784/CIZLCKWqzu0cEJiip75E',
+      'value': 1.0,
+      'currency': 'USD'
+  });
+</script>
 <title>Thank You — Anew Era TMS &amp; Psychiatry</title>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
