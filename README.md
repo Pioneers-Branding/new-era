@@ -4,9 +4,10 @@ Conversion-focused landing pages for Anew Era TMS & Psychiatry. Each one is a
 self-contained folder holding its own PHP template, build script and assets,
 rendered to static HTML for hosting on Netlify.
 
-| Folder | Page                                          |
-| ------ | --------------------------------------------- |
-| `tms/` | TMS therapy for depression, anxiety and PTSD  |
+| Folder        | Page                                                    |
+| ------------- | ------------------------------------------------------- |
+| `tms/`        | TMS therapy for depression, anxiety and PTSD            |
+| `psychiatry/` | Psychiatric evaluation, medication management, therapy  |
 
 Add a landing page by copying an existing folder and editing its content
 arrays. Netlify builds one `base` per site, so a new page needs either its own
@@ -14,6 +15,10 @@ Netlify site pointed at its folder, or a root build script that renders every
 folder into a single `dist/` under separate paths.
 
 ## Layout
+
+Both folders share the same components and brand system; what differs between
+them lives in the content arrays at the top of each `index.php`, plus one
+section — `#tms` on the TMS page, `#approach` on the psychiatry page.
 
 ```
 tms/
