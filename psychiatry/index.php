@@ -116,8 +116,6 @@ $services = [
      img($IMG['med'], 900, 560), 'cover', 'object-top'],
     ['Psychotherapy','Licensed therapists providing in-person and online sessions, coordinated with your medical care under one roof.',['In-person or virtual sessions','Licensed clinicians','Integrated with your treatment plan'],
      $LOCATION_IMG, 'cover', 'object-center'],
-    ['SPRAVATO&reg; (esketamine)','Esketamine nasal spray for treatment-resistant depression, self-administered in our clinic under the supervision of our medical team.',['Self-administered under supervision','Two hours of monitoring after each dose','For treatment-resistant depression'],
-     img('1779281887548-f676406dea2f', 900, 560), 'cover', 'object-center', 'Texas clinics only'],
 ];
 
 $stats = [
@@ -134,7 +132,7 @@ $faqs = [
     ['Can I be seen by video instead of in person?','Yes. Evaluations, medication follow-ups and therapy can all be done by video, and you can move between in-person and virtual appointments as suits you.'],
     ['How long is the first appointment?','About sixty minutes. That is the appointment the diagnosis rests on, so it is not rushed. Follow-up appointments are shorter.'],
     ['Will I have to take medication?','Not necessarily. Medication is one option among several, and the plan may be therapy alone. Where medication is recommended, you get the reasoning, the expected timeline and the alternatives.'],
-    ['What if medication has not worked for me before?','That is a common reason people come to us. Where several medications have not produced relief, options with a different mechanism become relevant — SPRAVATO&reg; at our Texas clinics, or TMS therapy, which is drug-free and covered by most plans.'],
+    ['What if medication has not worked for me before?','That is a common reason people come to us. Where several medications have not produced relief, options with a different mechanism become relevant — such as TMS therapy, which is drug-free and covered by most plans.'],
     ['Do you prescribe controlled substances?','Where clinically appropriate and after a full evaluation. We follow state and federal prescribing rules, which for some medications means an in-person appointment.'],
 ];
 
@@ -489,7 +487,7 @@ tailwind.config = {
               <label class="block">
                 <span class="text-[12.5px] font-semibold text-white">Service of interest</span>
                 <select name="interest" style="color-scheme:dark" class="mt-1.5 w-full rounded-md border border-white/25 bg-white/10 px-3.5 py-2.5 text-[15px] text-white outline-none focus:border-white/60 focus:bg-white/15 focus:ring-2 focus:ring-white/20 transition">
-                  <?php foreach (['Psychiatric evaluation','Medication management','Psychotherapy','SPRAVATO&reg; (Texas only)','Not sure yet'] as $i): ?><option class="bg-navy-800 text-white"><?= $i ?></option><?php endforeach; ?>
+                  <?php foreach (['Psychiatric evaluation','Medication management','Psychotherapy','Not sure yet'] as $i): ?><option class="bg-navy-800 text-white"><?= $i ?></option><?php endforeach; ?>
                 </select>
               </label>
 
@@ -855,7 +853,7 @@ tailwind.config = {
       </p>
     </div>
 
-    <div class="cards-slider mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="cards-slider mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <?php foreach ($services as $i => $sv): ?>
       <article class="reveal group flex flex-col overflow-hidden rounded-lg border border-steel-200 bg-white hover:shadow-pop transition-shadow">
         <div class="relative h-64 lg:h-72 overflow-hidden <?= $sv[4] === 'contain' ? 'bg-white border-b border-steel-200 p-5' : 'bg-steel-100' ?>">
@@ -1162,7 +1160,7 @@ function filterInsurances(state) {
       <div>
         <h4 class="text-white font-semibold text-[14px]">Treatment</h4>
         <ul class="mt-5 space-y-3 text-[14.5px]">
-          <?php foreach (['Psychiatric Evaluation','Medication Management','Psychotherapy','SPRAVATO&reg;'] as $l): ?>
+          <?php foreach (['Psychiatric Evaluation','Medication Management','Psychotherapy'] as $l): ?>
           <li><a href="#services" class="hover:text-white transition"><?= $l ?></a></li>
           <?php endforeach; ?>
         </ul>

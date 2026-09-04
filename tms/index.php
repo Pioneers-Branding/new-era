@@ -106,8 +106,6 @@ $services = [
      $TMS_CARD_IMG, 'cover'],
     ['Medication Management','Board-certified psychiatrists and psychiatric nurse practitioners managing your diagnosis, prescribing and ongoing adjustment over time.',['Comprehensive psychiatric evaluation','Ongoing review and adjustment','Same-week availability'],
      img($IMG['med'], 900, 560), 'cover', 'object-top'],
-    ['SPRAVATO&reg; (esketamine)','Esketamine nasal spray for treatment-resistant depression, self-administered in our clinic under the supervision of our medical team.',['Self-administered under supervision','Two hours of monitoring after each dose','For treatment-resistant depression'],
-     img('1779281887548-f676406dea2f', 900, 560), 'cover', 'object-center', 'Texas clinics only'],
     ['Psychotherapy','Licensed therapists providing in-person and online sessions, coordinated with your medical care under one roof.',['In-person or virtual sessions','Licensed clinicians','Integrated with your treatment plan'],
      $LOCATION_IMG, 'cover', 'object-center'],
 ];
@@ -144,7 +142,7 @@ $reviews = [
     ['Mark Kobdish','2 reviews','a month ago',
      'Greg was a wonderful technician who provided the majority of my treatments. He was consistently pleasant and made sure I was comfortable, and very professional throughout.<br><br>Shout out to Isabel who was in training for many of my sessions and gave me a solo treatment at the end of her orientation. She did a fantastic job and will be a great asset to the team.'],
     ['Tommy Miserendino','Local Guide · 76 reviews','5 months ago',
-     'I came to Anew Era for TMS. It was easy to schedule the appointments and they took my insurance. I had to talk to a few people before treatment (this was explained on my initial consultation) and each person made sure I understood what TMS was, possible side-effects, and what to expect for treatment.<br><br>Scheduling the multiple visits (per the treatment) was easy and the schedule was extremely flexible.<br><br>The technician, my dude was Alex, made sure to explain everything about the visits including how the treatment would progress. He made sure each time that the machine was in place and that my experience was comfortable. If it wasn\'t in place, he would adjust until it was correct.<br><br>No issues, straight-forward explanations about treatment, overall great experience. I have done CBT, EMDR, Spravado, KAT, and prescription medicine, and TMS has had the biggest impact (EMDR works well too) on my depression.'],
+     'I came to Anew Era for TMS. It was easy to schedule the appointments and they took my insurance. I had to talk to a few people before treatment (this was explained on my initial consultation) and each person made sure I understood what TMS was, possible side-effects, and what to expect for treatment.<br><br>Scheduling the multiple visits (per the treatment) was easy and the schedule was extremely flexible.<br><br>The technician, my dude was Alex, made sure to explain everything about the visits including how the treatment would progress. He made sure each time that the machine was in place and that my experience was comfortable. If it wasn\'t in place, he would adjust until it was correct.<br><br>No issues, straight-forward explanations about treatment, overall great experience. I have done CBT, EMDR, KAT, and prescription medicine, and TMS has had the biggest impact (EMDR works well too) on my depression.'],
     ['Wendy Douglas','Local Guide · 24 reviews','5 months ago',
      'So easy to take great care of your mental health, scheduling is totally stress free, online appts make is stress free as well. I thought I was going to lose my mind when my last psychiatrist dropped me because I kept missing appts. I found ANEW the next day and this was truly a blessing. The providers take excellent care of me, I feel comfortable talking to them, Rx refills are immediate. Very happy patient here!!!'],
     ['Madeline Rowe','Local Guide · 19 reviews','10 months ago',
@@ -493,7 +491,7 @@ tailwind.config = {
               <label class="block">
                 <span class="text-[12.5px] font-semibold text-white">Service of interest</span>
                 <select name="interest" style="color-scheme:dark" class="mt-1.5 w-full rounded-md border border-white/25 bg-white/10 px-3.5 py-2.5 text-[15px] text-white outline-none focus:border-white/60 focus:bg-white/15 focus:ring-2 focus:ring-white/20 transition">
-                  <?php foreach (['TMS Therapy','Medication Management','SPRAVATO&reg; (Texas only)','Psychotherapy','Not sure yet'] as $i): ?><option class="bg-navy-800 text-white"><?= $i ?></option><?php endforeach; ?>
+                  <?php foreach (['TMS Therapy','Medication Management','Psychotherapy','Not sure yet'] as $i): ?><option class="bg-navy-800 text-white"><?= $i ?></option><?php endforeach; ?>
                 </select>
               </label>
 
@@ -859,7 +857,7 @@ tailwind.config = {
       </p>
     </div>
 
-    <div class="cards-slider mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="cards-slider mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <?php foreach ($services as $i => $sv): ?>
       <article class="reveal group flex flex-col overflow-hidden rounded-lg border border-steel-200 bg-white hover:shadow-pop transition-shadow">
         <div class="relative h-64 lg:h-72 overflow-hidden <?= $sv[4] === 'contain' ? 'bg-white border-b border-steel-200 p-5' : 'bg-steel-100' ?>">
@@ -1166,7 +1164,7 @@ function filterInsurances(state) {
       <div>
         <h4 class="text-white font-semibold text-[14px]">Treatment</h4>
         <ul class="mt-5 space-y-3 text-[14.5px]">
-          <?php foreach (['TMS Therapy','Medication Management','SPRAVATO&reg;','Psychotherapy'] as $l): ?>
+          <?php foreach (['TMS Therapy','Medication Management','Psychotherapy'] as $l): ?>
           <li><a href="#services" class="hover:text-white transition"><?= $l ?></a></li>
           <?php endforeach; ?>
         </ul>
