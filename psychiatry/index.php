@@ -95,7 +95,7 @@ $steps = [
     ['01','Same day','Free consultation','Speak with our team the day you call. We answer your questions, explain how we work and verify your insurance benefits at no cost.'],
     ['02','Within 1–5 days','Psychiatric evaluation','A full evaluation with a board-certified psychiatrist or psychiatric nurse practitioner: your history, your symptoms, what has already been tried and what has not.'],
     ['03','Same visit','Diagnosis and plan','You leave with a diagnosis explained in plain language and a written plan — medication, therapy, or both, with the reasoning behind each choice.'],
-    ['04','Ongoing','Review and adjust','Follow-up appointments track what is working. Doses are adjusted, prescriptions refilled and the plan revised as your life changes.'],
+    ['04','Ongoing','Review and adjust','Follow-up appointments track what is working, and the plan is revised as your needs and your life change.'],
 ];
 
 /* What sets the care apart — three points, in place of the TMS mechanism */
@@ -112,7 +112,7 @@ $mechanism = [
 $services = [
     ['Psychiatric Evaluation','A full diagnostic evaluation with a board-certified psychiatrist or psychiatric nurse practitioner, in person or by video.',['Sixty-minute first appointment','Diagnosis explained in plain language','In person or telehealth'],
      img($IMG['consult'], 900, 560), 'cover', 'object-center'],
-    ['Medication Management','Prescribing and ongoing adjustment over time, with follow-up appointments that track what is actually working.',['Ongoing review and adjustment','Prompt prescription refills','Same-week availability'],
+    ['Medication Management','Ongoing psychiatric care with follow-up appointments that track how you are responding and revise the plan over time.',['Ongoing review and adjustment','Coordinated with your therapy','Same-week availability'],
      img($IMG['med'], 900, 560), 'cover', 'object-top'],
     ['Psychotherapy','Licensed therapists providing in-person and online sessions, coordinated with your medical care under one roof.',['In-person or virtual sessions','Licensed clinicians','Integrated with your treatment plan'],
      $LOCATION_IMG, 'cover', 'object-center'],
@@ -133,7 +133,6 @@ $faqs = [
     ['How long is the first appointment?','About sixty minutes. That is the appointment the diagnosis rests on, so it is not rushed. Follow-up appointments are shorter.'],
     ['Will I have to take medication?','Not necessarily. Medication is one option among several, and the plan may be therapy alone. Where medication is recommended, you get the reasoning, the expected timeline and the alternatives.'],
     ['What if medication has not worked for me before?','That is a common reason people come to us. Where several medications have not produced relief, options with a different mechanism become relevant — such as TMS therapy, which is drug-free and covered by most plans.'],
-    ['Do you prescribe controlled substances?','Where clinically appropriate and after a full evaluation. We follow state and federal prescribing rules, which for some medications means an in-person appointment.'],
 ];
 
 /* Accepted insurance. [display name, logo file in assets/insurances/ or null, note, state (both|ca|tx)]
@@ -149,7 +148,7 @@ $reviews = [
     ['Shannon Collins','Local Guide · 107 reviews','3 weeks ago',
      'I feel that I am heard and understood in my treatment. I\'ve tried a variety of medications and finally found a plan that works for me and my health. Laura Beaufford takes her time to carefully assess my case and diagnoses to create a specific treatment plan for me that is working. Finding a doctor that cares about what they are doing is important. Thankful to be treated as a person and not just another patient.'],
     ['Wendy Douglas','Local Guide · 24 reviews','5 months ago',
-     'So easy to take great care of your mental health, scheduling is totally stress free, online appts make is stress free as well. I thought I was going to lose my mind when my last psychiatrist dropped me because I kept missing appts. I found ANEW the next day and this was truly a blessing. The providers take excellent care of me, I feel comfortable talking to them, Rx refills are immediate. Very happy patient here!!!'],
+     'So easy to take great care of your mental health, scheduling is totally stress free, online appts make is stress free as well. I thought I was going to lose my mind when my last psychiatrist dropped me because I kept missing appts. I found ANEW the next day and this was truly a blessing. The providers take excellent care of me, I feel comfortable talking to them&hellip; Very happy patient here!!!'],
     ['Madeline Rowe','Local Guide · 19 reviews','10 months ago',
      'Laura Beaufford has been such a blessing in my mental health journey. She brings an incredible balance of professionalism and heart &mdash; she truly cares. Laura\'s compassion shines through in every session, and her ability to make you feel safe and supported while also being proactive and knowledgeable is remarkable. She listens deeply, remembers details, and tailors care with genuine thoughtfulness. It\'s clear she\'s passionate about helping her patients heal and thrive. I always leave our sessions feeling lighter, understood, and hopeful. Anew Era TMS is exceptional because of clinicians like her.'],
     ['Gloria Lopez','2 reviews','a year ago',
@@ -567,7 +566,7 @@ tailwind.config = {
           <?php foreach ([
             ['Nobody explained the diagnosis','A label, with no reasoning behind it.'],
             ['Appointments feel rushed','Fifteen minutes is not an evaluation.'],
-            ['Refills are a chase','Running out before anyone calls back.'],
+            ['Care feels fragmented','Nobody involved talks to anyone else.'],
             ['Waitlists are too long','Care delayed at the point it is most needed.'],
           ] as $p): ?>
           <div class="bg-white p-5">
@@ -649,7 +648,7 @@ tailwind.config = {
             ['Board-certified clinicians','Psychiatrists and psychiatric nurse practitioners'],
             ['Medication and therapy together','One plan, one practice, no hand-offs'],
             ['In person or by video','Move between the two as it suits you'],
-            ['Prompt refills','Prescriptions handled without the chase'],
+            ['Same-week availability','Follow-up appointments when you need them'],
           ] as $f): ?>
           <div class="flex gap-3">
             <svg viewBox="0 0 24 24" class="h-5 w-5 mt-0.5 shrink-0 text-med-600" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
@@ -951,7 +950,7 @@ tailwind.config = {
     </div>
 
     <p class="reveal mt-5 text-[13px] text-steel-400">
-      Published reviews from our clinics on Google. Individual results vary.
+      Published reviews from our clinics on Google; &ldquo;&hellip;&rdquo; marks omitted text. Individual results vary.
     </p>
   </div>
 </section>
