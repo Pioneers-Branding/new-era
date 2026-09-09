@@ -111,9 +111,9 @@ $mechanism = [
    in the frame need 'object-top' or the head is cut off. */
 $services = [
     ['Psychiatric Evaluation','A full diagnostic evaluation with a board-certified psychiatrist or psychiatric nurse practitioner, in person or by video.',['Sixty-minute first appointment','Diagnosis explained in plain language','In person or telehealth'],
-     img($IMG['consult'], 900, 560), 'cover', 'object-center'],
+     $BASE . 'assets/photos/anewera-tms-2.jpg', 'cover', 'object-center'],
     ['Ongoing Psychiatric Care','Ongoing clinical care with follow-up appointments that track how you are responding and revise the plan over time.',['Ongoing review and adjustment','Coordinated with your therapy','Same-week availability'],
-     img($IMG['med'], 900, 560), 'cover', 'object-top'],
+     $BASE . 'assets/photos/anewera-lp-1.jpg', 'cover', 'object-center'],
     ['Psychotherapy','Licensed therapists providing in-person and online sessions, coordinated with your medical care under one roof.',['In-person or virtual sessions','Licensed clinicians','Integrated with your treatment plan'],
      $LOCATION_IMG, 'cover', 'object-center'],
 ];
@@ -405,16 +405,15 @@ tailwind.config = {
       <div class="reveal lg:pt-4">
         <div class="inline-flex items-center gap-2.5 rounded border border-white/25 bg-white/10 px-3 py-1.5 text-[12.5px] font-medium text-white backdrop-blur-sm">
           <svg viewBox="0 0 24 24" class="h-4 w-4 text-med-200" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7z"/><path d="M9 12l2 2 4-4"/></svg>
-          Board-certified psychiatrists · Accepting new patients
+          Board-certified psychiatrists · Now Accepting new patients
         </div>
 
         <h1 class="mt-6 text-[2.5rem] sm:text-[3.1rem] lg:text-[3.5rem] font-bold leading-[1.06] tracking-tightest text-white">
-          Psychiatric care that starts with actually understanding you.
+          Psychiatric care that starts with understanding you.
         </h1>
 
         <p class="mt-5 text-[17px] leading-[1.7] text-steel-200 max-w-xl">
-          Evaluation, diagnosis and a treatment plan from board-certified psychiatrists in
-          The Woodlands — in person or by video, usually within five days.
+          Get a comprehensive psychiatric evaluation, diagnosis, and personalized treatment plan from board-certified psychiatrists serving The Woodlands, TX. Appointments are available in person or by video, often within five days.
         </p>
 
         <div class="mt-8 flex flex-wrap items-center gap-3">
@@ -447,8 +446,8 @@ tailwind.config = {
           <?php else: ?>
             <div class="flex items-start justify-between gap-4 pb-5 border-b border-white/20">
               <div>
-                <h2 class="text-[1.3rem] font-bold tracking-tightest text-white">Request a free consultation</h2>
-                <p class="mt-1.5 text-[13.5px] text-steel-200">We verify your insurance benefits at no cost.</p>
+                <h2 class="text-[1.3rem] font-bold tracking-tightest text-white">Request your free consultation</h2>
+                <p class="mt-1.5 text-[13.5px] text-steel-200">We’ll verify your insurance benefits at no cost and help you understand your coverage options.</p>
               </div>
               <span class="shrink-0 rounded border border-white/30 bg-white/15 px-2.5 py-1 text-[11px] font-semibold text-white tracking-wide">NO COST</span>
             </div>
@@ -496,8 +495,7 @@ tailwind.config = {
               </button>
 
               <p class="text-[12px] leading-relaxed text-white/65">
-                We use your ZIP code to route you to the nearest of our 15 clinics. Your information is
-                kept confidential and is never sold or shared.
+             We use your ZIP code to connect you with the nearest Anew Era location. Your information is kept confidential and handled securely.
               </p>
             </form>
           <?php endif; ?>
@@ -507,7 +505,7 @@ tailwind.config = {
 
     <!-- metric bar -->
     <dl class="reveal mt-12 lg:mt-14 grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/15 border-t border-x border-white/15">
-      <?php foreach ([['5 days','To your evaluation'],['60 min','First appointment'],['Video','Or in person'],['Most','Insurance accepted']] as $h): ?>
+      <?php foreach ([['Within 5 days','Appointment availability'],['60 min','Initial evaluation'],['Flexible Visits','In person or by video'],['Most Major Plans','Insurance accepted']] as $h): ?>
       <div class="bg-navy/60 backdrop-blur-md px-5 py-4">
         <dt class="text-[20px] font-bold leading-none text-white"><?= $h[0] ?></dt>
         <dd class="mt-2 text-[12.5px] leading-snug text-steel-300"><?= $h[1] ?></dd>
@@ -548,26 +546,24 @@ tailwind.config = {
 
       <div class="reveal">
         <div class="rule"></div>
-        <span class="mt-5 block eyebrow text-med-600">Why people come to us</span>
+        <span class="mt-5 block eyebrow text-med-600">WHY PATIENTS CHOOSE ANEW ERA</span>
         <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-navy">
-          When care has felt rushed or out of reach
+          Psychiatric Care That Gives You Time to Be Heard
         </h2>
         <p class="mt-6 text-[16.5px] leading-[1.75] text-steel-600">
           The National Institute of Mental Health estimates that one in five American adults
-          experiences some form of mental disorder. Most of them wait months for an appointment,
-          then get fifteen minutes without a comprehensive strategy.
+          experiences some form of mental disorder. Finding the right mental health care can be challenging, especially when appointments feel rushed or treatment options aren’t fully explained.
         </p>
         <p class="mt-4 text-[16.5px] leading-[1.75] text-steel-600">
-          We work differently. A full evaluation establishes the diagnosis, the plan is explained to
-          you, and follow-up appointments exist to change it when the evidence says to.
+         At Anew Era, our psychiatric evaluations are designed to give you the time and attention needed to understand your symptoms, diagnosis, and treatment options.
         </p>
 
         <div class="mt-8 grid sm:grid-cols-2 gap-px bg-steel-200 border border-steel-200 rounded overflow-hidden">
           <?php foreach ([
-            ['Nobody explained the diagnosis','A label, with no reasoning behind it.'],
-            ['Appointments feel rushed','Fifteen minutes is not an evaluation.'],
-            ['Care feels fragmented','Nobody involved talks to anyone else.'],
-            ['Waitlists are too long','Care delayed at the point it is most needed.'],
+            ['Understand Your Diagnosis','Clear explanations to help you better understand your mental health.'],
+            ['Time to Be Heard','Thorough evaluations that give you time to discuss your symptoms and concerns.'],
+            ['Connected, Personalized Care','A treatment plan built around your individual needs and progress.'],
+            ['Timely Access to Care','Appointments often available within five days.'],
           ] as $p): ?>
           <div class="bg-white p-5">
             <h3 class="text-[15px] font-semibold text-navy"><?= $p[0] ?></h3>
@@ -756,7 +752,7 @@ tailwind.config = {
 
 <!-- ═══ BREAK BAND ═══ -->
 <section class="relative isolate bg-navy-900 text-white">
-  <img src="<?= img($IMG['people'], 1800, 620, 72) ?>" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-center opacity-30">
+  <img src="<?= $BASE ?>assets/photos/anewera-lp-1.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-center opacity-30">
   <div class="absolute inset-0 -z-10 bg-gradient-to-r from-navy-900 via-navy-900/85 to-navy-900/55"></div>
   <div class="mx-auto max-w-[82rem] px-6 py-12 lg:py-16">
     <div class="reveal flex flex-col lg:flex-row lg:items-center justify-between gap-8">
@@ -1112,10 +1108,10 @@ function filterInsurances(state) {
       <div class="max-w-2xl reveal">
         <span class="eyebrow text-med-200">Accepting new patients</span>
         <h2 class="mt-4 text-[2.2rem] sm:text-[3rem] font-bold leading-[1.1] tracking-tightest">
-          Psychiatric care that treats you as a person
+         A More Personal Approach to Psychiatric Care
         </h2>
         <p class="mt-5 text-[17px] leading-[1.7] text-steel-300 max-w-xl">
-          Schedule your free consultation today and be evaluated within five days.
+        Request your free consultation today, with psychiatric evaluations often available within five days.
         </p>
       </div>
       <div class="flex flex-wrap gap-3 reveal">
