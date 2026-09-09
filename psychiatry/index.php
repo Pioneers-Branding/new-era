@@ -94,14 +94,14 @@ $conditions = [
 $steps = [
     ['01','Same day','Free consultation','Speak with our team the day you call. We answer your questions, explain how we work and verify your insurance benefits at no cost.'],
     ['02','Within 1–5 days','Psychiatric evaluation','A full evaluation with a board-certified psychiatrist or psychiatric nurse practitioner: your history, your symptoms, what has already been tried and what has not.'],
-    ['03','Same visit','Diagnosis and plan','You leave with a diagnosis explained in plain language and a written plan — medication, therapy, or both, with the reasoning behind each choice.'],
+    ['03','Same visit','Diagnosis and plan','You leave with a diagnosis explained in plain language and a written plan — therapy, clinical care, or both, with the reasoning behind each choice.'],
     ['04','Ongoing','Review and adjust','Follow-up appointments track what is working, and the plan is revised as your needs and your life change.'],
 ];
 
 /* What sets the care apart — three points, in place of the TMS mechanism */
 $mechanism = [
     ['01','An evaluation that takes its time','Diagnosis drives everything that follows, so the first appointment is unhurried. We go through your history, your symptoms and every treatment you have already tried.','M12 3a9 9 0 109 9M12 3v9l6.4 3.2'],
-    ['02','A plan, not a prescription','Medication is one tool. Your plan may combine it with therapy, and it always comes with the reasoning explained — what we expect, how long it takes and what we do if it does not work.','M20 6L9 17l-5-5'],
+    ['02','A comprehensive care plan','Clinical care is tailored to you. Your plan may combine psychiatric support with therapy, and it always comes with the reasoning explained — what we expect, how long it takes and what we do if it does not work.','M20 6L9 17l-5-5'],
     ['03','Care that keeps adjusting','Psychiatry is not one appointment. We follow up, watch what changes, and adjust — including moving to a different approach when the current one has gone as far as it can.','M4 12h3l2-5 3 10 2.5-7 1.5 4h4'],
 ];
 
@@ -112,7 +112,7 @@ $mechanism = [
 $services = [
     ['Psychiatric Evaluation','A full diagnostic evaluation with a board-certified psychiatrist or psychiatric nurse practitioner, in person or by video.',['Sixty-minute first appointment','Diagnosis explained in plain language','In person or telehealth'],
      img($IMG['consult'], 900, 560), 'cover', 'object-center'],
-    ['Medication Management','Ongoing psychiatric care with follow-up appointments that track how you are responding and revise the plan over time.',['Ongoing review and adjustment','Coordinated with your therapy','Same-week availability'],
+    ['Ongoing Psychiatric Care','Ongoing clinical care with follow-up appointments that track how you are responding and revise the plan over time.',['Ongoing review and adjustment','Coordinated with your therapy','Same-week availability'],
      img($IMG['med'], 900, 560), 'cover', 'object-top'],
     ['Psychotherapy','Licensed therapists providing in-person and online sessions, coordinated with your medical care under one roof.',['In-person or virtual sessions','Licensed clinicians','Integrated with your treatment plan'],
      $LOCATION_IMG, 'cover', 'object-center'],
@@ -129,10 +129,10 @@ $faqs = [
     ['How quickly can I be seen?','We can usually schedule a free consultation the same day you call, with a full psychiatric evaluation within one to five business days.'],
     ['Do you see adults, children or both?','We treat adults and adolescents. The evaluation establishes whether our care is the right fit, and we refer on where someone would be better served elsewhere.'],
     ['Is psychiatric care covered by insurance?','Yes. We accept most major commercial insurance companies as well as Tricare and Triwest. We do not accept Medicaid.<br><br><strong>California:</strong> Anthem Blue Cross, Blue Shield of California, Magellan / MHSA, Cigna, Aetna, Optum, United Healthcare, Oscar, Tricare-West, Triwest CCN, Healthnet, and MHN.<br><br><strong>Texas:</strong> Blue Cross Blue Shield of Tx (BCBS), Humana, Magellan / MHSA, Cigna, Aetna, Optum, United Healthcare, Oscar, Tricare-East, Triwest CCN, Healthnet, and MHN.<br><br>Free benefits verification and competitive cash-pay options are available.'],
-    ['Can I be seen by video instead of in person?','Yes. Evaluations, medication follow-ups and therapy can all be done by video, and you can move between in-person and virtual appointments as suits you.'],
+    ['Can I be seen by video instead of in person?','Yes. Evaluations, follow-up visits and therapy can all be done by video, and you can move between in-person and virtual appointments as suits you.'],
     ['How long is the first appointment?','About sixty minutes. That is the appointment the diagnosis rests on, so it is not rushed. Follow-up appointments are shorter.'],
-    ['Will I have to take medication?','Not necessarily. Medication is one option among several, and the plan may be therapy alone. Where medication is recommended, you get the reasoning, the expected timeline and the alternatives.'],
-    ['What if medication has not worked for me before?','That is a common reason people come to us. Where several medications have not produced relief, options with a different mechanism become relevant — such as TMS therapy, which is drug-free and covered by most plans.'],
+    ['What does my treatment plan include?','Every treatment plan is tailored to your individual needs. Options are discussed transparently, and your care plan may include therapy, clinical guidance, or specialized treatment. You get the full reasoning, expected timeline and alternatives.'],
+    ['What if previous treatments have not worked for me before?','That is a common reason people come to us. Where previous treatments have not produced relief, advanced options become relevant — such as TMS therapy, which is non-invasive and covered by most major insurance plans.'],
 ];
 
 /* Accepted insurance. [display name, logo file in assets/insurances/ or null, note, state (both|ca|tx)]
@@ -146,7 +146,7 @@ $INS_LOGOS = false;
    newest first. Paragraph breaks are <br><br>. [name, meta, when, review] */
 $reviews = [
     ['Shannon Collins','Local Guide · 107 reviews','3 weeks ago',
-     'I feel that I am heard and understood in my treatment. I\'ve tried a variety of medications and finally found a plan that works for me and my health. Laura Beaufford takes her time to carefully assess my case and diagnoses to create a specific treatment plan for me that is working. Finding a doctor that cares about what they are doing is important. Thankful to be treated as a person and not just another patient.'],
+     'I feel that I am heard and understood in my treatment. I\'ve tried a variety of treatment options and finally found a plan that works for me and my health. Laura Beaufford takes her time to carefully assess my case and diagnoses to create a specific treatment plan for me that is working. Finding a doctor that cares about what they are doing is important. Thankful to be treated as a person and not just another patient.'],
     ['Wendy Douglas','Local Guide · 24 reviews','5 months ago',
      'So easy to take great care of your mental health, scheduling is totally stress free, online appts make is stress free as well. I thought I was going to lose my mind when my last psychiatrist dropped me because I kept missing appts. I found ANEW the next day and this was truly a blessing. The providers take excellent care of me, I feel comfortable talking to them&hellip; Very happy patient here!!!'],
     ['Madeline Rowe','Local Guide · 19 reviews','10 months ago',
@@ -193,7 +193,7 @@ $insurers = [
 <title>Anew Era TMS &amp; Psychiatry — Psychiatrists in The Woodlands, TX</title>
 <link rel="icon" type="image/png" sizes="32x32" href="<?= $BASE ?>favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="<?= $BASE ?>apple-touch-icon.png">
-<meta name="description" content="Psychiatric evaluation, medication management and therapy for depression, anxiety, ADHD, bipolar disorder and PTSD in The Woodlands, TX. New patients seen within five days. Most major insurance accepted.">
+<meta name="description" content="Psychiatric evaluation, ongoing psychiatric care and therapy for depression, anxiety, ADHD, bipolar disorder and PTSD in The Woodlands, TX. New patients seen within five days. Most major insurance accepted.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -486,7 +486,7 @@ tailwind.config = {
               <label class="block">
                 <span class="text-[12.5px] font-semibold text-white">Service of interest</span>
                 <select name="interest" style="color-scheme:dark" class="mt-1.5 w-full rounded-md border border-white/25 bg-white/10 px-3.5 py-2.5 text-[15px] text-white outline-none focus:border-white/60 focus:bg-white/15 focus:ring-2 focus:ring-white/20 transition">
-                  <?php foreach (['Psychiatric evaluation','Medication management','Psychotherapy','Not sure yet'] as $i): ?><option class="bg-navy-800 text-white"><?= $i ?></option><?php endforeach; ?>
+                  <?php foreach (['Psychiatric evaluation','Ongoing psychiatric care','Psychotherapy','Not sure yet'] as $i): ?><option class="bg-navy-800 text-white"><?= $i ?></option><?php endforeach; ?>
                 </select>
               </label>
 
@@ -555,7 +555,7 @@ tailwind.config = {
         <p class="mt-6 text-[16.5px] leading-[1.75] text-steel-600">
           The National Institute of Mental Health estimates that one in five American adults
           experiences some form of mental disorder. Most of them wait months for an appointment,
-          then get fifteen minutes and a prescription.
+          then get fifteen minutes without a comprehensive strategy.
         </p>
         <p class="mt-4 text-[16.5px] leading-[1.75] text-steel-600">
           We work differently. A full evaluation establishes the diagnosis, the plan is explained to
@@ -605,7 +605,7 @@ tailwind.config = {
       </div>
       <p class="text-[16.5px] leading-[1.75] text-steel-600">
         Good psychiatry rests on an accurate diagnosis, and an accurate diagnosis takes time. What
-        follows is a plan you understand and a clinician who keeps adjusting it — not a prescription
+        follows is a plan you understand and a clinician who keeps adjusting it — not a rushed visit
         handed over at the end of a fifteen-minute appointment.
       </p>
     </div>
@@ -639,14 +639,14 @@ tailwind.config = {
         <h3 class="text-[1.5rem] font-bold tracking-tightest text-navy">Everything under one roof</h3>
         <p class="mt-4 text-[15.5px] leading-[1.75] text-steel-600">
           Psychiatrists, psychiatric nurse practitioners and licensed therapists work from the same
-          treatment plan in the same practice. Your prescriber and your therapist are not strangers
+          treatment plan in the same practice. Your psychiatrist and your therapist are not strangers
           to one another, and nothing gets lost between them.
         </p>
 
         <div class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-5 pt-8 border-t border-steel-200">
           <?php foreach ([
             ['Board-certified clinicians','Psychiatrists and psychiatric nurse practitioners'],
-            ['Medication and therapy together','One plan, one practice, no hand-offs'],
+            ['Psychiatric care and therapy together','One plan, one practice, no hand-offs'],
             ['In person or by video','Move between the two as it suits you'],
             ['Same-week availability','Follow-up appointments when you need them'],
           ] as $f): ?>
@@ -1159,7 +1159,7 @@ function filterInsurances(state) {
       <div>
         <h4 class="text-white font-semibold text-[14px]">Treatment</h4>
         <ul class="mt-5 space-y-3 text-[14.5px]">
-          <?php foreach (['Psychiatric Evaluation','Medication Management','Psychotherapy'] as $l): ?>
+          <?php foreach (['Psychiatric Evaluation','Ongoing Psychiatric Care','Psychotherapy'] as $l): ?>
           <li><a href="#services" class="hover:text-white transition"><?= $l ?></a></li>
           <?php endforeach; ?>
         </ul>
