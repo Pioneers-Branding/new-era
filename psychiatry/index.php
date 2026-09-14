@@ -102,7 +102,7 @@ $steps = [
 $mechanism = [
     ['01','An evaluation that takes its time','Diagnosis drives everything that follows, so the first appointment is unhurried. We go through your history, your symptoms and every treatment you have already tried.','M12 3a9 9 0 109 9M12 3v9l6.4 3.2'],
     ['02','A comprehensive care plan','Clinical care is tailored to you. Your plan may combine psychiatric support with therapy, and it always comes with the reasoning explained — what we expect, how long it takes and what we do if it does not work.','M20 6L9 17l-5-5'],
-    ['03','Care that keeps adjusting','Psychiatry is not one appointment. We follow up, watch what changes, and adjust — including moving to a different approach when the current one has gone as far as it can.','M4 12h3l2-5 3 10 2.5-7 1.5 4h4'],
+    ['03','Care that keeps adjusting','Psychiatric care doesn’t end after one appointment. We follow up, watch what changes, and adjust — including moving to a different approach when the current one has gone as far as it can.','M4 12h3l2-5 3 10 2.5-7 1.5 4h4'],
 ];
 
 /* [title, description, bullets, image src, object-fit, object-position (optional),
@@ -130,9 +130,9 @@ $faqs = [
     ['Do you see adults, children or both?','We treat adults and adolescents. The evaluation establishes whether our care is the right fit, and we refer on where someone would be better served elsewhere.'],
     ['Is psychiatric care covered by insurance?','Yes. We accept most major commercial insurance companies as well as Tricare and Triwest. We do not accept Medicaid.<br><br><strong>California:</strong> Anthem Blue Cross, Blue Shield of California, Magellan / MHSA, Cigna, Aetna, Optum, United Healthcare, Oscar, Tricare-West, Triwest CCN, Healthnet, and MHN.<br><br><strong>Texas:</strong> Blue Cross Blue Shield of Tx (BCBS), Humana, Magellan / MHSA, Cigna, Aetna, Optum, United Healthcare, Oscar, Tricare-East, Triwest CCN, Healthnet, and MHN.<br><br>Free benefits verification and competitive cash-pay options are available.'],
     ['Can I be seen by video instead of in person?','Yes. Evaluations, follow-up visits and therapy can all be done by video, and you can move between in-person and virtual appointments as suits you.'],
-    ['How long is the first appointment?','About sixty minutes. That is the appointment the diagnosis rests on, so it is not rushed. Follow-up appointments are shorter.'],
+    ['How long is the first appointment?','About sixty minutes. Your initial evaluation helps establish an accurate diagnosis and treatment plan, so we take the time to understand your symptoms, history, and concerns.'],
     ['What does my treatment plan include?','Every treatment plan is tailored to your individual needs. Options are discussed transparently, and your care plan may include therapy, clinical guidance, or specialized treatment. You get the full reasoning, expected timeline and alternatives.'],
-    ['What if previous treatments have not worked for me before?','That is a common reason people come to us. Where previous treatments have not produced relief, advanced options become relevant — such as TMS therapy, which is non-invasive and covered by most major insurance plans.'],
+    ['What if previous treatments have not worked for me before?','That is a common reason people come to us. When previous treatments have not provided adequate relief, additional treatment options may be considered, including TMS therapy when clinically appropriate. Coverage varies by insurance plan.'],
 ];
 
 /* Accepted insurance. [display name, logo file in assets/insurances/ or null, note, state (both|ca|tx)]
@@ -335,7 +335,7 @@ tailwind.config = {
       <p class="hidden sm:block">Accepting new patients &amp; most major insurance plans</p>
       <div class="flex items-center gap-6 mx-auto sm:mx-0">
         <span class="hidden md:inline">15 clinics across CA &amp; TX</span>
-        <a href="tel:<?= $PHONE_RAW ?>" class="font-semibold text-white hover:text-med-200 transition"><?= $PHONE ?></a>
+        <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-1.5 font-semibold text-white hover:text-med-200 transition"><svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-med-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><?= $PHONE ?></a>
       </div>
     </div>
   </div>
@@ -366,7 +366,7 @@ tailwind.config = {
           <?= $PHONE ?>
         </a>
         <a href="#book" class="hidden sm:inline-flex items-center gap-2 rounded-lg bg-med-500 px-5 py-2.5 text-[14.5px] font-semibold text-white hover:bg-med-400 transition">
-          Book Appointment
+          Book an Appointment
         </a>
         <button id="burger" class="nav-burger lg:hidden grid place-items-center h-11 w-11 rounded-lg border border-white/20 text-white" aria-label="Menu" aria-expanded="false">
           <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -382,7 +382,7 @@ tailwind.config = {
       <a href="<?= $l[1] ?>" class="nav-mlink py-3 text-[16px] font-medium text-white/80 border-b border-white/10"><?= $l[0] ?></a>
       <?php endforeach; ?>
       <div class="mt-5 grid gap-3">
-        <a href="tel:<?= $PHONE_RAW ?>" class="nav-mphone rounded-lg border border-white/25 py-3.5 text-center text-[15px] font-semibold text-white"><?= $PHONE ?></a>
+        <a href="tel:<?= $PHONE_RAW ?>" class="nav-mphone flex items-center justify-center gap-2 rounded-lg border border-white/25 py-3.5 text-center text-[15px] font-semibold text-white"><svg viewBox="0 0 24 24" class="h-4 w-4 text-med-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><?= $PHONE ?></a>
         <a href="#book" class="rounded-lg bg-med-500 py-3.5 text-center text-[15px] font-semibold text-white">Book Appointment</a>
       </div>
     </div>
@@ -419,7 +419,7 @@ tailwind.config = {
         <div class="mt-8 flex flex-wrap items-center gap-3">
           <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-white/35 bg-white/5 px-6 py-3.5 text-[15px] font-semibold text-white backdrop-blur-sm hover:bg-white/15 transition">
             <svg viewBox="0 0 24 24" class="h-4 w-4 text-med-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
-            Call <?= $PHONE ?>
+            <?= $PHONE ?>
           </a>
           <a href="#approach" class="inline-flex items-center gap-2 text-[15px] font-semibold text-white/80 hover:text-white transition">
             How our care works
@@ -439,8 +439,8 @@ tailwind.config = {
               </div>
               <p class="mt-5 text-[1.4rem] font-bold tracking-tightest text-white">Request received</p>
               <p class="mt-3 text-[15px] leading-relaxed text-steel-200 max-w-sm mx-auto">
-                A care coordinator will contact you shortly. To speak with someone now, call
-                <a href="tel:<?= $PHONE_RAW ?>" class="font-semibold text-white underline underline-offset-4"><?= $PHONE ?></a>.
+                A care coordinator will contact you shortly. To speak with someone now,
+                <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-1 font-semibold text-white underline underline-offset-4"><svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-med-300 inline" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><?= $PHONE ?></a>.
               </p>
             </div>
           <?php else: ?>
@@ -574,11 +574,12 @@ tailwind.config = {
 
         <div class="mt-9 flex flex-wrap items-center gap-3">
           <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-med-600 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-med-700 transition">
-            Book a psychiatric evaluation
+            Book a Psychiatric Evaluation
             <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-steel-300 px-6 py-3.5 text-[15px] font-semibold text-navy hover:border-med-500 hover:text-med-600 transition">
-            Call <?= $PHONE ?>
+            <svg viewBox="0 0 24 24" class="h-4 w-4 text-med-600" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+            <?= $PHONE ?>
           </a>
         </div>
       </div>
@@ -669,11 +670,12 @@ tailwind.config = {
 
     <div class="reveal mt-9 flex flex-wrap items-center gap-3">
       <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-med-600 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-med-700 transition">
-        Request a free consultation
+        Request a Free Consultation
         <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
       <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-steel-300 px-6 py-3.5 text-[15px] font-semibold text-navy hover:border-med-500 hover:text-med-600 transition">
-        Call <?= $PHONE ?>
+        <svg viewBox="0 0 24 24" class="h-4 w-4 text-med-600" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+        <?= $PHONE ?>
       </a>
     </div>
   </div>
@@ -739,11 +741,12 @@ tailwind.config = {
       </p>
       <div class="flex flex-wrap gap-3 shrink-0">
         <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-med-600 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-med-700 transition">
-          Request a free consultation
+          Request a Free Consultation
           <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
         <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-steel-300 bg-white px-6 py-3.5 text-[15px] font-semibold text-navy hover:border-med-500 hover:text-med-600 transition">
-          Call <?= $PHONE ?>
+          <svg viewBox="0 0 24 24" class="h-4 w-4 text-med-600" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+          <?= $PHONE ?>
         </a>
       </div>
     </div>
@@ -824,8 +827,8 @@ tailwind.config = {
           </p>
         </div>
         <div class="flex flex-wrap gap-3">
-          <a href="#book" class="inline-flex items-center rounded-md bg-white px-6 py-3.5 text-[15px] font-semibold text-navy hover:bg-steel-100 transition">Request a consultation</a>
-          <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center rounded-md border border-white/35 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-white/10 transition"><?= $PHONE ?></a>
+          <a href="#book" class="inline-flex items-center rounded-md bg-white px-6 py-3.5 text-[15px] font-semibold text-navy hover:bg-steel-100 transition">Request a Consultation</a>
+          <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-white/35 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-white/10 transition"><svg viewBox="0 0 24 24" class="h-4 w-4 text-med-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><?= $PHONE ?></a>
         </div>
       </div>
     </div>
@@ -883,7 +886,8 @@ tailwind.config = {
         <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
       <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-steel-300 px-6 py-3.5 text-[15px] font-semibold text-navy hover:border-med-500 hover:text-med-600 transition">
-        Call <?= $PHONE ?>
+        <svg viewBox="0 0 24 24" class="h-4 w-4 text-med-600" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+        <?= $PHONE ?>
       </a>
     </div>
   </div>
@@ -916,7 +920,7 @@ tailwind.config = {
           </button>
         </div>
         <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-med-600 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-med-700 transition">
-          Request a free consultation
+          Request a Free Consultation
           <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
@@ -977,7 +981,7 @@ tailwind.config = {
         <p class="mt-3 text-[14.5px] leading-relaxed text-steel-600">
          We handle the paperwork with your insurer and provide an estimate of your expected out-of-pocket cost.
         </p>
-        <a href="#book" class="mt-6 block rounded-md bg-med-600 py-3.5 text-center text-[15px] font-semibold text-white hover:bg-med-700 transition">Check my coverage</a>
+        <a href="#book" class="mt-6 block rounded-md bg-med-600 py-3.5 text-center text-[15px] font-semibold text-white hover:bg-med-700 transition">Check My Coverage</a>
       </div>
     </div>
 
@@ -1067,11 +1071,12 @@ function filterInsurances(state) {
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-med-600 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-med-700 transition">
-            Request a free consultation
+            Request a Free Consultation
             <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-steel-300 px-6 py-3.5 text-[15px] font-semibold text-navy hover:border-med-500 hover:text-med-600 transition">
-            Call <?= $PHONE ?>
+            <svg viewBox="0 0 24 24" class="h-4 w-4 text-med-600" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+            <?= $PHONE ?>
           </a>
         </div>
         <figure class="mt-8 hidden lg:block overflow-hidden rounded-lg border border-steel-200 bg-white">
@@ -1119,7 +1124,8 @@ function filterInsurances(state) {
           Request a Consultation
           <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center rounded-md border border-white/30 px-7 py-4 text-[15px] font-semibold text-white hover:bg-white/10 transition">
+        <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-white/30 px-7 py-4 text-[15px] font-semibold text-white hover:bg-white/10 transition">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 text-med-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
           <?= $PHONE ?>
         </a>
       </div>
@@ -1140,7 +1146,7 @@ function filterInsurances(state) {
           Customized, comprehensive mental health care from psychiatrists, psychologists,
           psychiatric nurse practitioners and licensed therapists.
         </p>
-        <a href="tel:<?= $PHONE_RAW ?>" class="mt-6 inline-block text-[1.4rem] font-bold tracking-tightest text-white hover:text-med-200 transition"><?= $PHONE ?></a>
+        <a href="tel:<?= $PHONE_RAW ?>" class="mt-6 inline-flex items-center gap-2 text-[1.4rem] font-bold tracking-tightest text-white hover:text-med-200 transition"><svg viewBox="0 0 24 24" class="h-5 w-5 text-med-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><?= $PHONE ?></a>
 
         <address class="mt-5 flex items-start gap-2.5 not-italic text-[14.5px] leading-relaxed">
           <svg viewBox="0 0 24 24" class="h-4 w-4 mt-1 shrink-0 text-med-300" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1200,7 +1206,7 @@ function filterInsurances(state) {
 
 <!-- ═══ MOBILE STICKY CTA ═══ -->
 <div class="lg:hidden fixed bottom-0 inset-x-0 z-50 border-t border-steel-200 bg-white px-4 py-3 flex gap-3">
-  <a href="tel:<?= $PHONE_RAW ?>" class="flex-1 inline-flex items-center justify-center rounded-md border border-steel-300 py-3.5 text-[14.5px] font-semibold text-navy">Call</a>
+  <a href="tel:<?= $PHONE_RAW ?>" class="flex-1 inline-flex items-center justify-center gap-1.5 rounded-md border border-steel-300 py-3.5 text-[14.5px] font-semibold text-navy"><svg viewBox="0 0 24 24" class="h-4 w-4 text-med-600" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg> <?= $PHONE ?></a>
   <a href="#book" class="flex-[1.5] inline-flex items-center justify-center rounded-md bg-med-600 py-3.5 text-[14.5px] font-semibold text-white">Request Consultation</a>
 </div>
 <div class="lg:hidden h-[74px]"></div>
