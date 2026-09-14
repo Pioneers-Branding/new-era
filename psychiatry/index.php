@@ -490,7 +490,7 @@ tailwind.config = {
               </label>
 
               <button class="mt-1 w-full inline-flex items-center justify-center gap-2.5 rounded-md bg-med-600 px-6 py-3.5 text-[15.5px] font-semibold text-white hover:bg-med-700 transition">
-                Request my free consultation
+                Request a Free Consultation
                 <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </button>
 
@@ -766,7 +766,7 @@ tailwind.config = {
         </p>
       </div>
       <a href="#book" class="shrink-0 inline-flex items-center gap-2.5 rounded-md bg-white px-7 py-4 text-[15px] font-semibold text-navy hover:bg-steel-100 transition">
-        Book an evaluation
+        Book an Evaluation
         <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
@@ -791,7 +791,7 @@ tailwind.config = {
         </p>
       </div>
       <a href="#book" class="shrink-0 inline-flex items-center gap-2.5 rounded-md bg-med-600 px-7 py-3.5 text-[15px] font-semibold text-white hover:bg-med-700 transition">
-        Begin with step one
+        Begin with Step One
         <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
@@ -882,7 +882,7 @@ tailwind.config = {
 
     <div class="reveal mt-9 flex flex-wrap items-center gap-3">
       <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-med-600 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-med-700 transition">
-        Book an appointment
+        Book an Appointment
         <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
       <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-steel-300 px-6 py-3.5 text-[15px] font-semibold text-navy hover:border-med-500 hover:text-med-600 transition">
