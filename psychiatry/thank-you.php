@@ -14,9 +14,8 @@ $LOGO_WHITE = $BASE . 'assets/logo/new-era-logo-white.png';
 $INS_DIR = $BASE . 'assets/insurances/';
 $insurers = [
     ['Aetna',                               'aetna.webp'],
-    ['Anthem Blue Cross',                   'anthem.webp'],
+    ['Baylor Scott & White',                'baylor-scott-white.png'],
     ['Blue Cross Blue Shield of Tx (BCBS)', null],
-    ['Blue Shield of California',            'blue-california.webp'],
     ['Cigna',                               'cigna.webp'],
     ['Healthnet',                           'health-net.png'],
     ['Humana',                               null],
@@ -24,7 +23,6 @@ $insurers = [
     ['MHN',                                 'mhn.webp'],
     ['Optum',                               'optum.webp'],
     ['Oscar',                               null],
-    ['Tricare-West',                        'tricare.webp'],
     ['Tricare-East',                        'tricare.webp'],
     ['Triwest CCN',                         'triwest.png'],
     ['United Healthcare',                   'unitedhealthcare.png'],
@@ -93,7 +91,7 @@ $insurers = [
   <div class="mx-auto max-w-[82rem] px-6 h-10 flex items-center justify-between border-b border-white/10 text-[13px] text-steel-300">
     <p class="hidden sm:block">Accepting new patients &amp; most major insurance plans</p>
     <div class="flex items-center gap-6 mx-auto sm:mx-0">
-      <span class="hidden md:inline">15 clinics across CA &amp; TX</span>
+      <span class="hidden md:inline">Located in The Woodlands, TX</span>
       <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-1.5 font-semibold text-white hover:text-med-200 transition"><svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-med-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><?= $PHONE ?></a>
     </div>
   </div>
@@ -109,7 +107,7 @@ $insurers = [
           <svg viewBox="0 0 24 24" class="h-4 w-4 text-med-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
           <?= $PHONE ?>
         </a>
-        <a href="index.php" class="inline-flex items-center gap-2 rounded-lg bg-med-600 px-4 py-2 text-[14px] font-semibold text-white hover:bg-med-700 transition">
+        <a href="index.php" class="inline-flex items-center gap-2 rounded-lg bg-[#ED8B00] px-4 py-2 text-[14px] font-bold text-white hover:bg-[#D97E00] shadow-sm transition">
           <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
           Back to Home
         </a>
@@ -130,8 +128,8 @@ $insurers = [
         </svg>
       </div>
 
-      <span class="eyebrow text-med-600">Consultation Request Received</span>
-      <h1 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tightest text-navy">
+      <span class="eyebrow text-steel-600">Consultation Request Received</span>
+      <h1 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tightest text-[#2774AE]">
         Thank You for Reaching Out!
       </h1>
       <p class="mt-4 text-base sm:text-lg text-steel-600 max-w-2xl mx-auto leading-relaxed">
@@ -150,7 +148,7 @@ $insurers = [
           </div>
         </div>
         <div class="mt-5 flex flex-col sm:flex-row items-center gap-4">
-          <a href="tel:<?= $PHONE_RAW ?>" class="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-med-600 px-6 py-3 text-[15px] font-semibold text-white hover:bg-med-500 transition">
+          <a href="tel:<?= $PHONE_RAW ?>" class="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-[#ED8B00] px-6 py-3 text-[15px] font-bold text-white hover:bg-[#D97E00] shadow-md transition">
             <svg viewBox="0 0 24 24" class="h-4 w-4 text-white" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
             <?= $PHONE ?>
           </a>
@@ -160,7 +158,7 @@ $insurers = [
 
       <!-- Roadmap / Next Steps -->
       <div class="mt-12 border-t border-steel-200 pt-10 text-left">
-        <h3 class="text-lg font-bold text-navy text-center mb-8">What Happens Next?</h3>
+        <h3 class="text-lg font-bold text-[#2774AE] text-center mb-8">What Happens Next?</h3>
         
         <div class="grid sm:grid-cols-3 gap-6">
           <div class="rounded-lg border border-steel-200 bg-steel-50 p-5">
@@ -179,7 +177,7 @@ $insurers = [
               Intake Consultation
             </div>
             <p class="text-xs leading-relaxed text-steel-600">
-              Our clinical coordinator reviews your health history and routes you to the nearest of our 15 clinics.
+              Our clinical coordinator reviews your health history and confirms your appointment at our Woodlands clinic.
             </p>
           </div>
 

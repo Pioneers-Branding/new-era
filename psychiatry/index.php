@@ -78,24 +78,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['lead_form'])) {
     }
 }
 
-/* [title, description, image id] */
+/* [title, description, icon file] */
 $conditions = [
-    ['Depression','More than a bad or sad mood — a real disorder with physical and mental symptoms.','1531854253260-44f0d06e3d26'],
-    ['Anxiety','Intense fear and worry that becomes exhausting to live with, day after day.','1757744705465-ea08b0ddc38a'],
-    ['ADHD','Difficulty with attention, focus and follow-through, in adults as well as children.','1573497019940-1c28c88b4f3e'],
-    ['Bipolar Disorder','Shifts in mood and energy that need careful diagnosis and steady management.','1623717217554-72ca676de535'],
-    ['PTSD','Trauma of many forms can lead to post-traumatic stress disorder.','1564564244660-5d73c057f2d2'],
-    ['OCD','Obsessive-compulsive disorder built on repetitive, intrusive thoughts.','1592234789031-94bf65f630ed'],
-    ['Postpartum Depression','A form of depression that often affects new mothers after childbirth.','1542385151-efd9000785a0'],
-    ['Insomnia &amp; Sleep','Sleep that will not come or will not hold, often tangled with mood and anxiety.','1520206183501-b80df61043c2'],
+    ['Depression','More than a bad or sad mood — a real disorder with physical and mental symptoms.','depression.png'],
+    ['Anxiety','Intense fear and worry that becomes exhausting to live with, day after day.','anxiety.png'],
+    ['ADHD','Difficulty with attention, focus and follow-through, in adults as well as children.','adhd.png'],
+    ['Bipolar Disorder','Shifts in mood and energy that need careful diagnosis and steady management.','bipolar.png'],
+    ['PTSD','Trauma of many forms can lead to post-traumatic stress disorder.','ptsd.png'],
+    ['OCD','Obsessive-compulsive disorder built on repetitive, intrusive thoughts.','ocd.png'],
+    ['Postpartum Depression','A form of depression that often affects new mothers after childbirth.','postpartum.png'],
+    ['Migraines','Severe, throbbing headaches often complicated by chronic stress and sensory overload.','migraines.png'],
 ];
 
 /* [number, timing tag, title, body] */
 $steps = [
-    ['01','Same day','Free consultation','Speak with our team the day you call. We answer your questions, explain how we work and verify your insurance benefits at no cost.'],
-    ['02','Within 1–5 days','Psychiatric evaluation','A full evaluation with a board-certified psychiatrist or psychiatric nurse practitioner: your history, your symptoms, what has already been tried and what has not.'],
-    ['03','Same visit','Diagnosis and plan','You leave with a diagnosis explained in plain language and a written plan — therapy, clinical care, or both, with the reasoning behind each choice.'],
-    ['04','Ongoing','Review and adjust','Follow-up appointments track what is working, and the plan is revised as your needs and your life change.'],
+    ['01','Same day','Free consultation','Speak with our friendly team. We’ll answer your questions and check your insurance benefits for free.'],
+    ['02','Within 1–5 days','Psychiatric evaluation','Meet with a compassionate specialist to discuss your symptoms and goals in an unhurried space.'],
+    ['03','Same visit','Diagnosis and plan','Leave your first visit with clear answers and a personalized care plan tailored to your life.'],
+    ['04','Ongoing','Review and adjust','We stay by your side with regular check-ins, adjusting your care as you heal.'],
 ];
 
 /* What sets the care apart — three points, in place of the TMS mechanism */
@@ -119,7 +119,7 @@ $services = [
 ];
 
 $stats = [
-    ['15','Clinics across California and Texas'],
+    ['1','Convenient Woodlands Clinic'],
     ['5','Days or less to your first evaluation'],
     ['60','Minutes for your first appointment'],
     ['0','Cost to verify your insurance benefits'],
@@ -128,7 +128,7 @@ $stats = [
 $faqs = [
     ['How quickly can I be seen?','We can usually schedule a free consultation the same day you call, with a full psychiatric evaluation within one to five business days.'],
     ['Do you see adults, children or both?','We treat adults and adolescents. The evaluation establishes whether our care is the right fit, and we refer on where someone would be better served elsewhere.'],
-    ['Is psychiatric care covered by insurance?','Yes. We accept most major commercial insurance companies as well as Tricare and Triwest. We do not accept Medicaid.<br><br><strong>California:</strong> Anthem Blue Cross, Blue Shield of California, Magellan / MHSA, Cigna, Aetna, Optum, United Healthcare, Oscar, Tricare-West, Triwest CCN, Healthnet, and MHN.<br><br><strong>Texas:</strong> Blue Cross Blue Shield of Tx (BCBS), Humana, Magellan / MHSA, Cigna, Aetna, Optum, United Healthcare, Oscar, Tricare-East, Triwest CCN, Healthnet, and MHN.<br><br>Free benefits verification and competitive cash-pay options are available.'],
+    ['Is psychiatric care covered by insurance?','Yes. We accept most major commercial insurance companies as well as Tricare-East and Triwest. We do not accept Medicaid.<br><br><strong>Accepted Plans in Texas:</strong> Blue Cross Blue Shield of Tx (BCBS), Humana, Magellan / MHSA, Cigna, Aetna, Optum, United Healthcare, Oscar, Tricare-East, Triwest CCN, Healthnet, and MHN.<br><br>Free benefits verification and competitive cash-pay options are available.'],
     ['Can I be seen by video instead of in person?','Yes. Evaluations, follow-up visits and therapy can all be done by video, and you can move between in-person and virtual appointments as suits you.'],
     ['How long is the first appointment?','About sixty minutes. Your initial evaluation helps establish an accurate diagnosis and treatment plan, so we take the time to understand your symptoms, history, and concerns.'],
     ['What does my treatment plan include?','Every treatment plan is tailored to your individual needs. Options are discussed transparently, and your care plan may include therapy, clinical guidance, or specialized treatment. You get the full reasoning, expected timeline and alternatives.'],
@@ -145,34 +145,39 @@ $INS_LOGOS = false;
 /* Patient reviews — published verbatim from Google reviews of our clinics,
    newest first. Paragraph breaks are <br><br>. [name, meta, when, review] */
 $reviews = [
-    ['Shannon Collins','Local Guide · 107 reviews','3 weeks ago',
-     'I feel that I am heard and understood in my treatment. I\'ve tried a variety of treatment options and finally found a plan that works for me and my health. Laura Beaufford takes her time to carefully assess my case and diagnoses to create a specific treatment plan for me that is working. Finding a doctor that cares about what they are doing is important. Thankful to be treated as a person and not just another patient.'],
-    ['Wendy Douglas','Local Guide · 24 reviews','5 months ago',
-     'So easy to take great care of your mental health, scheduling is totally stress free, online appts make is stress free as well. I thought I was going to lose my mind when my last psychiatrist dropped me because I kept missing appts. I found ANEW the next day and this was truly a blessing. The providers take excellent care of me, I feel comfortable talking to them&hellip; Very happy patient here!!!'],
-    ['Madeline Rowe','Local Guide · 19 reviews','10 months ago',
-     'Laura Beaufford has been such a blessing in my mental health journey. She brings an incredible balance of professionalism and heart &mdash; she truly cares. Laura\'s compassion shines through in every session, and her ability to make you feel safe and supported while also being proactive and knowledgeable is remarkable. She listens deeply, remembers details, and tailors care with genuine thoughtfulness. It\'s clear she\'s passionate about helping her patients heal and thrive. I always leave our sessions feeling lighter, understood, and hopeful. Anew Era TMS is exceptional because of clinicians like her.'],
-    ['Gloria Lopez','2 reviews','a year ago',
-     'I have the best psychiatrist! Amanda is fantastic!! She was out on leave and I had to visit with someone else and it was not the same!! She knows my patterns even better than I do. She\'s straight forward, caring, and attentive! Love her!!!'],
+    ['Veloci R.',    'Westlake, TX',       'Aug 2026',
+     'Finally made the decision to get my mental health together and found a brilliant psychiatrist. Progress is noticeable to myself and others in my life so it\'s not just me. Calming environment and office. I\'m not out of the woods yet, but I can finally see a path. You\'re gonna like it here, I promise.'],
+    ['Sara P.',      'Cedar Park, TX',     'Aug 2026',
+     'Thank you Anew Era TMS & Psychiatry! I am finally coming out of a sad, dreary state of existence. I\'m looking forward a more joyful rest of my life :)'],
+    ['Becky V.',     'Grapevine, TX',      'Aug 2026',
+     'I recommend Anew ERA TMS & Psychiatry. They have been a huge help to me. They don\'t see you one time then ignore you. Any question I have or prescription refill request is always handled in a timely manner.'],
+    ['Carlos F.',    'Central Austin, TX', 'Aug 2026',
+     'A New Era has been a huge help for me, especially during what I can call the hardest season of my life. Both the NP helping me regulate meds and Rickie with therapy have been an absolute Godsend!!'],
+    ['Shannon C.',   'Central Austin, TX', 'Aug 2026',
+     'I feel that I am heard and understood in my treatment. I\'ve tried a variety of medications and finally found a plan that works for me and my health. Laura Beaufford takes her time to carefully assess my case and diagnoses to create a specific treatment plan for me that is working. Finding a doctor that cares about what they are doing is important. Thankful to be treated as a person and not just another patient.'],
+    ['Brenda G.',    'Westlake, TX',       'Aug 2026',
+     'The Dr and the Office staff were both kind knowledgeable and helpful. I was happy the Dr was able to give me an update on taking my medication. He made me feel confident with the new regimine and talked with me and understood my situation and the outcome was exactly what I had been looking for a long time. I would recommend this office and Dr SHI to others.'],
+    ['Sam L.',       'Central Dallas, TX', 'Jul 2026',
+     'The Anew Era team here is absolutely wonderful! From the warm greetings at the front desk, my medication management appointments with Ms Tammy, and my TMS appointments with Ms Armani, it’s always a comforting and reassuring experience from start to finish here. Very much recommended! 😊'],
+    ['Jamie P.',     'Central Dallas, TX', 'Jun 2026',
+     'Dr Cudjoe is exceptional - she is very kind & caring and ensures I have the meds I need for my condition. She always makes me feel like I am a priority.'],
 ];
 
 
 $insurers = [
-    ['Aetna',                               'aetna.webp',               '',           'both'],
-    ['Anthem Blue Cross',                   'anthem.webp',              'California', 'ca'],
-    ['Baylor Scott & White',                'baylor-scott-white.png',   'Texas',      'tx'],
-    ['Blue Cross Blue Shield of Tx (BCBS)', null,                      'Texas',      'tx'],
-    ['Blue Shield of California',            'blue-california.webp',     'California', 'ca'],
-    ['Cigna',                               'cigna.webp',               '',           'both'],
-    ['Healthnet',                           'health-net.png',           '',           'both'],
-    ['Humana',                               null,                      'Texas',      'tx'],
-    ['Magellan / MHSA',                     'megallan-health-logo.png', '',           'both'],
-    ['MHN',                                 'mhn.webp',                 '',           'both'],
-    ['Optum',                               'optum.webp',               '',           'both'],
-    ['Oscar',                               'oscar.png',                      '',           'both'],
-    ['Tricare-West',                        'tricare.webp',             'California', 'ca'],
-    ['Tricare-East',                        'tricare.webp',             'Texas',      'tx'],
-    ['Triwest CCN',                         'triwest.png',              '',           'both'],
-    ['United Healthcare',                   'unitedhealthcare.png',     '',           'both'],
+    ['Aetna',                               'aetna.webp'],
+    ['Baylor Scott & White',                'baylor-scott-white.png'],
+    ['Blue Cross Blue Shield of Tx (BCBS)', null],
+    ['Cigna',                               'cigna.webp'],
+    ['Healthnet',                           'health-net.png'],
+    ['Humana',                               null],
+    ['Magellan / MHSA',                     'megallan-health-logo.png'],
+    ['MHN',                                 'mhn.webp'],
+    ['Optum',                               'optum.webp'],
+    ['Oscar',                               'oscar.png'],
+    ['Tricare-East',                        'tricare.webp'],
+    ['Triwest CCN',                         'triwest.png'],
+    ['United Healthcare',                   'unitedhealthcare.png'],
 ];
 ?>
 <!DOCTYPE html>
@@ -205,13 +210,11 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        navy:  { DEFAULT:'#0F2440', 900:'#0A1A30', 800:'#132C4E', 700:'#1B3A63', 600:'#27507F' },
-        steel: { 50:'#F4F6F9', 100:'#E9EDF3', 200:'#D8DFE9', 300:'#B9C4D3', 400:'#8494AB', 500:'#5B6B82', 600:'#475569' },
-        /* med-600 is the logo's ocean blue; the rest of the scale is built around it. */
-        med:   { 50:'#EFF7FB', 100:'#D7EBF5', 200:'#AFD5E9', 300:'#7BB8D6', 400:'#3F93BF', 500:'#1573A6', 600:'#0F639B', 700:'#0B4E7B' },
-        /* The logo's orange. 2.4:1 on white, so it is never used for text on a light
-           surface — only on navy, or as a non-text rule. */
-        brand: { orange:'#E8922F', green:'#86BE52' },
+        pps:    { DEFAULT:'#2774AE', 700:'#1F5E8E', 600:'#2774AE', 500:'#3B84BE' },
+        navy:   { DEFAULT:'#0F2440', 900:'#0A1A30', 800:'#132C4E', 700:'#1B3A63', 600:'#27507F' },
+        steel:  { 50:'#F4F6F9', 100:'#E9EDF3', 200:'#D8DFE9', 300:'#B9C4D3', 400:'#8494AB', 500:'#5B6B82', 600:'#475569' },
+        med:    { 50:'#EFF7FB', 100:'#D7EBF5', 200:'#AFD5E9', 300:'#7BB8D6', 400:'#3F93BF', 500:'#1573A6', 600:'#2774AE', 700:'#1F5E8E' },
+        brand:  { orange:'#ED8B00', green:'#84BD00', blue:'#2774AE' },
         sky:   { 400:'#38BDF8', 500:'#0EA5E9', 600:'#0284C7' },
       },
       fontFamily: { sans:['"IBM Plex Sans"','system-ui','sans-serif'] },
@@ -295,7 +298,7 @@ tailwind.config = {
       max-width:84%;
     }
   }
-  .rule{ border-top:3px solid #E8922F; width:44px; }
+  .rule{ border-top:3px solid #2774AE; width:44px; }
 
   /* ── Header: transparent over the hero → white once scrolled ───────────── */
   #topbar{ max-height:2.5rem; opacity:1; transition:max-height .3s ease, opacity .25s ease; overflow:hidden; }
@@ -334,7 +337,7 @@ tailwind.config = {
     <div class="mx-auto max-w-[82rem] px-6 h-10 flex items-center justify-between">
       <p class="hidden sm:block">Accepting new patients &amp; most major insurance plans</p>
       <div class="flex items-center gap-6 mx-auto sm:mx-0">
-        <span class="hidden md:inline">15 clinics across CA &amp; TX</span>
+        <span class="hidden md:inline">Located in The Woodlands, TX</span>
         <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-1.5 font-semibold text-white hover:text-med-200 transition"><svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-med-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><?= $PHONE ?></a>
       </div>
     </div>
@@ -391,12 +394,12 @@ tailwind.config = {
 
 
 <!-- ═══ HERO (copy + consultation form) ═══ -->
-<section class="relative isolate overflow-hidden bg-navy">
+<section class="relative isolate overflow-hidden bg-[#0C1A29]">
 
   <img src="<?= htmlspecialchars($HERO_BG) ?>" alt=""
        class="absolute inset-0 -z-10 h-full w-full object-cover object-center">
-  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-navy-900/85 via-navy-900/65 to-navy-900/30"></div>
-  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-navy-900/75 via-transparent to-navy-900/45"></div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#0C1A29]/75 via-[#0C1A29]/40 to-transparent"></div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-[#0C1A29]/40 via-transparent to-transparent"></div>
 
   <div class="mx-auto max-w-[82rem] px-6 pt-[8.5rem] pb-0 lg:pt-[10rem]">
     <div class="grid lg:grid-cols-[1.02fr_.98fr] gap-10 lg:gap-14 items-start">
@@ -421,10 +424,10 @@ tailwind.config = {
             <svg viewBox="0 0 24 24" class="h-4 w-4 text-med-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
             <?= $PHONE ?>
           </a>
-          <a href="#approach" class="inline-flex items-center gap-2 text-[15px] font-semibold text-white/80 hover:text-white transition">
+          <!-- <a href="#approach" class="inline-flex items-center gap-2 text-[15px] font-semibold text-white/80 hover:text-white transition">
             How our care works
             <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+          </a> -->
         </div>
 
       </div>
@@ -485,11 +488,11 @@ tailwind.config = {
               <label class="block">
                 <span class="text-[12.5px] font-semibold text-white">Service of interest</span>
                 <select name="interest" style="color-scheme:dark" class="mt-1.5 w-full rounded-md border border-white/25 bg-white/10 px-3.5 py-2.5 text-[15px] text-white outline-none focus:border-white/60 focus:bg-white/15 focus:ring-2 focus:ring-white/20 transition">
-                  <?php foreach (['Psychiatric evaluation','Ongoing psychiatric care','Psychotherapy','Not sure yet'] as $i): ?><option class="bg-navy-800 text-white"><?= $i ?></option><?php endforeach; ?>
+                  <?php foreach (['Psychiatric evaluation','Ongoing psychiatric care','Psychotherapy','TMS','Medication Management','Talk Therapy','Not sure yet'] as $i): ?><option class="bg-navy-800 text-white"><?= $i ?></option><?php endforeach; ?>
                 </select>
               </label>
 
-              <button class="mt-1 w-full inline-flex items-center justify-center gap-2.5 rounded-md bg-med-600 px-6 py-3.5 text-[15.5px] font-semibold text-white hover:bg-med-700 transition">
+              <button class="mt-1 w-full inline-flex items-center justify-center gap-2.5 rounded-md bg-[#ED8B00] px-6 py-3.5 text-[15.5px] font-bold text-white hover:bg-[#D97E00] shadow-md transition">
                 Request a Free Consultation
                 <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </button>
@@ -505,7 +508,7 @@ tailwind.config = {
 
     <!-- metric bar -->
     <dl class="reveal mt-12 lg:mt-14 grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/15 border-t border-x border-white/15">
-      <?php foreach ([['Within 5 days','Appointment availability'],['60 min','Initial evaluation'],['Flexible Visits','In person or by video'],['Most Major Plans','Insurance accepted']] as $h): ?>
+      <?php foreach ([['Within 72 hours','Appointment availability'],['60 min','Initial evaluation'],['Flexible Visits','In person or by video'],['Most Major Plans','Insurance accepted']] as $h): ?>
       <div class="bg-navy/60 backdrop-blur-md px-5 py-4">
         <dt class="text-[20px] font-bold leading-none text-white"><?= $h[0] ?></dt>
         <dd class="mt-2 text-[12.5px] leading-snug text-steel-300"><?= $h[1] ?></dd>
@@ -546,8 +549,8 @@ tailwind.config = {
 
       <div class="reveal">
         <div class="rule"></div>
-        <span class="mt-5 block eyebrow text-med-600">WHY PATIENTS CHOOSE ANEW ERA</span>
-        <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-navy">
+        <span class="mt-5 block eyebrow text-steel-600">WHY PATIENTS CHOOSE ANEW ERA</span>
+        <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-[#2774AE]">
           Psychiatric Care That Gives You Time to Be Heard
         </h2>
         <p class="mt-6 text-[16.5px] leading-[1.75] text-steel-600">
@@ -566,19 +569,19 @@ tailwind.config = {
             ['Timely Access to Care','Appointments often available within five days.'],
           ] as $p): ?>
           <div class="bg-white p-5">
-            <h3 class="text-[15px] font-semibold text-navy"><?= $p[0] ?></h3>
+            <h3 class="text-[15px] font-bold text-[#2774AE]"><?= $p[0] ?></h3>
             <p class="mt-1.5 text-[13.5px] leading-relaxed text-steel-500"><?= $p[1] ?></p>
           </div>
           <?php endforeach; ?>
         </div>
 
         <div class="mt-9 flex flex-wrap items-center gap-3">
-          <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-med-600 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-med-700 transition">
+          <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-[#ED8B00] px-6 py-3.5 text-[15px] font-bold text-white hover:bg-[#D97E00] shadow-sm transition">
             Book a Psychiatric Evaluation
             <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-steel-300 px-6 py-3.5 text-[15px] font-semibold text-navy hover:border-med-500 hover:text-med-600 transition">
-            <svg viewBox="0 0 24 24" class="h-4 w-4 text-med-600" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+          <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-steel-300 px-6 py-3.5 text-[15px] font-semibold text-[#2774AE] hover:border-[#2774AE] transition">
+            <svg viewBox="0 0 24 24" class="h-4 w-4 text-[#2774AE]" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
             <?= $PHONE ?>
           </a>
         </div>
@@ -595,9 +598,9 @@ tailwind.config = {
     <div class="reveal grid lg:grid-cols-2 gap-8 lg:gap-16 items-end pb-12 border-b border-steel-200">
       <div>
         <div class="rule"></div>
-        <span class="mt-5 block eyebrow text-med-600">Our approach</span>
-        <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-navy">
-          How psychiatric care works here
+        <span class="mt-5 block eyebrow text-steel-600">Our approach</span>
+        <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-[#2774AE]">
+          How psychiatric care works
         </h2>
       </div>
       <p class="text-[16.5px] leading-[1.75] text-steel-600">
@@ -682,9 +685,9 @@ tailwind.config = {
 </section>
 
 <!-- ═══ STATS ═══ -->
-<section class="relative isolate bg-navy text-white">
-  <img src="<?= img($IMG['window'], 1800, 700, 72) ?>" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover opacity-[.22]">
-  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/70"></div>
+<section class="relative isolate bg-[#163654] text-white">
+  <img src="<?= img($IMG['window'], 1800, 700, 72) ?>" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover opacity-[.35]">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#163654]/85 via-[#1C4368]/75 to-[#245482]/65"></div>
   <div class="mx-auto max-w-[82rem] px-6 py-12">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8">
       <?php foreach ($stats as $i => $s): ?>
@@ -703,8 +706,8 @@ tailwind.config = {
     <div class="reveal grid lg:grid-cols-[1fr_auto] gap-8 items-end pb-10 border-b border-steel-200">
       <div class="max-w-2xl">
         <div class="rule"></div>
-        <span class="mt-5 block eyebrow text-med-600">Conditions treated</span>
-        <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-navy">
+        <span class="mt-5 block eyebrow text-steel-600">Conditions treated</span>
+        <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-[#2774AE]">
           Care determined by clinical evaluation
         </h2>
       </div>
@@ -716,20 +719,26 @@ tailwind.config = {
 
     <div class="cards-slider mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <?php foreach ($conditions as $c): ?>
-      <article class="reveal group flex flex-col overflow-hidden rounded-lg border border-steel-200 bg-white hover:shadow-pop transition-shadow">
-        <div class="relative overflow-hidden bg-steel-100">
-          <img src="<?= img($c[2], 640, 420) ?>" alt="" loading="lazy"
-               class="h-44 w-full object-cover group-hover:scale-[1.04] transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-navy/45 to-transparent"></div>
-          <h3 class="absolute bottom-4 left-5 right-5 text-[17px] font-semibold text-white drop-shadow-sm"><?= $c[0] ?></h3>
+      <article class="reveal group flex flex-col rounded-xl border border-steel-200/90 bg-white p-6 sm:p-7 hover:border-[#2774AE]/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+        <div class="flex items-center justify-between">
+          <div class="w-14 h-14 rounded-xl bg-[#EFF6FB] border border-[#2774AE]/15 flex items-center justify-center p-2.5 transition-all duration-300 group-hover:bg-[#2774AE] group-hover:scale-105 group-hover:shadow-md">
+            <img src="assets/icons/<?= $c[2] ?>" alt="<?= $c[0] ?>" width="36" height="36" loading="lazy"
+                 class="w-9 h-9 object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert">
+          </div>
+          <span class="text-[11.5px] font-semibold tracking-wider text-steel-400 uppercase group-hover:text-[#2774AE] transition-colors">Specialized</span>
         </div>
-        <div class="flex flex-col flex-1 p-6">
-          <p class="text-[14px] leading-relaxed text-steel-600"><?= $c[1] ?></p>
-          <a href="#book" class="mt-5 pt-4 border-t border-steel-200 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-med-600 mt-auto">
-            Discuss options
-            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
+
+        <h3 class="mt-5 text-[18px] font-bold text-navy group-hover:text-[#2774AE] transition-colors">
+          <?= $c[0] ?>
+        </h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-steel-600 flex-1">
+          <?= $c[1] ?>
+        </p>
+
+        <a href="#book" class="mt-6 pt-4 border-t border-steel-100 flex items-center justify-between text-[13.5px] font-semibold text-[#2774AE] group-hover:text-[#ED8B00] transition-colors">
+          <span>Discuss treatment</span>
+          <svg viewBox="0 0 24 24" class="h-4 w-4 transform group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </article>
       <?php endforeach; ?>
     </div>
@@ -740,12 +749,12 @@ tailwind.config = {
         establish the right diagnosis and treatment plan.
       </p>
       <div class="flex flex-wrap gap-3 shrink-0">
-        <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-med-600 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-med-700 transition">
+        <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-[#ED8B00] px-6 py-3.5 text-[15px] font-bold text-white hover:bg-[#D97E00] shadow-sm transition">
           Request a Free Consultation
           <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-steel-300 bg-white px-6 py-3.5 text-[15px] font-semibold text-navy hover:border-med-500 hover:text-med-600 transition">
-          <svg viewBox="0 0 24 24" class="h-4 w-4 text-med-600" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+        <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-steel-300 bg-white px-6 py-3.5 text-[15px] font-semibold text-[#2774AE] hover:border-[#2774AE] transition">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 text-[#2774AE]" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
           <?= $PHONE ?>
         </a>
       </div>
@@ -754,9 +763,9 @@ tailwind.config = {
 </section>
 
 <!-- ═══ BREAK BAND ═══ -->
-<section class="relative isolate bg-navy-900 text-white">
-  <img src="<?= $BASE ?>assets/photos/anewera-lp-1.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-center opacity-30">
-  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-navy-900 via-navy-900/85 to-navy-900/55"></div>
+<section class="relative isolate bg-[#163654] text-white">
+  <img src="<?= $BASE ?>assets/photos/anewera-lp-1.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-center opacity-50">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#163654]/80 via-[#1C4368]/65 to-[#245482]/50"></div>
   <div class="mx-auto max-w-[82rem] px-6 py-12 lg:py-16">
     <div class="reveal flex flex-col lg:flex-row lg:items-center justify-between gap-8">
       <div class="max-w-2xl">
@@ -781,16 +790,16 @@ tailwind.config = {
     <div class="reveal grid lg:grid-cols-[1fr_auto] gap-8 items-end pb-12 border-b border-steel-200">
       <div class="max-w-2xl">
         <div class="rule"></div>
-        <span class="mt-5 block eyebrow text-med-600">How it works</span>
-        <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-navy">
-          From first call to a plan you understand
+        <span class="mt-5 block eyebrow text-steel-600">How it works</span>
+        <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-[#2774AE]">
+          From the first call to a plan you understand
         </h2>
         <p class="mt-6 text-[16.5px] leading-[1.75] text-steel-600">
           Four steps, and most of them happen inside the first week. Consultations are frequently
           available the same day you call.
         </p>
       </div>
-      <a href="#book" class="shrink-0 inline-flex items-center gap-2.5 rounded-md bg-med-600 px-7 py-3.5 text-[15px] font-semibold text-white hover:bg-med-700 transition">
+      <a href="#book" class="shrink-0 inline-flex items-center gap-2.5 rounded-md bg-[#ED8B00] px-7 py-3.5 text-[15px] font-bold text-white hover:bg-[#D97E00] shadow-sm transition">
         Begin with Step One
         <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -803,9 +812,9 @@ tailwind.config = {
         <?php if ($i < count($steps) - 1): ?>
           <span aria-hidden="true" class="hidden lg:block absolute top-7 left-16 -right-10 h-px bg-steel-200"></span>
         <?php endif; ?>
-        <span class="relative z-10 grid h-14 w-14 place-items-center rounded-full border border-steel-300 bg-white text-[15px] font-bold text-med-600"><?= $s[0] ?></span>
-        <p class="mt-6 inline-block rounded bg-med-50 border border-med-100 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[.12em] text-med-700"><?= $s[1] ?></p>
-        <h3 class="mt-3.5 text-[18.5px] font-semibold text-navy"><?= $s[2] ?></h3>
+        <span class="relative z-10 grid h-14 w-14 place-items-center rounded-full border border-steel-300 bg-white text-[15px] font-bold text-[#2774AE]"><?= $s[0] ?></span>
+        <p class="mt-6 inline-block rounded bg-steel-100 border border-steel-200 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[.12em] text-steel-700"><?= $s[1] ?></p>
+        <h3 class="mt-3.5 text-[18.5px] font-bold text-[#2774AE]"><?= $s[2] ?></h3>
         <p class="mt-2.5 text-[14.5px] leading-[1.7] text-steel-600"><?= $s[3] ?></p>
       </li>
       <?php endforeach; ?>
@@ -815,7 +824,7 @@ tailwind.config = {
     <div class="reveal relative isolate mt-16 overflow-hidden rounded-lg">
       <img src="<?= img($IMG['consult'], 1800, 620, 76) ?>" alt="Consultation with a clinician at an Anew Era clinic"
            class="absolute inset-0 -z-10 h-full w-full object-cover object-[center_30%]">
-      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/45"></div>
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#163654]/80 via-[#1C4368]/65 to-[#245482]/50"></div>
       <div class="grid lg:grid-cols-[1fr_auto] gap-8 items-center p-8 sm:p-12">
         <div class="max-w-xl">
           <p class="text-[1.35rem] sm:text-[1.6rem] font-bold leading-[1.3] tracking-tightest text-white">
@@ -827,8 +836,8 @@ tailwind.config = {
           </p>
         </div>
         <div class="flex flex-wrap gap-3">
-          <a href="#book" class="inline-flex items-center rounded-md bg-white px-6 py-3.5 text-[15px] font-semibold text-navy hover:bg-steel-100 transition">Request a Consultation</a>
-          <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-white/35 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-white/10 transition"><svg viewBox="0 0 24 24" class="h-4 w-4 text-med-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><?= $PHONE ?></a>
+          <a href="#book" class="inline-flex items-center rounded-md bg-[#ED8B00] px-6 py-3.5 text-[15px] font-bold text-white hover:bg-[#D97E00] shadow-sm transition">Request a Consultation</a>
+          <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-white/35 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-white/10 transition"><svg viewBox="0 0 24 24" class="h-4 w-4 text-steel-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><?= $PHONE ?></a>
         </div>
       </div>
     </div>
@@ -841,8 +850,8 @@ tailwind.config = {
   <div class="mx-auto max-w-[82rem] px-6">
     <div class="reveal max-w-3xl">
       <div class="rule"></div>
-      <span class="mt-5 block eyebrow text-med-600">Our services</span>
-      <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-navy">
+      <span class="mt-5 block eyebrow text-steel-600">Our services</span>
+      <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-[#2774AE]">
         Comprehensive psychiatric care, coordinated under one roof
       </h2>
       <p class="mt-6 text-[16.5px] leading-[1.75] text-steel-600">
@@ -861,16 +870,16 @@ tailwind.config = {
         </div>
         <div class="flex flex-col flex-1 p-7">
           <div class="flex flex-wrap items-center gap-2.5">
-            <h3 class="text-[20px] font-bold tracking-tightest text-navy"><?= $sv[0] ?></h3>
+            <h3 class="text-[20px] font-bold tracking-tightest text-[#2774AE]"><?= $sv[0] ?></h3>
             <?php if (!empty($sv[6])): ?>
-              <span class="rounded border border-med-100 bg-med-50 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-med-700"><?= $sv[6] ?></span>
+              <span class="rounded border border-steel-200 bg-steel-100 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-steel-700"><?= $sv[6] ?></span>
             <?php endif; ?>
           </div>
           <p class="mt-3 text-[15px] leading-[1.7] text-steel-600"><?= $sv[1] ?></p>
           <ul class="mt-5 pt-5 border-t border-steel-200 space-y-2.5">
             <?php foreach ($sv[2] as $li): ?>
             <li class="flex items-start gap-2.5 text-[14.5px] text-steel-600">
-              <svg viewBox="0 0 24 24" class="h-4 w-4 mt-1 shrink-0 text-med-600" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 mt-1 shrink-0 text-[#2774AE]" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
               <?= $li ?>
             </li>
             <?php endforeach; ?>
@@ -881,12 +890,12 @@ tailwind.config = {
     </div>
 
     <div class="reveal mt-9 flex flex-wrap items-center gap-3">
-      <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-med-600 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-med-700 transition">
+      <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-[#ED8B00] px-6 py-3.5 text-[15px] font-bold text-white hover:bg-[#D97E00] shadow-sm transition">
         Book an Appointment
         <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-steel-300 px-6 py-3.5 text-[15px] font-semibold text-navy hover:border-med-500 hover:text-med-600 transition">
-        <svg viewBox="0 0 24 24" class="h-4 w-4 text-med-600" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+      <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-steel-300 px-6 py-3.5 text-[15px] font-semibold text-[#2774AE] hover:border-[#2774AE] transition">
+        <svg viewBox="0 0 24 24" class="h-4 w-4 text-[#2774AE]" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
         <?= $PHONE ?>
       </a>
     </div>
@@ -900,8 +909,8 @@ tailwind.config = {
     <div class="reveal grid lg:grid-cols-[1fr_auto] gap-8 items-end pb-10 border-b border-steel-200">
       <div class="max-w-2xl">
         <div class="rule"></div>
-        <span class="mt-5 block eyebrow text-med-600">Patient reviews</span>
-        <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-navy">
+        <span class="mt-5 block eyebrow text-steel-600">Patient reviews</span>
+        <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-[#2774AE]">
           What our patients say
         </h2>
         <p class="mt-6 text-[16.5px] leading-[1.75] text-steel-600">
@@ -962,65 +971,39 @@ tailwind.config = {
     <div class="reveal grid lg:grid-cols-[1fr_auto] gap-12 items-start">
       <div class="max-w-2xl">
         <div class="rule"></div>
-        <span class="mt-5 block eyebrow text-med-600">Insurance &amp; cost</span>
-        <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-navy">
+        <span class="mt-5 block eyebrow text-steel-600">Insurance &amp; cost</span>
+        <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-[#2774AE]">
           Psychiatric care is covered by most major insurance plans
         </h2>
         <p class="mt-6 text-[16.5px] leading-[1.75] text-steel-600">
-          We accept most major commercial insurance companies as well as Tricare and Triwest across California and Texas.
+          We accept most major commercial insurance companies as well as Tricare and Triwest in Texas.
           Your exact benefits are verified at no charge before treatment begins, and competitive cash-pay options are available.
         </p>
-        <p class="mt-4 text-[14px] font-medium text-steel-700 bg-amber-50 inline-block px-3 py-1.5 rounded-md border border-amber-200/60">
+        <p class="mt-4 text-[14px] font-medium text-steel-700 bg-steel-100 inline-block px-3 py-1.5 rounded-md border border-steel-200">
           <strong>Note:</strong> We do not accept Medicaid.
         </p>
       </div>
 
       <div class="lg:w-80 rounded-lg border border-steel-200 bg-steel-50 p-7">
-        <p class="eyebrow text-steel-400">Benefits verification</p>
-        <p class="mt-3 text-[2.6rem] font-bold leading-none tracking-tightest text-navy">Free</p>
+        <p class="eyebrow text-steel-500">Benefits verification</p>
+        <p class="mt-3 text-[2.6rem] font-bold leading-none tracking-tightest text-[#2774AE]">Free</p>
         <p class="mt-3 text-[14.5px] leading-relaxed text-steel-600">
          We handle the paperwork with your insurer and provide an estimate of your expected out-of-pocket cost.
         </p>
-        <a href="#book" class="mt-6 block rounded-md bg-med-600 py-3.5 text-center text-[15px] font-semibold text-white hover:bg-med-700 transition">Check My Coverage</a>
+        <a href="#book" class="mt-6 block rounded-md bg-[#ED8B00] py-3.5 text-center text-[15px] font-bold text-white hover:bg-[#D97E00] shadow-sm transition">Check My Coverage</a>
       </div>
     </div>
 
-    <!-- State filter tabs -->
-    <div class="reveal mt-8 flex flex-wrap items-center gap-2">
-      <span class="text-xs font-semibold uppercase tracking-wider text-steel-400 mr-2">Filter by State:</span>
-      <button type="button" onclick="filterInsurances('all')" id="ins-tab-all"
-              class="ins-tab px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-md bg-navy text-white transition-colors duration-200 shadow-sm">
-        All Accepted Plans
-      </button>
-      <button type="button" onclick="filterInsurances('ca')" id="ins-tab-ca"
-              class="ins-tab px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-md bg-steel-100 text-steel-600 hover:bg-steel-200 transition-colors duration-200">
-        California (CA)
-      </button>
-      <button type="button" onclick="filterInsurances('tx')" id="ins-tab-tx"
-              class="ins-tab px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-md bg-steel-100 text-steel-600 hover:bg-steel-200 transition-colors duration-200">
-        Texas (TX)
-      </button>
-    </div>
-
     <!-- carrier wall, full container width -->
-    <div class="reveal mt-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-4" id="insurance-grid">
+    <div class="reveal mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-4" id="insurance-grid">
       <?php foreach ($insurers as $ins): ?>
-      <div data-state="<?= $ins[3] ?>"
-           class="ins-card h-[110px] rounded-lg border border-steel-200 bg-white flex flex-col items-center justify-center gap-1.5 px-4 py-3 text-center hover:border-steel-300 transition-all">
+      <div class="ins-card h-[110px] rounded-lg border border-steel-200 bg-white flex flex-col items-center justify-center gap-1.5 px-4 py-3 text-center hover:border-steel-300 transition-all">
         <?php if ($INS_LOGOS && $ins[1]): ?>
           <img src="<?= $INS_DIR . $ins[1] ?>" alt="<?= strip_tags($ins[0]) ?>" loading="lazy"
                class="max-h-11 w-auto max-w-full object-contain">
         <?php else: ?>
-          <span class="text-[15px] font-semibold leading-snug text-navy"><?= $ins[0] ?></span>
+          <span class="text-[15px] font-bold leading-snug text-[#2774AE]"><?= $ins[0] ?></span>
         <?php endif; ?>
-        <div class="flex items-center gap-1.5 flex-wrap justify-center">
-          <?php if ($ins[2]): ?>
-            <span class="text-[11px] leading-tight text-steel-400"><?= $ins[2] ?></span>
-          <?php endif; ?>
-          <span class="inline-block px-1.5 py-0.5 text-[10px] font-bold rounded bg-steel-100 text-steel-600">
-            <?= $ins[3] === 'both' ? 'CA & TX' : strtoupper($ins[3]) ?>
-          </span>
-        </div>
       </div>
       <?php endforeach; ?>
     </div>
@@ -1031,51 +1014,26 @@ tailwind.config = {
   </div>
 </section>
 
-<script>
-function filterInsurances(state) {
-  const tabs = document.querySelectorAll('.ins-tab');
-  tabs.forEach(t => {
-    t.classList.remove('bg-navy', 'text-white', 'shadow-sm');
-    t.classList.add('bg-steel-100', 'text-steel-600');
-  });
-  const activeTab = document.getElementById('ins-tab-' + state);
-  if (activeTab) {
-    activeTab.classList.remove('bg-steel-100', 'text-steel-600');
-    activeTab.classList.add('bg-navy', 'text-white', 'shadow-sm');
-  }
-
-  const cards = document.querySelectorAll('.ins-card');
-  cards.forEach(card => {
-    const cardState = card.getAttribute('data-state');
-    if (state === 'all' || cardState === 'both' || cardState === state) {
-      card.style.display = 'flex';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-}
-</script>
-
 <!-- ═══ FAQ ═══ -->
 <section id="faq" class="bg-white py-14 lg:py-20 scroll-mt-[92px]">
   <div class="mx-auto max-w-[82rem] px-6">
     <div class="grid lg:grid-cols-[.75fr_1.25fr] gap-12 lg:gap-16">
       <div class="reveal lg:sticky lg:top-[90px] self-start">
         <div class="rule"></div>
-        <span class="mt-5 block eyebrow text-med-600">Frequently asked</span>
-        <h2 class="mt-4 text-[2.1rem] sm:text-[2.5rem] font-bold leading-[1.14] tracking-tightest text-navy">
+        <span class="mt-5 block eyebrow text-steel-600">Frequently asked</span>
+        <h2 class="mt-4 text-[2.1rem] sm:text-[2.5rem] font-bold leading-[1.14] tracking-tightest text-[#2774AE]">
           Common questions
         </h2>
         <p class="mt-6 text-[15.5px] leading-[1.7] text-steel-600">
           If your question is not answered here, our team can help.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-med-600 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-med-700 transition">
+          <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-[#ED8B00] px-6 py-3.5 text-[15px] font-bold text-white hover:bg-[#D97E00] shadow-sm transition">
             Request a Free Consultation
             <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-steel-300 px-6 py-3.5 text-[15px] font-semibold text-navy hover:border-med-500 hover:text-med-600 transition">
-            <svg viewBox="0 0 24 24" class="h-4 w-4 text-med-600" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+          <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-steel-300 px-6 py-3.5 text-[15px] font-semibold text-[#2774AE] hover:border-[#2774AE] transition">
+            <svg viewBox="0 0 24 24" class="h-4 w-4 text-[#2774AE]" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
             <?= $PHONE ?>
           </a>
         </div>
@@ -1105,9 +1063,9 @@ function filterInsurances(state) {
 </section>
 
 <!-- ═══ FINAL CTA ═══ -->
-<section class="relative bg-navy text-white">
-  <img src="<?= img($IMG['calm'], 1600, 800, 70) ?>" alt="" class="absolute inset-0 h-full w-full object-cover opacity-[.18]">
-  <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/75"></div>
+<section class="relative bg-[#163654] text-white">
+  <img src="<?= img($IMG['calm'], 1600, 800, 70) ?>" alt="" class="absolute inset-0 h-full w-full object-cover opacity-[.40]">
+  <div class="absolute inset-0 bg-gradient-to-r from-[#163654]/85 via-[#1C4368]/70 to-[#245482]/55"></div>
   <div class="relative mx-auto max-w-[82rem] px-6 py-14 lg:py-18">
     <div class="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
       <div class="max-w-2xl reveal">
@@ -1120,12 +1078,12 @@ function filterInsurances(state) {
         </p>
       </div>
       <div class="flex flex-wrap gap-3 reveal">
-        <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-med-500 px-7 py-4 text-[15px] font-semibold text-white hover:bg-med-600 transition">
+        <a href="#book" class="inline-flex items-center gap-2.5 rounded-md bg-[#ED8B00] px-7 py-4 text-[15px] font-bold text-white hover:bg-[#D97E00] shadow-md transition">
           Request a Consultation
           <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-white/30 px-7 py-4 text-[15px] font-semibold text-white hover:bg-white/10 transition">
-          <svg viewBox="0 0 24 24" class="h-4 w-4 text-med-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+        <a href="tel:<?= $PHONE_RAW ?>" class="inline-flex items-center gap-2.5 rounded-md border border-white/35 px-7 py-4 text-[15px] font-semibold text-white hover:bg-white/10 transition">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 text-steel-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
           <?= $PHONE ?>
         </a>
       </div>
