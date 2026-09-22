@@ -816,7 +816,7 @@ tailwind.config = {
     <div class="reveal relative isolate mt-16 overflow-hidden rounded-lg">
       <img src="<?= img($IMG['consult'], 1800, 620, 76) ?>" alt="Consultation with a clinician at an Anew Era clinic"
            class="absolute inset-0 -z-10 h-full w-full object-cover object-[center_30%]">
-      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#0F2236]/95 via-[#132B44]/85 to-[#183656]/60"></div>
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#163654]/80 via-[#1C4368]/65 to-[#245482]/50"></div>
       <div class="grid lg:grid-cols-[1fr_auto] gap-8 items-center p-8 sm:p-12">
         <div class="max-w-xl">
           <p class="text-[1.35rem] sm:text-[1.6rem] font-bold leading-[1.3] tracking-tightest text-white">
@@ -1106,9 +1106,9 @@ function filterInsurances(state) {
 </section>
 
 <!-- ═══ FINAL CTA ═══ -->
-<section class="relative bg-[#0F2236] text-white">
-  <img src="<?= img($IMG['calm'], 1600, 800, 70) ?>" alt="" class="absolute inset-0 h-full w-full object-cover opacity-[.20]">
-  <div class="absolute inset-0 bg-gradient-to-r from-[#0D1F33] via-[#132C47]/95 to-[#18385B]/85"></div>
+<section class="relative bg-[#163654] text-white">
+  <img src="<?= img($IMG['calm'], 1600, 800, 70) ?>" alt="" class="absolute inset-0 h-full w-full object-cover opacity-[.40]">
+  <div class="absolute inset-0 bg-gradient-to-r from-[#163654]/85 via-[#1C4368]/70 to-[#245482]/55"></div>
   <div class="relative mx-auto max-w-[82rem] px-6 py-14 lg:py-18">
     <div class="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
       <div class="max-w-2xl reveal">
