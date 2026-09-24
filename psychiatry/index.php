@@ -416,7 +416,7 @@ tailwind.config = {
         </h1>
 
         <p class="mt-5 text-[17px] leading-[1.7] text-steel-200 max-w-xl">
-          Get a comprehensive psychiatric evaluation, diagnosis, and personalized treatment plan from board-certified psychiatrists serving The Woodlands, TX. Appointments are available in person or by video, often within five days.
+          Get a comprehensive psychiatric evaluation, diagnosis, and personalized treatment plan from board-certified psychiatrists serving The Woodlands, TX. Appointments are available in person or telehealth, often within five days.
         </p>
 
         <div class="mt-8 flex flex-wrap items-center gap-3">
@@ -508,7 +508,7 @@ tailwind.config = {
 
     <!-- metric bar -->
     <dl class="reveal mt-12 lg:mt-14 grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/15 border-t border-x border-white/15">
-      <?php foreach ([['Within 72 hours','Appointment availability'],['60 min','Initial evaluation'],['Flexible Visits','In person or by video'],['Most Major Plans','Insurance accepted']] as $h): ?>
+      <?php foreach ([['Within 72 hours','Appointment availability'],['60 min','Initial evaluation'],['Flexible Visits','In person or telehealth'],['Most Major Plans','Insurance accepted']] as $h): ?>
       <div class="bg-navy/60 backdrop-blur-md px-5 py-4">
         <dt class="text-[20px] font-bold leading-none text-white"><?= $h[0] ?></dt>
         <dd class="mt-2 text-[12.5px] leading-snug text-steel-300"><?= $h[1] ?></dd>
