@@ -110,7 +110,7 @@ $mechanism = [
    The cards crop the image to a wide band, so portraits whose subject sits high
    in the frame need 'object-top' or the head is cut off. */
 $services = [
-    ['Psychiatric Evaluation','A full diagnostic evaluation with a board-certified psychiatrist or psychiatric nurse practitioner, in person or by video.',['Sixty-minute first appointment','Diagnosis explained in plain language','In person or telehealth'],
+    ['Psychiatric Evaluation','A full diagnostic evaluation with a board-certified psychiatrist or psychiatric nurse practitioner, In person or telehealth',['Sixty-minute first appointment','Diagnosis explained in plain language','In person or telehealth'],
      $BASE . 'assets/photos/anewera-tms-2.jpg', 'cover', 'object-center'],
     ['Ongoing Psychiatric Care','Ongoing clinical care with follow-up appointments that track how you are responding and revise the plan over time.',['Ongoing review and adjustment','Coordinated with your therapy','Same-week availability'],
      $BASE . 'assets/photos/anewera-lp-1.jpg', 'cover', 'object-center'],
@@ -551,11 +551,12 @@ tailwind.config = {
         <div class="rule"></div>
         <span class="mt-5 block eyebrow text-steel-600">WHY PATIENTS CHOOSE ANEW ERA</span>
         <h2 class="mt-4 text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] tracking-tightest text-[#2774AE]">
-          Psychiatric Care That Gives You Time to Be Heard
+          Psychiatric care that gives you time to be heard
         </h2>
         <p class="mt-6 text-[16.5px] leading-[1.75] text-steel-600">
+           Finding the right mental health care can be challenging, especially when appointments feel rushed or treatment options aren’t fully explained.
           The National Institute of Mental Health estimates that one in five American adults
-          experiences some form of mental disorder. Finding the right mental health care can be challenging, especially when appointments feel rushed or treatment options aren’t fully explained.
+          experiences some form of mental disorder.
         </p>
         <p class="mt-4 text-[16.5px] leading-[1.75] text-steel-600">
          At Anew Era, our psychiatric evaluations are designed to give you the time and attention needed to understand your symptoms, diagnosis, and treatment options.
