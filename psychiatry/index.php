@@ -648,7 +648,7 @@ tailwind.config = {
           <?php foreach ([
             ['Board-certified clinicians','Psychiatrists and psychiatric nurse practitioners'],
             ['Psychiatric care and therapy together','One plan, one practice, no hand-offs'],
-            ['In person or by video','Move between the two as it suits you'],
+            ['In person or telehealth','Move between the two as it suits you'],
             ['Same-week availability','Follow-up appointments when you need them'],
           ] as $f): ?>
           <div class="flex gap-3">
