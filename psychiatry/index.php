@@ -493,6 +493,11 @@ tailwind.config = {
                 </select>
               </label>
 
+              <label class="block">
+                <span class="text-[12.5px] font-semibold text-white">Message</span>
+                <textarea name="message" rows="3" maxlength="1000" placeholder="Anything you'd like us to know (optional)" class="mt-1.5 w-full resize-y rounded-md border border-white/25 bg-white/10 px-3.5 py-2.5 text-[15px] text-white placeholder-white/60 outline-none focus:border-white/60 focus:bg-white/15 focus:ring-2 focus:ring-white/20 transition"></textarea>
+              </label>
+
               <button class="mt-1 w-full inline-flex items-center justify-center gap-2.5 rounded-md bg-[#ED8B00] px-6 py-3.5 text-[15.5px] font-bold text-white hover:bg-[#D97E00] shadow-md transition">
                 Request a Free Consultation
                 <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
