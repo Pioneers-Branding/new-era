@@ -4,8 +4,8 @@
  * Clinical / professional build. Tailwind CSS (Play CDN). Content from aneweratms.com
  */
 
-$PHONE     = '(936) 444-4870';
-$PHONE_RAW = '9364444870';
+$PHONE     = '(832) 968-9606';
+$PHONE_RAW = '8329689606';
 
 /* ---------- Clinic (The Woodlands, TX) ---------- */
 $ADDR_LINES = ['1733 Woodstead Ct #102', 'The Woodlands, TX 77380'];

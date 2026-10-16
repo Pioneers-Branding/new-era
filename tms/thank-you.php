@@ -4,8 +4,8 @@
  * Form submission confirmation page.
  */
 
-$PHONE     = '(936) 444-4870';
-$PHONE_RAW = '9364444870';
+$PHONE     = '(832) 968-9606';
+$PHONE_RAW = '8329689606';
 
 $LOGO       = 'assets/logo/new-era-logo.webp';
 $LOGO_WHITE = 'assets/logo/new-era-logo-white.png';
